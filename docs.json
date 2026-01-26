@@ -17,13 +17,14 @@
             "group": "Getting started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "quickstart"
             ]
           },
           {
-            "group": "Working with CodeBanana",
-            "pages": []
+            "group": "Working in CodeBanana",
+            "pages": [
+              "guides/working-with-code-banana/untitled-page"
+            ]
           },
           {
             "group": "Publishing your app",
