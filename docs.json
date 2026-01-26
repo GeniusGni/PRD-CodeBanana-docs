@@ -49,12 +49,7 @@
             "group": "Publishing your app",
             "icon": "rocket-launch",
             "pages": [
-              {
-                "group": "Deployment Types",
-                "pages": [
-                  "guides/publishing-your-app/deployment-types/untitled-page"
-                ]
-              }
+              "guides/publishing-your-app/deployment-types/untitled-page"
             ]
           },
           {
