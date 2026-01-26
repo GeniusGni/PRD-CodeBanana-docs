@@ -36,6 +36,16 @@
             ]
           },
           {
+            "group": "Teams",
+            "icon": "screen-users",
+            "pages": [
+              "guides/teams/untitled-page",
+              "guides/teams/untitled-page-1",
+              "guides/teams/managing-teams",
+              "guides/teams/project-controls"
+            ]
+          },
+          {
             "group": "Publishing your app",
             "icon": "rocket-launch",
             "pages": [
@@ -62,41 +72,6 @@
               "guides/account-and-subscriptions/untitled-page-1",
               "guides/account-and-subscriptions/untitled-page-2",
               "guides/account-and-subscriptions/untitled-page-3"
-            ]
-          },
-          {
-            "group": "Teams",
-            "icon": "screen-users",
-            "pages": [
-              "guides/teams/untitled-page",
-              "guides/teams/untitled-page-1",
-              "guides/teams/managing-teams",
-              "guides/teams/project-controls"
-            ]
-          },
-          {
-            "group": "help1",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "help2",
-            "icon": "code-fork",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "help3",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
             ]
           }
         ]
