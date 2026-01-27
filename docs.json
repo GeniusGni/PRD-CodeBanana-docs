@@ -3,8 +3,8 @@
   "theme": "aspen",
   "name": "CodeBanana document",
   "colors": {
-    "primary": "#129ec9",
-    "light": "#06c9c9",
+    "primary": "#02b7cf",
+    "light": "#38ece8",
     "dark": "#1a3e8d"
   },
   "favicon": "/images/favicon.ico",
