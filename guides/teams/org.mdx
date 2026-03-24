@@ -1,0 +1,89 @@
+---
+title: "Organization"
+description: "Organization is the core collaboration unit in CodeBanana. It defines how users, projects, permissions, and billing are structured and managed"
+---
+
+### **Access and Switching**
+
+Click the **organization selector in the top-left corner** to:
+
+- Switch between organizations
+- Apply to join a new organization
+
+To** join** an organization:
+
+- Search for the organization name
+- Submit a request
+- After approval by the **organization owner**, you can switch into that organization
+
+#### **Create Organization**
+
+- A default organization is **automatically created** when you register (via email or third-party login)
+- The organization name is initially based on your email and can be renamed by the owner
+- Each user can have **only one owned organization**
+
+#### **Organization Types**
+
+CodeBanana distinguishes between two types of organizations:
+
+**Own Organization**
+
+- The organization you created and fully control
+- You are the **Owner**
+- Each user can have only one
+
+**Work Organization**
+
+- Organizations you join as a collaborator
+- You can be part of multiple work organizations
+
+#### **Key behavior**
+
+- You can only be in **one organization at a time**
+- Switching organizations means switching your entire workspace:
+  - Projects
+  - Files
+  - Context
+
+#### **Members and Roles**
+
+Organizations manage collaboration through roles:
+
+- **Owner**
+  - Full control over the organization
+  - Manages members, permissions, and billing
+- **Member**
+  - Can access AI resources and participate in projects
+
+#### **Join mechanism**
+
+- Users must **actively apply** to join an organization
+- Search by organization name and submit a request
+- Access is granted after admin approval
+
+#### **Leaving an organization**
+
+- Users can switch between organizations if they belong to multiple
+- Full removal currently requires action from the **organization owner**
+- Self-service “leave organization” is not yet available (to prevent accidental data loss)
+
+#### **Organization & Projects**
+
+Projects are tightly bound to organizations:
+
+**Strong binding**
+
+- Every project must belong to a specific organization
+- Projects cannot exist outside an organization
+
+**Data isolation**
+
+- Projects in one organization are **not visible** to members of another
+- Switching organizations refreshes your entire project list
+
+**External collaboration (special case)**
+
+- If an external user is invited to a project:
+  - They gain access to the **project only**, not the organization
+  - Currently, the project may appear across their organization views
+  - Future updates will place such projects under the user’s personal organization

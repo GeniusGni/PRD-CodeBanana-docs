@@ -54,7 +54,6 @@
             "icon": "id-card-clip",
             "pages": [
               "guides/account-and-subscriptions/untitled-page",
-              "guides/account-and-subscriptions/request",
               "guides/account-and-subscriptions/untitled-page-1"
             ]
           },
@@ -62,9 +61,8 @@
             "group": "Teams",
             "icon": "screen-users",
             "pages": [
-              "guides/teams/untitled-page",
-              "guides/teams/untitled-page-1",
-              "guides/teams/managing-teams"
+              "guides/teams/org",
+              "guides/teams/untitled-page-1"
             ]
           }
         ]
