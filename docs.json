@@ -105,5 +105,10 @@
   },
   "search": {
     "prompt": "Search for..."
+  },
+  "fonts": {
+    "heading": {
+      "family": "Lato"
+    }
   }
 }
