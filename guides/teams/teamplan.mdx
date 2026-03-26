@@ -80,15 +80,12 @@ Organization owners manage Team Plan configuration and billing:
 
 **Modify member plans**
 
-- **Admins can update:**
-  - VM configuration
-  - On-demand usage limits
-- **Upgrade behavior**:
-  - Takes effect immediately
-  - Price difference is charged to the owner（**VM Change Only）**
-- **Downgrade behavior**:
-  - Remaining balance is stored in Stripe（**VM Change Only**），used to offset future billing
-  - Refunds require manual request via email
+**Admins can update:**
+
+- VM configuration
+- On-demand usage limits
+  - Members can only use resources within the configured limit
+  - Usage beyond the limit will be blocked
 
 <Frame>
   ![Addteamplanmember](/images/addteamplanmember.png)
@@ -96,6 +93,26 @@ Organization owners manage Team Plan configuration and billing:
 
 <Frame>
   ![Chang Vm](/images/changVm.png)
+</Frame>
+
+**Upgrade behavior**:
+
+- Takes effect immediately
+- Price difference is charged to the owner（**VM Change Only）**
+
+**Downgrade behavior**:
+
+- Remaining balance is stored in Stripe（**VM Change Only**），used to offset future billing
+- Refunds require manual request via email
+
+**Remove member**:
+
+- Team plan members can be removed by the admin
+- Removed members cannot be re-added for a cooling period (7–30 days)
+- Re-adding is only allowed after the cooling period ends
+
+<Frame>
+  ![Teamplanremove](/images/teamplanremove.png)
 </Frame>
 
 **Billing management**
