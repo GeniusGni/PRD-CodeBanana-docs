@@ -247,13 +247,13 @@ This allows teams to interact with the agent **without entering the CodeBanana i
     Set up a bot via the Developer Portal:
 
     - Visit [https://discord.com/developers/applications](https://discord.com/developers/applications)
-    - Click **New Application** → name it (e.g. OpenClaw Bot) → Create
+    - Click **New Application** → name it (e.g. `OpenClaw Bot`) → Create
     - Go to **Bot → Add Bot → Yes, do it!**
 
     Retrieve credentials:
 
     - Click **Reset Token** → copy Bot Token (shown once only)
-    - Example format: MTk5OTk5OTkyNzY4OTk4NzYxNg...
+    - Example format: `MTk5OTk5OTkyNzY4OTk4NzYxNg...`
 
     #### **Required Intents (Critical)**
 
@@ -261,9 +261,9 @@ This allows teams to interact with the agent **without entering the CodeBanana i
 
     - Scroll to **Privileged Gateway Intents**
     - Enable all:
-      - Message Content Intent (read message content)
-      - Server Members Intent
-      - Presence Intent
+      - `Message Content Intent `(read message content)
+      - `Server Members Intent`
+      - `Presence Intent`
     - Click **Save Changes**
 
     #### **Invite Bot to Server**
@@ -274,16 +274,16 @@ This allows teams to interact with the agent **without entering the CodeBanana i
 
     Select scopes:
 
-    - bot
-    - applications.commands (for slash commands)
+    - `bot`
+    - `applications.commands `(for slash commands)
 
     Select permissions (minimum required):
 
-    - Read Messages / View Channels
-    - Send Messages
-    - Read Message History
-    - Embed Links
-    - Add Reactions (optional)
+    - `Read Messages / View Channels`
+    - `Send Messages`
+    - `Read Message History`
+    - `Embed Links`
+    - `Add Reactions (optional)`
     - Copy generated URL → open in browser
     - Select your server → **Authorize**
 
@@ -294,5 +294,40 @@ This allows teams to interact with the agent **without entering the CodeBanana i
   </Accordion>
 
   <Accordion title="Mattermost">
+    #### **Prerequisites**
+
+    - Mattermost server deployed (cloud or self-hosted)
+    - Admin access available
+    - OpenClaw installed (Node.js ≥ 22 recommended)
+
+    #### **Create Bot Account**
+
+    - Log in to Mattermost Admin Console
+      - https://\<your-domain\>/admin\_console
+    - Go to **Integrations → Bot Accounts → Add Bot Account**
+
+    Configure:
+
+    - Username: openclaw-bot
+    - Display Name: OpenClaw AI
+    - Role:
+      - Recommended: System Admin
+      - Or minimal: post:all, slash\_command:all
+    - Save and copy the **Bot Token** (mmb-...)
+
+    #### **Allow Internal Connections (Critical)**
+
+    - Go to **Environment → Developer**
+    - Find **AllowedUntrustedInternalConnections**
+    - Add your OpenClaw gateway address:
+      - openclaw-server-ip
+      - or [gateway.example.com](http://gateway.example.com)
+    - Save changes
+    - Restart Mattermost server
+
+    #### **Configuration in CodeBanana**
+
+    - Go to **Personal Center → IM Settings**
+    - Input the **Bot Token**
   </Accordion>
 </AccordionGroup>
