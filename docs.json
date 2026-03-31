@@ -107,7 +107,8 @@
     "dark": "/images/CB-LOGOwhite.png"
   },
   "search": {
-    "prompt": "Search for..."
+    "prompt": "Search for...",
+    "mode": "legacy"
   },
   "fonts": {
     "heading": {
