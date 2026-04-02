@@ -22,7 +22,6 @@ You can connect the agent to multiple IM platforms, including:
 - DingTalk
 - WeCom
 - QQ
-- Mattermost
 
 <Frame>
   ![Channel](/images/channel.png)
@@ -291,43 +290,5 @@ This allows teams to interact with the agent **without entering the CodeBanana i
 
     - Go to **Personal Center → IM Settings**
     - Paste the **Bot Token**
-  </Accordion>
-
-  <Accordion title="Mattermost">
-    #### **Prerequisites**
-
-    - Mattermost server deployed (cloud or self-hosted)
-    - Admin access available
-    - OpenClaw installed (Node.js ≥ 22 recommended)
-
-    #### **Create Bot Account**
-
-    - Log in to Mattermost Admin Console
-      - https://\<your-domain\>/admin\_console
-    - Go to **Integrations → Bot Accounts → Add Bot Account**
-
-    Configure:
-
-    - Username: `openclaw-bot`
-    - Display Name: OpenClaw AI
-    - Role:
-      - Recommended: `System Admin`
-      - Or minimal: `post:all`, `slash_command:all`
-    - Save and copy the **Bot Token** (`mmb-...`)
-
-    #### **Allow Internal Connections (Critical)**
-
-    - Go to **Environment → Developer**
-    - Find **AllowedUntrustedInternalConnections**
-    - Add your OpenClaw gateway address:
-      - `openclaw-server-ip`
-      - or gateway.example.com
-    - Save changes
-    - Restart Mattermost server
-
-    #### **Configuration in CodeBanana**
-
-    - Go to **Personal Center → IM Settings**
-    - Input the **Bot Token**
   </Accordion>
 </AccordionGroup>
