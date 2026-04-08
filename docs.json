@@ -56,7 +56,7 @@
             "group": "CodeBanana Bot",
             "icon": "robot",
             "pages": [
-              "documentation/cbbot/overview"
+              "documentation/cbbot/introduction"
             ]
           },
           {
