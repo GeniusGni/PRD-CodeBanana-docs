@@ -53,7 +53,7 @@
             ]
           },
           {
-            "group": "CBBot",
+            "group": "CodeBanana Bot",
             "icon": "robot",
             "pages": [
               "documentation/cbbot/overview"
