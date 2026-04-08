@@ -1,0 +1,140 @@
+---
+description: "A local runtime version of CodeBanana, a desktop-based AI Agent that runs directly on your computer.  "
+title: "Overview"
+---
+
+## What is CBBot
+
+Unlike the web version, CBBot operates within your local environment, allowing the agent to interact with your **files, applications, browser, and system**, extending AI capabilities beyond the cloud into your personal workspace.
+
+## Web vs CBBot
+
+CBBot and the Web version are **two forms of the same product**, sharing the same account system and synchronized data.
+
+| Dimension | Web | CBBot |
+| --- | --- | --- |
+| Runtime | Browser-based | Local desktop application |
+| Core features | Full product capabilities (projects, chats, orgs) | Same core capabilities |
+| Agent scope | Cloud projects & environments | Local system, files, apps, browser |
+| Account | Shared | Shared |
+| Project visibility | Cloud \+ local (when client is online) | Cloud \+ local |
+| Best for | Collaboration & accessibility | Deep local automation |
+
+> Both interfaces display the same project list. Cloud projects are always accessible, while local projects are available when the client is online.
+
+---
+
+## Installation
+
+CBBot supports both macOS and Windows.
+
+| Platform | Support |
+| --- | --- |
+| macOS | ✅ |
+| Windows | ✅ |
+
+### Steps
+
+1. Download the installer from the CodeBanana website
+2. Install:
+   - macOS: Open `.dmg` and drag to Applications
+   - Windows: Run `.exe` installer
+3. Launch CBBot and log in with your account
+
+---
+
+## Login & Sync
+
+### Account
+
+- Use the same CodeBanana account as Web
+- Supports email and third-party login
+- Can stay logged in on both Web and CBBot
+
+### Data Sync
+
+| Data | Behavior |
+| --- | --- |
+| Account info | Synced in real time |
+| Billing & Plan | Shared across platforms |
+| Organization | Shared members & permissions |
+| Team Plan | Fully synced |
+| Cloud projects | Fully synced |
+| Local projects | Synced; shown as offline if client is offline |
+| Chat history | Synced across devices |
+
+> Project configurations (Basic Info, Skills, Cron Jobs) are project-specific but consistent across platforms.
+
+---
+
+## Local Agent Capabilities
+
+CBBot enables agents to operate directly on your **local machine**.
+
+### System Control
+
+- Read, create, modify, delete files
+- Move and batch process files
+- Execute terminal commands and scripts
+- Access system-level information
+
+### Application Control
+
+- Open local applications
+- Simulate user interactions (click, type, etc.)
+
+### Browser Automation
+
+- Navigate web pages
+- Fill forms and extract data
+- Simulate full browsing workflows
+
+### Screen Understanding
+
+- Capture screen content
+- Analyze UI states
+- Validate operation results
+
+---
+
+## Typical Use Cases
+
+| Scenario | Workflow |
+| --- | --- |
+| File organization | Scan → classify → move files |
+| Form automation | Open browser → fill → submit |
+| Reporting | Capture screen → analyze → generate report |
+| File monitoring | Trigger workflows via File Watch |
+| App automation | Open app → execute actions |
+
+---
+
+## Bot-only Features
+
+### Bot-exclusive Skills
+
+CBBot supports **Bot-only Skills**, which include local system operations.
+
+| Type | Availability |
+| --- | --- |
+| Standard Skills | Web \+ Bot |
+| Bot-only Skills | Bot only (`Bot` tag) |
+
+---
+
+### Cron Job Differences
+
+| Capability | Web | CBBot |
+| --- | --- | --- |
+| Scheduled tasks | ✅ | ✅ |
+| System notifications | ❌ | ✅ |
+| File Watch scope | Project files only | Full local filesystem |
+
+---
+
+## Project Status
+
+| Type | Location | Availability |
+| --- | --- | --- |
+| Cloud Project | Server | Always available |
+| Local Project | Local machine | Offline when client is offline |

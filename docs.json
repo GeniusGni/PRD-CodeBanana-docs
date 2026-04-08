@@ -53,6 +53,13 @@
             ]
           },
           {
+            "group": "CBBot",
+            "icon": "robot",
+            "pages": [
+              "documentation/cbbot/overview"
+            ]
+          },
+          {
             "group": "Account and subscriptions",
             "icon": "id-card-clip",
             "pages": [
