@@ -106,22 +106,7 @@
             "github": "https://github.com/mobvoi/CBbot",
             "x": "https://x.com/CodewithMobvoi",
             "discord": "https://discord.com/invite/yUcCxACgh9"
-          },
-          "links": [
-            {
-              "header": "Resources",
-              "items": [
-                {
-                  "label": "Documentation",
-                  "href": "/"
-                },
-                {
-                  "label": "Website",
-                  "href": "https://www.codebanana.com/"
-                }
-              ]
-            }
-          ]
+          }
         }
       },
       {
@@ -164,22 +149,7 @@
             "github": "https://github.com/mobvoi/CBbot",
             "x": "https://x.com/CodewithMobvoi",
             "discord": "https://discord.com/invite/yUcCxACgh9"
-          },
-          "links": [
-            {
-              "header": "资源",
-              "items": [
-                {
-                  "label": "文档中心",
-                  "href": "/zh"
-                },
-                {
-                  "label": "官网",
-                  "href": "https://www.codebanana.com/"
-                }
-              ]
-            }
-          ]
+          }
         }
       }
     ]
