@@ -119,13 +119,13 @@
         },
         "navbar": {
           "links": [
-            { "label": "Support",
+            { "label": "联系我们",
               "href": "mailto:codebanana-support@mobvoi.com" 
             }
           ],
           "primary": {
             "type": "button",
-            "label": "Get Started",
+            "label": "开始",
             "href": "https://www.codebanana.cn/"
           }
         },
