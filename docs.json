@@ -16,6 +16,25 @@
       {
         "language": "en",
         "default": true,
+        "footer": {
+          "socials": {
+            "github": "https://github.com/mobvoi/CBbot",
+            "x": "https://x.com/CodewithMobvoi",
+            "discord": "https://discord.com/invite/yUcCxACgh9"
+          }
+        },
+        "navbar": {
+          "links": [
+            { "label": "Support",
+              "href": "mailto:codebanana-support@mobvoi.com" 
+            }
+          ],
+          "primary": {
+            "type": "button",
+            "label": "Get Started",
+            "href": "https://www.codebanana.com/"
+          }
+        },
         "tabs": [
           {
             "tab": "Documentation",
