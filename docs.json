@@ -49,8 +49,7 @@
                     "pages": [
                       "quickstarts/firstapp",
                       "quickstarts/templates",
-                      "quickstarts/github",
-                      "quickstarts/test"
+                      "quickstarts/github"
                     ]
                   },
                   "onboarding"
