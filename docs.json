@@ -16,6 +16,26 @@
       {
         "language": "en",
         "default": true,
+        "navbar": {
+          "links": [
+            {
+              "label": "Support",
+              "href": "mailto:codebanana-support@mobvoi.com"
+            }
+          ],
+          "primary": {
+            "type": "button",
+            "label": "Get started",
+            "href": "https://www.codebanana.com/"
+          }
+        },
+        "footer": {
+          "socials": {
+            "github": "https://github.com/mobvoi/CBbot",
+            "x": "https://x.com/CodewithMobvoi",
+            "discord": "https://discord.com/invite/yUcCxACgh9"
+          }
+        },
         "tabs": [
           {
             "tab": "Documentation",
@@ -92,6 +112,26 @@
       {
         "language": "zh",
         "hidden": true,
+        "navbar": {
+          "links": [
+            {
+              "label": "支持",
+              "href": "mailto:codebanana-support@mobvoi.com"
+            }
+          ],
+          "primary": {
+            "type": "button",
+            "label": "立即开始",
+            "href": "https://www.codebanana.com/"
+          }
+        },
+        "footer": {
+          "socials": {
+            "github": "https://github.com/mobvoi/CBbot",
+            "x": "https://x.com/CodewithMobvoi",
+            "discord": "https://discord.com/invite/yUcCxACgh9"
+          }
+        },
         "tabs": [
           {
             "tab": "文档",
