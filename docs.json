@@ -12,103 +12,189 @@
     "dark": "/images/favicon.ico"
   },
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Documentation",
-        "groups": [
+        "language": "en",
+        "default": true,
+        "tabs": [
           {
-            "group": "Getting started",
-            "icon": "bolt-lightning",
-            "pages": [
-              "index",
+            "tab": "Documentation",
+            "groups": [
               {
-                "group": "Quickstarts",
+                "group": "Getting started",
+                "icon": "bolt-lightning",
                 "pages": [
-                  "quickstarts/firstapp",
-                  "quickstarts/templates",
-                  "quickstarts/github"
+                  "index",
+                  {
+                    "group": "Quickstarts",
+                    "pages": [
+                      "quickstarts/firstapp",
+                      "quickstarts/templates",
+                      "quickstarts/github"
+                    ]
+                  },
+                  "onboarding"
                 ]
               },
-              "onboarding"
-            ]
-          },
-          {
-            "group": "Working in CodeBanana",
-            "icon": "computer",
-            "pages": [
-              "documentation/working-in-code-banana/project-and-chat",
-              "documentation/working-in-code-banana/agent-mode",
-              "documentation/working-in-code-banana/models",
-              "documentation/working-in-code-banana/projectViewer",
               {
-                "group": "Agent Config",
+                "group": "Working in CodeBanana",
+                "icon": "computer",
                 "pages": [
-                  "documentation/working-in-code-banana/basicinfo",
-                  "documentation/working-in-code-banana/imsetting",
-                  "documentation/working-in-code-banana/skills",
-                  "documentation/working-in-code-banana/cron-job"
+                  "documentation/working-in-code-banana/project-and-chat",
+                  "documentation/working-in-code-banana/agent-mode",
+                  "documentation/working-in-code-banana/models",
+                  "documentation/working-in-code-banana/projectViewer",
+                  {
+                    "group": "Agent Config",
+                    "pages": [
+                      "documentation/working-in-code-banana/basicinfo",
+                      "documentation/working-in-code-banana/imsetting",
+                      "documentation/working-in-code-banana/skills",
+                      "documentation/working-in-code-banana/cron-job"
+                    ]
+                  },
+                  "documentation/working-in-code-banana/dev-tools"
                 ]
               },
-              "documentation/working-in-code-banana/dev-tools"
+              {
+                "group": "CodeBanana Bot",
+                "icon": "robot",
+                "pages": [
+                  "documentation/cbbot/introduction"
+                ]
+              },
+              {
+                "group": "Account and subscriptions",
+                "icon": "id-card-clip",
+                "pages": [
+                  "documentation/account-and-subscriptions/account",
+                  "documentation/account-and-subscriptions/billing-plan"
+                ]
+              },
+              {
+                "group": "Teams",
+                "icon": "screen-users",
+                "pages": [
+                  "documentation/teams/org",
+                  "documentation/teams/teamplan"
+                ]
+              }
             ]
           },
           {
-            "group": "CodeBanana Bot",
-            "icon": "robot",
+            "tab": "Changelog",
             "pages": [
-              "documentation/cbbot/introduction"
-            ]
-          },
-          {
-            "group": "Account and subscriptions",
-            "icon": "id-card-clip",
-            "pages": [
-              "documentation/account-and-subscriptions/account",
-              "documentation/account-and-subscriptions/billing-plan"
-            ]
-          },
-          {
-            "group": "Teams",
-            "icon": "screen-users",
-            "pages": [
-              "documentation/teams/org",
-              "documentation/teams/teamplan"
+              "changelog/changelog"
             ]
           }
-        ]
+        ],
+        "navbar": {
+          "links": [
+            {
+              "label": "Support",
+              "href": "mailto:codebanana-support@mobvoi.com"
+            }
+          ],
+          "primary": {
+            "type": "button",
+            "label": "Get started",
+            "href": "https://www.codebanana.com/"
+          }
+        },
+        "footer": {
+          "socials": {
+            "github": "https://github.com/mobvoi/CBbot",
+            "x": "https://x.com/CodewithMobvoi",
+            "discord": "https://discord.com/invite/yUcCxACgh9"
+          },
+          "links": [
+            {
+              "header": "Resources",
+              "items": [
+                {
+                  "label": "Documentation",
+                  "href": "/"
+                },
+                {
+                  "label": "Website",
+                  "href": "https://www.codebanana.com/"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
-        "tab": "Changelog",
-        "pages": [
-          "changelog/changelog"
-        ]
+        "language": "zh",
+        "tabs": [
+          {
+            "tab": "文档",
+            "groups": [
+              {
+                "group": "快速开始",
+                "icon": "bolt-lightning",
+                "pages": [
+                  "zh/index"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "更新日志",
+            "pages": [
+              "zh/changelog/changelog"
+            ]
+          }
+        ],
+        "navbar": {
+          "links": [
+            {
+              "label": "支持",
+              "href": "mailto:codebanana-support@mobvoi.com"
+            }
+          ],
+          "primary": {
+            "type": "button",
+            "label": "立即开始",
+            "href": "https://www.codebanana.com/"
+          }
+        },
+        "footer": {
+          "socials": {
+            "github": "https://github.com/mobvoi/CBbot",
+            "x": "https://x.com/CodewithMobvoi",
+            "discord": "https://discord.com/invite/yUcCxACgh9"
+          },
+          "links": [
+            {
+              "header": "资源",
+              "items": [
+                {
+                  "label": "文档中心",
+                  "href": "/zh"
+                },
+                {
+                  "label": "官网",
+                  "href": "https://www.codebanana.com/"
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:codebanana-support@mobvoi.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Get started",
-      "href": "https://www.codebanana.com/"
-    }
-  },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "logo": {
     "light": "/images/logo.webp",
@@ -121,13 +207,6 @@
   "fonts": {
     "heading": {
       "family": "Lato"
-    }
-  },
-  "footer": {
-    "socials": {
-      "github": "https://github.com/mobvoi/CBbot",
-      "x": "https://x.com/CodewithMobvoi",
-      "discord": "https://discord.com/invite/yUcCxACgh9"
     }
   }
 }
