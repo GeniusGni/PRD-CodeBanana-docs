@@ -87,27 +87,7 @@
               "changelog/changelog"
             ]
           }
-        ],
-        "navbar": {
-          "links": [
-            {
-              "label": "Support",
-              "href": "mailto:codebanana-support@mobvoi.com"
-            }
-          ],
-          "primary": {
-            "type": "button",
-            "label": "Get started",
-            "href": "https://www.codebanana.com/"
-          }
-        },
-        "footer": {
-          "socials": {
-            "github": "https://github.com/mobvoi/CBbot",
-            "x": "https://x.com/CodewithMobvoi",
-            "discord": "https://discord.com/invite/yUcCxACgh9"
-          }
-        }
+        ]
       },
       {
         "language": "zh",
@@ -116,10 +96,61 @@
             "tab": "文档",
             "groups": [
               {
-                "group": "快速开始",
+                "group": "快速入门",
                 "icon": "bolt-lightning",
                 "pages": [
-                  "zh/index"
+                  "zh/index",
+                  {
+                    "group": "快速开始",
+                    "pages": [
+                      "zh/quickstarts/app",
+                      "zh/quickstarts/templates"
+                    ]
+                  },
+                  "zh/onboarding"
+                ]
+              },
+              {
+                "group": "使用Codebanana",
+                "icon": "computer",
+                "pages": [
+                  "zh/documentation/working-in-code-banana/project-and-chat",
+                  "zh/documentation/working-in-code-banana/agent-mode",
+                  "zh/documentation/working-in-code-banana/models",
+                  "zh/documentation/working-in-code-banana/projectViewer",
+                  {
+                    "group": "Agent设置",
+                    "pages": [
+                      "zh/documentation/working-in-code-banana/basicinfo",
+                      "zh/documentation/working-in-code-banana/imsetting",
+                      "zh/documentation/working-in-code-banana/skills",
+                      "zh/documentation/working-in-code-banana/cron-job"
+                    ]
+                  },
+                  "zh/documentation/working-in-code-banana/dev-tools"
+                ]
+              },
+              {
+                "group": "CodeBanana Bot",
+                "icon": "robot",
+                "pages": [
+                  "zh/documentation/cbbot/introduction"
+                ]
+              },
+              {
+                "group": "账号和订阅",
+                "icon": "id-card-clip",
+                "pages": [
+                  "zh/documentation/account-and-subscriptions/account",
+                  "zh/documentation/account-and-subscriptions/billing-plan"
+                ]
+              },
+              {
+                "group": "团队",
+                "icon": "screen-users",
+                "pages": [
+                  "zh/documentation/teams/org",
+                  "zh/documentation/teams/teamplan"
                 ]
               }
             ]
@@ -130,27 +161,7 @@
               "zh/changelog/changelog"
             ]
           }
-        ],
-        "navbar": {
-          "links": [
-            {
-              "label": "支持",
-              "href": "mailto:codebanana-support@mobvoi.com"
-            }
-          ],
-          "primary": {
-            "type": "button",
-            "label": "立即开始",
-            "href": "https://www.codebanana.com/"
-          }
-        },
-        "footer": {
-          "socials": {
-            "github": "https://github.com/mobvoi/CBbot",
-            "x": "https://x.com/CodewithMobvoi",
-            "discord": "https://discord.com/invite/yUcCxACgh9"
-          }
-        }
+        ]
       }
     ]
   },
