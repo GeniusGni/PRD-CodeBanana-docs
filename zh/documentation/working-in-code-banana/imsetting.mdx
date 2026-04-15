@@ -1,4 +1,294 @@
 ---
-title: 'IM软件设置'
+title: "IM软件设置"
+description: "IM软件设置（IM setting）允许您将外部消息平台接入项目 Agent，使您能够在 CodeBanana 之外与 Agent 进行交互。"
 ---
 
+## **什么是 IM软件设置**
+
+IM软件设置是连接 CodeBanana 与外部 IM 工具的桥梁。
+
+通过配置 Bot，您可以直接从 Slack、Telegram 等平台向项目 Agent 发送消息，并接收返回的响应。
+
+这使 Agent 能够在 **不同沟通环境中** 被访问，从而支持更灵活的工作流。
+
+#### **支持的平台**
+
+您可以将 Agent 连接到多个 IM 平台，包括：
+
+- Feishu
+- Telegram
+- Slack
+- Discord
+- DingTalk
+- WeCom
+- QQ
+
+<Frame>
+  ![Channel](/images/channel.png)
+</Frame>
+
+### **创建 Bot**
+
+要启用 IM软件设置，您需要先创建并配置一个 Bot：
+
+- 前往 **Agent Config → Channel → Add Bot**
+- 选择目标 IM 平台
+- 填写所需凭证（例如 ID 和 Secret）
+- 配置正确后：
+  - 状态会显示为 **Connected**
+  - 配置无效时会显示为 **Disconnected**
+
+如有需要，您也可以为同一平台创建多个 Bot。
+
+<Frame>
+  ![Channelexam](/images/channelexam.png)
+</Frame>
+
+<Frame>
+  ![Bindabot](/images/bindabot.png)
+</Frame>
+
+#### **将 Bot 绑定到项目**
+
+创建 Bot 后，还需要将其绑定到指定项目：
+
+- 选择一个 Bot，并 **将其绑定到项目**
+- 每个项目 **只能绑定一个 Bot**
+- 每个 Bot **也只能绑定到一个项目**
+
+只有处于 **Connected** 状态的 Bot 才可以被绑定。
+
+<Frame>
+  ![Bindbot](/images/bindbot.png)
+</Frame>
+
+## **工作方式**
+
+连接完成后：
+
+- 从外部平台发送的消息会被路由到项目 Team Agent
+- Agent 会基于相同的项目上下文处理请求
+- 响应结果会返回到外部平台
+
+这使团队能够 **无需进入 CodeBanana 界面** 也能与 Agent 进行交互。
+
+## **IM 集成指南**
+
+<AccordionGroup>
+  <Accordion title="Feishu (Lark)">
+    #### **配置步骤**
+
+    在开发者后台创建应用：
+
+    - 登录 [https://open.feishu.cn/app](https://open.feishu.cn/app)
+    - 创建企业自建应用
+    - 配置名称、描述和头像
+    - 记录 **App ID** 和 **App Secret**
+
+    #### **权限配置**
+
+    添加以下权限：
+
+    - `im:message:send_as_bot`
+    - `im:message:readonly`
+
+    #### **事件订阅**
+
+    - 使用 **长连接模式**
+    - 订阅：`im.message.receive_v1`
+
+    #### **在 CodeBanana 中配置**
+
+    - 前往 **Personal Center → IM Settings**
+    - 输入 **App ID** 和 **App Secret**
+  </Accordion>
+
+  <Accordion title="Telegram">
+    #### **配置步骤**
+
+    - 打开 Telegram，搜索 **@BotFather**
+    - 发送 `/start` 和 `/newbot`
+    - 设置 Bot 名称和用户名（用户名必须以 `_bot` 结尾）
+    - 复制 **HTTP API Token**
+
+    #### **在 CodeBanana 中配置**
+
+    - 将 Token 粘贴到 **IM Settings** 中，例如：`123456789:ABCdefGhIJKlmNoPQRStuVWxyZ`
+  </Accordion>
+
+  <Accordion title="WeCom (Enterprise WeChat)">
+    #### **配置步骤**
+
+    - 管理后台 → 应用管理 → 创建应用
+    - 配置名称、Logo 和可见范围（All）
+
+    #### **消息配置**
+
+    - 开启 API 消息接收
+    - 生成：
+      - Token
+      - EncodingAESKey
+
+    #### **Webhook 配置**
+
+    - 从 **IM Settings** 中复制 Webhook URL
+    - 粘贴到 WeCom 的服务端配置中
+
+    #### **限制说明**
+
+    - Webhook 域名必须与企业已备案域名一致
+  </Accordion>
+
+  <Accordion title="QQ">
+    #### **配置步骤**
+
+    - 访问 [https://q.qq.com/#/](https://q.qq.com/#/)
+    - 进入 OpenClaw Bot 创建入口
+    - 通过扫码登录
+    - 创建 Bot 并获取：
+      - **App ID**
+      - **App Secret**
+
+    #### **在 CodeBanana 中配置**
+
+    - 在 **IM Settings** 中填写对应凭证
+  </Accordion>
+
+  <Accordion title="DingTalk">
+    #### **配置步骤**
+
+    - 打开 [https://open-dev.dingtalk.com](https://open-dev.dingtalk.com)
+    - 创建 OpenClaw Bot 应用
+    - 记录：
+      - Client ID
+      - Client Secret
+
+    #### **在 CodeBanana 中配置**
+
+    - 在 **IM Settings** 中填写凭证
+  </Accordion>
+
+  <Accordion title="Slack">
+    #### **配置步骤**
+
+    通过官方控制台创建 Slack App：
+
+    - 访问 [https://api.slack.com/apps](https://api.slack.com/apps)
+    - 点击 **Create New App → From scratch**
+      - App Name：（例如 CB）
+      - Development Slack Workspace：选择您的工作区
+    - 点击 **Create App**
+
+    #### **Socket Mode（必需）**
+
+    开启长连接模式：
+
+    - 前往 **Settings → Socket Mode**
+    - 打开 **Enable Socket Mode**
+    - 创建一个 Token（例如 `openclaw-socket`）
+      - 权限：`connections:write`（自动分配）
+    - 点击 **Generate** 并复制 **App-Level Token**（`xapp-...`）
+
+    #### **Bot 权限**
+
+    配置 Bot 能力：
+
+    - 前往 **Features → OAuth & Permissions**
+    - 在 **Bot Token Scopes → Add an OAuth Scope** 中添加：
+      - `app_mentions:read` — 读取 @提及
+      - `chat:write` — 发送消息
+      - `channels:history` — 读取公开频道
+      - `groups:history` — 读取私有频道
+      - `im:history` — 读取私聊消息
+      - `mpim:history` — 读取群组私聊消息
+      - `files:write` — 上传文件 / 图片
+
+    #### **安装与 Token**
+
+    - 点击 **Install to Workspace → Allow**
+    - 复制 **Bot User OAuth Token**（`xoxb-...`）
+
+    此时您应获得两个 Token：
+
+    - `xapp-...` → App Token（Socket Mode / 连接）
+    - `xoxb-...` → Bot Token（发送消息）
+
+    #### **App Home 配置**
+
+    - 前往 **Features → App Home**
+    - 在 **Show Tabs** 下启用：
+      - **Messages Tab**（允许用户私聊 Bot）
+
+    #### **事件订阅**
+
+    启用基于事件的消息处理：
+
+    - 前往 **Features → Event Subscriptions**
+    - 打开 **Enable Events**
+    - 在 **Subscribe to bot events** 下添加：
+      - `app_mention` — 在频道中提及 Bot 时触发
+      - `message.im` — 私聊消息
+      - `message.channels` — 公开频道消息
+      - `message.groups` — 私有频道消息
+    - 点击 **Save Changes**
+
+    #### **在 CodeBanana 中配置**
+
+    - 前往 **Personal Center → IM Settings**
+    - 配置两个 Token：
+      - App Token（`xapp-...`）
+      - Bot Token（`xoxb-...`）
+  </Accordion>
+
+  <Accordion title="Discord">
+    #### **创建 Bot**
+
+    通过 Developer Portal 创建 Bot：
+
+    - 访问 [https://discord.com/developers/applications](https://discord.com/developers/applications)
+    - 点击 **New Application** → 命名（例如 `OpenClaw Bot`）→ Create
+    - 前往 **Bot → Add Bot → Yes, do it!**
+
+    获取凭证：
+
+    - 点击 **Reset Token** → 复制 Bot Token（仅显示一次）
+    - 示例格式：`MTk5OTk5OTkyNzY4OTk4NzYxNg...`
+
+    #### **必需 Intents（关键）**
+
+    启用特权 Intents：
+
+    - 滚动至 **Privileged Gateway Intents**
+    - 全部开启：
+      - `Message Content Intent`（读取消息内容）
+      - `Server Members Intent`
+      - `Presence Intent`
+    - 点击 **Save Changes**
+
+    #### **邀请 Bot 进入服务器**
+
+    生成邀请链接：
+
+    - 前往 **OAuth2 → URL Generator**
+
+    选择 scopes：
+
+    - `bot`
+    - `applications.commands`（用于斜杠命令）
+
+    选择权限（最低要求）：
+
+    - `Read Messages / View Channels`
+    - `Send Messages`
+    - `Read Message History`
+    - `Embed Links`
+    - `Add Reactions`（可选）
+    - 复制生成的 URL → 在浏览器中打开
+    - 选择您的服务器 → **Authorize**
+
+    #### **在 CodeBanana 中配置**
+
+    - 前往 **Personal Center → IM Settings**
+    - 粘贴 **Bot Token**
+  </Accordion>
+</AccordionGroup>

@@ -1,4 +1,65 @@
 ---
-title: "开发者工具"
+title: "开发工具"
+description: "开发工具可通过左下角面板访问，包括 Terminal、Service 和 Git Status。"
 ---
 
+### **Terminal**
+
+内置 Terminal 允许开发者直接与项目环境进行交互。
+
+- 在项目运行环境中执行命令
+- 适用于：
+  - 安装依赖
+  - 运行脚本
+  - 调试问题
+- 用于支持更高级或更自定义的开发工作流
+
+<Frame>
+  ![Devtool](/images/devtool.png)
+</Frame>
+
+### **Service**
+
+Service 面板用于管理运行时进程和活动端口。
+
+- 查看所有 **活跃服务与端口**
+- 当服务启动失败时，可重启 VM 环境
+- 在需要时结束指定进程或端口
+
+这有助于确保应用稳定运行，并在出现问题时快速恢复。
+
+<Frame>
+  ![Service](/images/service.png)
+</Frame>
+
+### **Git Status**
+
+Git Status 提供版本控制可见性和基础操作能力。
+
+- 查看当前文件变更
+- 通过 **Save** 操作创建 commits
+- 访问 commit 历史：
+  - 查看历史版本
+  - 在需要时恢复到指定 commit
+
+这使团队能够直接在工作区内追踪变更，并维护清晰的开发历史。
+
+<Frame>
+  ![Gitoverview](/images/gitoverview.png)
+</Frame>
+
+<Frame>
+  ![Gitnew](/images/gitnew.png)
+</Frame>
+
+### **Deploy**
+
+Deploy 支持将您的项目发布为一个 **持久、可分享的链接**：
+
+- 生成稳定且不会失效的 URL
+- 当项目发生变更时自动更新
+- 更适用于：
+  - 静态网站
+  - 轻量级应用
+
+建议您在部署前先通过 preview 确认项目效果。

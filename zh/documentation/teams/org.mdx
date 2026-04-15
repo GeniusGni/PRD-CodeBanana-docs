@@ -1,4 +1,209 @@
 ---
-title: '组织'
+title: "组织"
+description: "Organization 是 CodeBanana 中的核心协作单元，用于定义用户、项目、权限和计费的组织与管理方式"
 ---
 
+import SnippetIntro from '/snippets/snippet-intro.mdx';
+
+import OrganizationManagement from '/snippets/Organization-Management.mdx';
+
+### **访问与切换**
+
+点击 **左上角的组织选择器** 可以：
+
+- 在不同组织之间切换
+- 申请加入新组织
+
+如需 **加入** 一个组织：
+
+- 搜索组织名称
+- 提交申请
+- 经 **组织 Owner** 审批通过后，即可切换进入该组织
+
+<Frame>
+  ![Switchorga](/images/switchorga.png)
+</Frame>
+
+#### **创建组织**
+
+- 当您注册账号时（通过邮箱或第三方登录），系统会 **自动创建** 一个默认组织
+- 组织名称初始默认基于您的邮箱生成，Owner 可对其进行重命名
+- 每位用户 **只能拥有一个自己创建的组织**
+
+#### **组织类型**
+
+CodeBanana 区分两种类型的组织：
+
+**Own Organization**
+
+- 由您创建并完全控制的组织
+- 您是该组织的 **Owner**
+- 每位用户只能拥有一个
+
+**Work Organization**
+
+- 您以协作者身份加入的组织
+- 您可以加入多个 work organizations
+
+#### **关键行为**
+
+- 您在任一时刻只能处于 **一个组织** 中
+- 切换组织意味着切换整个工作空间，包括：
+  - Projects
+  - Files
+  - Contacts
+
+#### **成员与角色**
+
+组织通过角色来管理协作：
+
+- **Owner**
+  - 对组织拥有完整控制权
+  - 管理成员、权限和计费
+- **Member**
+  - 可访问 AI 资源并参与项目协作
+
+#### **加入机制**
+
+- 用户必须 **主动申请** 加入组织
+- 通过搜索组织名称并提交申请
+- 经管理员审批后获得访问权限
+
+<Frame>
+  ![Joinorg](/images/joinorg.png)
+</Frame>
+
+#### **离开组织**
+
+- 如果用户属于多个组织，可以在不同组织之间切换
+- 当前若需彻底移除，仍需由 **组织 Owner** 执行操作
+- 暂未开放用户自主“离开组织”功能（以防止误操作导致数据丢失）
+
+#### **组织与项目**
+
+项目与组织之间是强绑定关系：
+
+**强绑定**
+
+- 每个项目都必须属于某一个特定组织
+- 项目不能脱离组织单独存在
+
+**数据隔离**
+
+- 一个组织中的项目 **不会对其他组织成员可见**
+- 切换组织后，整个项目列表会随之刷新
+
+**外部协作（特殊情况）**
+
+- 如果某个外部用户被邀请加入项目：
+  - 其仅获得该 **项目本身** 的访问权限，不会加入组织
+  - 当前情况下，该项目可能会出现在其多个组织视图中
+  - 后续版本将把此类项目归入该用户的个人组织下
+
+### Organization Management
+
+**Admin 和 Owner** 可以通过 **Contacts 页面** 管理组织架构与成员。
+
+#### **概览**
+
+Contacts 模块是以下能力的统一管理入口：
+
+- 组织架构管理
+- 成员管理与权限设置
+- 面向团队扩展的批量操作
+
+<Frame>
+  ![Org Contacts](/images/org-contacts.png)
+</Frame>
+
+#### **邀请成员**
+
+成员可通过两种方式添加：
+
+- **Invite Members（手动邀请）**
+
+<Steps>
+  <Step title="打开 Contacts 页面">
+    - 点击头像 → contacts
+
+    <Frame>
+      ![Clickavatar](/images/clickavatar.png)
+    </Frame>
+  </Step>
+  <Step title="点击 invite members">
+    - 通过 **Invite Members** 按钮逐个邀请用户
+
+    <Frame>
+      ![Clickinvitebotton](/images/clickinvitebotton.png)
+    </Frame>
+
+    - 输入邮箱地址并选择所属部门
+
+    <Frame>
+      ![Individualinvite](/images/individualinvite.png)
+    </Frame>
+  </Step>
+</Steps>
+
+- **批量导入**
+
+<Steps>
+  <Step title="打开 Contacts 页面">
+    - 点击头像 → contacts
+
+    <Frame>
+      ![Clickavatar](/images/clickavatar.png)
+    </Frame>
+  </Step>
+  <Step title="点击右上角图标">
+    <Frame>
+      ![Toprighticon](/images/toprighticon.png)
+    </Frame>
+
+    - 点击 Batch Import
+  </Step>
+  <Step title="下载模板并编辑">
+    - 下载两个模板
+    - 按照指引编辑这些模板
+
+    <Frame>
+      ![Download Template](/images/downloadTemplate.png)
+    </Frame>
+  </Step>
+  <Step title="上传模板并预览">
+  </Step>
+</Steps>
+
+#### **导出文件**
+
+导出的文件支持编辑后重新上传：
+
+- **Export Structure** — 导出部门层级结构
+- **Export Members** — 导出成员列表
+
+#### **部门管理**
+
+**Admins 和 Owner** 可以管理组织架构：
+
+- 创建一级部门
+- 在现有部门下添加子部门（**Add Sub-dept**）
+- 编辑部门信息
+
+<Frame>
+  ![Departmentmanage](/images/departmentmanage.png)
+</Frame>
+
+- 删除部门
+- 更新成员姓名、角色与所属部门
+
+<Frame>
+  ![Editmemberifo](/images/editmemberifo.png)
+</Frame>
+
+- 移除成员
+  - 需要先将该成员拥有的全部项目转移给其他用户
+  - 成员被移除后，其所有组织权限将立即被撤销
+
+<Frame>
+  ![Removemember](/images/removemember.png)
+</Frame>

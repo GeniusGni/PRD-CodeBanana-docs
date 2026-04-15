@@ -144,7 +144,7 @@
                   {
                     "group": "快速开始",
                     "pages": [
-                      "zh/quickstarts/app",
+                      "zh/quickstarts/firstapp",
                       "zh/quickstarts/templates"
                     ]
                   },

@@ -1,4 +1,98 @@
 ---
-title: '定时任务'
+title: "定时任务"
+description: "定时任务支持 Agent 基于时间或事件自动执行任务。"
 ---
 
+## **什么是定时任务**
+
+定时任务是一种 **在合适时间触发 Agent 执行任务** 的机制，支持以下方式：
+
+- 在指定时间执行（例如每天早上 7 点）
+- 按固定间隔执行（例如每 30 分钟）
+- 在特定事件发生时执行（例如文件变更）
+
+这使 Agent 即使在您未主动与其交互时，也能够 **异步运行**。
+
+## **定时任务类型**
+
+主要分为两类：
+
+### **Heartbeat（基于间隔）**
+
+按固定时间间隔重复运行任务。
+
+- 配置时间间隔（例如每 30 分钟）
+- 执行 **HEARTBEAT.md** 中定义的全部任务
+- 适用于：
+  - 周期性检查
+  - 监控类工作流
+  - 批处理任务
+
+### **Scheduled Tasks（基于时间 / 事件）**
+
+在指定时间或触发条件下运行任务。
+
+- **基于时间的方式**：
+  - Daily、Weekly、Monthly
+  - One-time execution
+  - Custom intervals
+- **基于事件的方式（File Watch）**：
+  - 当文件被新增、修改或删除时触发
+  - 例如：当文件被删除时发送通知
+
+### **如何选择**
+
+1. **这是一次性任务或提醒吗？**
+   - 是 → 使用 **Scheduled Task**
+   - 否 → 继续
+2. **任务是否需要在精确时间运行？**
+   - 是 → 使用 **Scheduled Task**
+   - 否 → 继续
+3. **此任务能否与其他周期性检查统一处理？**
+   - 是 → 使用 **Heartbeat**（将其添加到 **HEARTBEAT.md**）
+   - 否 → 使用 **Scheduled Task**
+4. **此任务是否由文件变化或其他事件触发？**
+   - 是 → 使用 **Scheduled Task（File Watch）**
+   - 否 → 按以上规则选择
+
+#### **配置方式**
+
+**Heartbeat**
+
+1. 通过打开 **右侧面板中的开关** 启用 Heartbeat
+2. 设置 **执行间隔**（例如每 10 分钟、每 30 分钟等）
+3. 系统会在每个间隔到达时，自动执行 **HEARTBEAT.md** 中定义的所有任务
+
+任务管理方式：
+
+- 点击 **HEARTBEAT.md** 旁的 **Edit** 修改任务内容
+- 点击 **Reset** 恢复默认配置
+
+<Frame>
+  ![Heartbeat](/images/heartbeat.png)
+</Frame>
+
+**Scheduled Task**
+
+1. 点击 **Create New Task** 创建任务
+2. 定义 **Trigger Conditions**，即任务的触发时机：
+   - **Scheduled（基于时间）**
+     可选择：
+     - Daily — 每天在指定时间执行
+     - Weekly — 每周在指定日期和时间执行
+     - Monthly — 每月在指定日期和时间执行
+     - Once — 仅执行一次
+     - Every — 按固定时间间隔执行
+   - **File Watch（基于事件）**
+     当选定目录下发生以下变化时触发：
+     - 文件创建
+     - 文件修改
+     - 文件删除
+     例如：当某个文件夹中的 Excel 文件被删除时触发任务
+3. 配置 **Execution Flow**
+   - 定义任务触发后 Agent 应执行的操作
+   - 可包含任意由 Agent 执行的自动化动作或工作流
+
+<Frame>
+  ![Schaduled](/images/schaduled.png)
+</Frame>

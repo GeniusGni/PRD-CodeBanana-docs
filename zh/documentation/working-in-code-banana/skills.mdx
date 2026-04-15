@@ -1,4 +1,129 @@
 ---
-title: 'Skills'
+title: "Skills"
+description: "Skills 允许您为 Agent 封装可复用的能力，从而实现一致的工作流，并便于在不同项目之间复用。"
 ---
 
+## **什么是 Skill**
+
+Skill 是一个结构化模块，用于定义 Agent 应如何执行某项特定任务。
+
+它通常包括：
+
+- 一个 [**SKILL.md**](http://SKILL.md) 文件（用于定义 Agent 的指令与行为）
+- 可选资源，例如：
+  - 脚本
+  - 参考资料
+  - 资源文件
+
+Skills 是 **可复用的能力单元**，可以将一次性的解决方案沉淀为可重复使用的能力。
+
+#### **Skill 类型**
+
+CodeBanana 中的 Skills 分为三类：
+
+**Public Skills**
+
+- 在 Skill Market 中可见
+- 由社区创建并分享
+- 可浏览、添加到项目以及分享
+
+**Private Skills**
+
+- 由个人用户创建和管理
+- 除非发布，否则仅自己可见
+- 可在自己的多个项目中复用
+
+**Project Skills**
+
+- **当前已应用在某个具体项目中** 的 Skills
+- 仅在该项目的 Agent 上下文中生效
+
+#### **使用 Skills**
+
+您可以通过不同方式将 Skills 应用到项目中：
+
+**从 Skill Market 添加**
+
+- 在市场中搜索相关 Skills
+- 点击 **Add to Project**，将其应用到项目中
+
+<Frame>
+  ![Skillmarket](/images/skillmarket.png)
+</Frame>
+
+**创建并复用自己的 Skills**
+
+- 将您的工作流封装为一个 Skill
+- 上传到您的私有 Skill 库
+- 在多个项目中打开并添加到当前项目，以实现复用
+
+<Frame>
+  ![Createskill](/images/createskill.png)
+</Frame>
+
+**分享 Skills**
+
+- 生成可分享链接
+- 其他人可以导入并在自己的项目中使用该 Skill
+
+<Frame>
+  ![Shareskill](/images/shareskill.png)
+</Frame>
+
+**发布 Skills**
+
+- 将私有 Skills 转为公开 Skills
+- 使其在 Skill Market 中可见
+
+<Frame>
+  ![Pubishskill](/images/pubishskill.png)
+</Frame>
+
+#### **在哪里管理 Skills**
+
+Skills 有两个入口：
+
+- **Personal Center → Skills**
+  - 浏览 Skill Market
+  - 管理 private 和 public skills
+
+<Frame>
+  ![Skillsentrance](/images/skillsentrance.png)
+</Frame>
+
+- **Project → Agent Config → Skills**
+  - 查看并管理当前项目中已生效的 Skills
+  - 添加或移除 Skills
+
+<Frame>
+  ![Basicinfo](/images/basicinfo.png)
+</Frame>
+
+#### **常见使用场景**
+
+**查找并将 Skill 应用到项目中**
+
+- 前往 **Skill Market**
+- 搜索相关 Skill
+- 点击 **Add to Project** 并选择目标项目
+
+**创建 Skill 并在多个项目中复用**
+
+- 前往 **Agent Config → Skills → Skill Market → Private → Upload**
+- 将 Skill 上传到您的私有库
+- 在另一个项目中：
+  - 前往 **Skills → Skill Market → Private → Add to Project**
+
+**发布一个 Skill**
+
+- 前往 **Skill Market → Private**
+- 选择目标 Skill，并点击 **Publish** 将其公开
+
+## **为什么 Skills 很重要**
+
+Skills 可以帮助团队：
+
+- 标准化工作流
+- 减少重复指令
+- 在项目之间共享最佳实践
+- 将经验沉淀为可复用资产

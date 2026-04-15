@@ -1,4 +1,112 @@
 ---
-title: '项目工作区'
+title: "项目工作区"
+description: "项目工作区是您与文件交互、预览输出并实时查看变更的核心工作区域。"
 ---
 
+## **文件导航与标签页**
+
+在项目中工作时，已打开的文件会以标签页的形式组织，便于快速切换：
+
+- 支持同时打开多个文件
+- 标签页显示在工作区顶部
+- 右键点击标签页可执行：
+  - 关闭当前
+  - 关闭其他
+  - 全部关闭
+
+这使您能够在处理项目不同部分时，更高效地管理上下文。
+
+<Frame>
+  ![Viewertab](/images/viewertab.png)
+</Frame>
+
+## **文件查看与预览**
+
+工作区会根据文件类型，支持 **代码模式与预览模式**：
+
+**Markdown（md）**
+
+- 支持在 **Code** 与 **Preview** 之间切换
+- 支持在预览模式下直接编辑
+- 输入 / 可触发格式选项
+- 选中某一行后，可通过 **右键执行格式与编辑操作**
+
+<Frame>
+  ![Mdedit](/images/mdedit.png)
+</Frame>
+
+<Frame>
+  ![Markdownpreview](/images/markdownpreview.png)
+</Frame>
+
+**HTML / JSON / 静态文件**
+
+- 支持代码视图与预览模式
+- 支持在新标签页中打开
+
+<Frame>
+  ![Htmlpreview](/images/htmlpreview.png)
+</Frame>
+
+**应用项目**
+
+- 支持在多个环境中进行预览：
+  - Web
+  - iOS
+  - Android
+  - My Device（通过外部预览工具）
+- 支持刷新，以便实时查看更新
+
+## **项目预览**
+
+当服务处于运行状态时，项目工作区支持 **实时预览**：
+
+- 自动识别活跃端口
+- 可即时访问正在运行的应用
+- 也可通过 **Service 面板** 进入
+
+这带来了一种“所见即所得”的体验，类似于实时文档编辑，但应用于应用本身。
+
+<Frame>
+  ![Projectpreview](/images/projectpreview.png)
+</Frame>
+
+## **编辑与交互**
+
+项目工作区支持直接与项目内容进行交互：
+
+- 选中内容后可执行：
+  - 添加评论
+  - 引用到聊天
+  - 复制内容
+- 评论会绑定到具体行号，并在上下文中持续可见
+- 浮动评论面板可帮助您快速浏览和定位所有评论
+
+<Frame>
+  ![Comment](/images/comment.png)
+</Frame>
+
+## **Diff 与变更追踪**
+
+当文件发生修改时，可使用额外视图：
+
+- **Preview** — 文件当前状态
+- **Diff View** — 对比当前修改与之前版本的差异
+
+这有助于团队在提交或分享更新前，清晰了解具体变更内容。
+
+<Frame>
+  ![Diff](/images/diff.png)
+</Frame>
+
+## **分享**
+
+某些文件类型（例如 HTML、Markdown、JSON）支持 **可分享链接**，允许其他人在不进入完整项目的情况下从外部查看内容。
+
+<Frame>
+  ![Share](/images/share.png)
+</Frame>
+
+<Frame>
+  ![Shareexam](/images/shareexam.png)
+</Frame>

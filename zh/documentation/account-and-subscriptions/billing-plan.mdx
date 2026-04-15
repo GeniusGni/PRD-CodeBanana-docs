@@ -1,4 +1,116 @@
 ---
-title: '订阅和账单'
+title: "账单与套餐"
+description: "免费开始，按需扩展。"
 ---
 
+## 选择您的套餐
+
+我们提供可随应用规模灵活扩展的套餐方案。无论您是在构建概念验证，还是面向生产环境进行部署，都可以通过下方的功能对比，找到最符合当前需求的版本。
+
+<AccordionGroup>
+  <Accordion title="Free">
+    免费使用全部核心功能，体验 CodeBanana 的完整能力。
+
+    - **30 次 agent requests** / 月
+    - **20 MB** 云存储
+    - **多个**组织
+    - **2 vCPU、4 GB RAM** 云主机
+
+    <Card title="套餐功能" icon="light-emergency-on">
+      无功能限制。即使在免费版中，您也可以使用包括协作能力在内的全部功能。
+    </Card>
+  </Accordion>
+
+  <Accordion title="Personal">
+    为严肃的个人项目提供更强性能与更高私密性，全面提升您的工作效率。
+
+    - **300 次 agent requests** / 月
+    - **1GB** 云存储
+    - **多档位** VM 配置（2v 4GB、4v 8GB、8v 16GB）
+
+    <Card title="套餐功能" icon="light-emergency-on">
+      - 更高的请求额度
+      - 更大的云存储空间
+      - 灵活的 VM 档位选择
+      - 完整的环境隔离
+    </Card>
+  </Accordion>
+
+  <Accordion title="Professional">
+    为团队提供更强性能与高级协作能力，支持应用进一步扩展。
+
+    - **1000 次 agent requests** / 月
+    - **5GB** 云存储
+
+    <Card title="套餐功能" icon="light-emergency-on">
+      更高的请求额度与更大的云存储空间，满足团队协作需求。
+    </Card>
+  </Accordion>
+</AccordionGroup>
+
+<Card title="准备购买了吗？" icon="arrow-right" href="https://www.codebanana.com/en/membership">
+  查看价格，选择最适合您的套餐。
+</Card>
+
+## 购买套餐
+
+当您选择好适合自身需求的套餐后，可以通过以下方式完成升级：
+
+<Tip>
+  **有优惠码？** 请务必在结账前先进行使用，否则系统不会自动生效。
+</Tip>
+
+**购买套餐的方法：**
+
+1. 点击工作空间右上角的 **upgrade 按钮**
+2. 选择合适的 Plan
+3. 选择您偏好的计费周期：
+   - **Yearly：** 享受年度优惠价格
+   - **Monthly：** 按月支付
+4. 点击 **VM tiers** 进行自定义配置
+5. 在所选 Plan 中点击 **Upgrade** 进入结账流程
+
+<Frame>
+  ![Price](/images/price.png)
+</Frame>
+
+## Requests 与 Token
+
+#### **什么是 Request**
+
+**Request** 表示一次与 Agent 的单次交互。
+
+- 每次向 Agent 发送 prompt 都会计为一次 request
+- 包括：
+  - 代码生成
+  - 问答
+  - 任务执行
+
+不同套餐通常会根据订阅档位，按月提供固定数量的 requests。
+
+#### **什么是 Token**
+
+**Token** 用于衡量模型实际消耗的计算量。
+
+- 包括：
+  - 输入内容（您的 prompt、上下文、文件）
+  - 输出内容（Agent 回复、生成的代码）
+- 任务越复杂、上下文越大，消耗的 token 通常也会越多
+
+Token 用于计算 **按用量计费成本**，尤其适用于超出套餐额度后的使用部分。
+
+#### **计费方式如何运作**
+
+用量将基于 requests 和 tokens 共同计算：
+
+1. **在套餐额度内** requests 会从您的月度配额中扣除
+2. **超出套餐额度后** 计费可能会切换为 **按用量计费（基于 token）**
+3. **Team Agent 与 Private Agent（此前称为 My agent）**
+   - Team Agent 的使用费用由 **项目 Owner** 承担
+   - Private Agent 的使用费用同样由 **项目 Owner** 承担
+
+#### **其他说明**
+
+- 使用更高级的模型或更大的上下文，可能会增加 token 消耗
+- 某些功能（例如支持服务会话或增强能力）可能会对用量 적용 **倍数系数**
+- 您可以在 **Usage dashboard** 中查看详细的用量信息

@@ -1,4 +1,117 @@
 ---
-title: "Agent模式"
+title: "Agent 模式"
+description: "了解不同的 Agent 模式，以及如何在项目中进行协作"
 ---
 
+## Project and Chat modes
+
+CodeBanana 中的每个项目都对应一个群聊，并支持三种不同的聊天模式，以满足不同的协作需求。
+
+### Chat modes
+
+每个项目群聊都包含三种模式：
+
+#### Team agent
+
+Team Agent 模式专为团队环境中的 **共享式、可控式 AI 协作** 而设计。与每位成员分别与独立助手交互不同，团队通过一个 **项目级别的统一 Agent** 协作，该 Agent 基于共享代码库、共享上下文和共享目标运行。
+
+这一模式确保所有由 AI 驱动的变更在整个团队中都保持 **可见、可协调、可对齐**。
+
+<Frame>
+  ![Chatmodes](/images/chatmodes.png)
+</Frame>
+
+#### **What is Team Agent**
+
+Team Agent 是项目中的 **中心化 AI 协作者**：
+
+- 基于 **完整项目上下文** 运行（repo、文件、讨论记录、历史）
+- 作为编码、重构、调试和任务自动化的 **共享执行层**
+- 确保所有由 AI 生成的变更在团队工作空间中都 **透明且可追踪**
+
+与个人 AI 工具不同，Team Agent 并非私有。每一次交互都会影响 **项目的整体状态**。
+
+#### **Collaboration**
+
+为保持一致性并避免冲突，Team Agent 采用 **受控交互模型**：
+
+- 任一时刻仅允许一名团队成员与 Agent 交互。默认情况下，只有 **项目 Owner** 可以使用 Team Agent
+- 当其他成员希望使用 Team Agent 时：
+  - 需要先 **向 Owner 申请权限**
+  - 审批通过后，**仅该成员** 获得与 Agent 交互的权限
+  - 在此期间，其他成员将无法使用，直到控制权被重新分配
+- 在活跃会话期间：
+  - Agent 会根据当前用户的指令执行任务
+  - 所有变更都会 **立即对团队可见**
+- 使用消耗计入 **项目 Owner**
+
+这种模式确保 AI 操作具备 **顺序性、可审查性和无冲突性**，类似于协同编辑中的“单一写入者”机制。
+
+<Frame>
+  ![Teamagentrequest](/images/Teamagentrequest.png)
+</Frame>
+
+#### **Agent Modes**
+
+Agent Modes 定义了 Agent 与项目的交互方式，从只读辅助到直接执行代码均可覆盖。
+
+- **Ask-only** 只读模式。Agent 仅回答问题并提供指导，不会修改任何文件。
+- **Coding** 执行模式。Agent 可以直接在项目中编写和编辑代码。
+- **CodeBanana (Optimized Model)** 针对项目级任务进行了增强优化，例如开发、环境处理和部署。能力更强，但可能会消耗更多 tokens。
+- **Claude Code (Native Model)** 更快、更轻量，但需要更明确的提示词和用户引导。
+
+<Frame>
+  ![Agentmode](/images/Agentmode.png)
+</Frame>
+
+#### Private agent
+
+Private Agent 模式（此前称为 My agent）提供 **项目内的个人 AI 助手能力**，使用户能够在不影响共享工作流的前提下独立开展工作。
+
+**What is Private Agent**
+
+它是一个私有的、用户级别的 Agent，独立于 Team Agent 之外运行。
+
+适用于：
+
+- 提问
+- 任务规划
+- 思路探索 所有交互都 **与团队当前的工作流隔离**。
+- **使用特性**
+  - 主要运行于 **ask 模式（只读）**
+  - 可 **与 Team Agent 会话并行使用**
+  - 不会修改共享项目
+  - 使用费用 **计入** 项目 Owner，而不是 **个人用户**
+  - 遵循用户的个人套餐或按用量计费逻辑
+
+My Agent 使用户能够保持个人效率，同时让团队级协作维持 **结构化且无冲突** 的状态。
+
+<Frame>
+  ![Myagent](/images/Myagent.png)
+</Frame>
+
+### **Discussion**
+
+Discussion 模式是一个 **面向整个团队的沟通空间**，用于在没有 AI 介入的情况下进行开放协作。
+
+**What is Discussion**
+
+- 这是一个共享聊天频道，团队成员可以在其中讨论想法、对齐需求并协调工作。
+- 它作为协作中的 **人类沟通层** 存在，与 Agent 驱动的执行流程分离。
+
+**Usage Characteristics**
+
+- 所有成员都可以 **自由参与**
+- 支持 **实时讨论、反馈与决策**
+- 对话对整个团队可见，并持续作为项目上下文的一部分保留
+
+**Agent Involvement**
+
+- 此模式下不会有 Agent 参与
+- 不会触发代码执行或自动化操作
+
+Discussion 模式为团队提供了一个专门用于 **清晰沟通与共识对齐** 的空间，并与基于 Agent 的结构化协作流程形成互补。
+
+<Frame>
+  ![Disscussion](/images/Disscussion.png)
+</Frame>

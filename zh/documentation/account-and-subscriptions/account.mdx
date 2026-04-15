@@ -1,4 +1,77 @@
 ---
-title: '管理你的账号'
+title: "账户管理"
+description: "统一管理您的个人资料、应用默认设置和聊天体验。"
 ---
 
+您的账户设置集中管理所有与您个人相关的信息，从姓名、头像到聊天中的消息发送方式。您可以通过此页面确保个人信息准确且安全。
+
+## **访问账户设置**
+
+您可以通过个人资料菜单管理所有个人账户选项。
+
+**打开账户设置的方法：**
+
+1. 进入 CodeBanana 主页面。
+2. 点击右上角的个人头像。
+
+### 更换头像
+
+点击您的头像即可进入头像编辑页面。在这里，您可以上传图片来更换头像。
+
+头像需满足 **以下要求**：
+
+1. 仅支持 JPG、PNG、GIF 和 WebP 格式。
+2. 文件大小小于 5MB。
+
+<Frame>
+  ![Header](/images/header.png)
+</Frame>
+
+### Usage
+
+点击个人中心中的 “Usage” 按钮，即可查看您的用量详情。整体计费分为 **两种类型**：
+
+1. **套餐内 requests：**
+
+- 不同会员等级——Free、Personal 和 Professional——分别提供 30、300 和 1000 次 requests。
+- Personal 和 Professional 套餐支持根据服务规模选择不同的虚拟机配置；账单将根据所使用的虚拟机服务计费。
+
+2. **按用量计费**
+
+- 当您用完套餐内 requests 后，可以在 Usage 页面启用按用量计费，并设置额度上限。启用后，系统会自动拉起 Stripe 账单流程进行充值。
+
+<Frame>
+  ![Usage](/images/usage.png)
+</Frame>
+
+### Contacts
+
+- 您可以查看组织申请记录、组织成员以及外部联系人。
+  <Frame>
+    ![Contacts1new](/images/contacts1new.png)
+  </Frame>
+  - **Organization Contacts** 已加入同一组织的成员。您可以：
+    - 直接将其添加到项目中，无需发送邮件邀请
+    - 在同一处浏览并搜索所有组织成员
+    - 查看每位成员的角色（Owner / Admin / Member）
+  - **External Contacts** 通过邮件邀请加入协作、但不属于组织的联系人。您可以：
+    - 通过邮件邀请其加入项目，而无需将其添加到组织中
+    - 在邀请加入其他项目时快速查找并复用这些联系人
+    - 在视觉上区分其与内部成员，避免混淆
+
+|  | **Organization Contacts** | **External Contacts** |
+| --- | --- | --- |
+| 加入方式 | 直接加入组织 | 通过邮件受邀加入项目 |
+| 添加到项目 | 可直接添加（无需邮件） | 需要邮件邀请 |
+| 是否为组织成员 | 是 | 否 |
+
+- **Admin 和 Owner** 可以管理组织架构与成员。
+
+<Card title="如何管理您的组织？" icon="arrow-right-long" href="/documentation/teams/org">
+  前往 Organization 页面查看更多详情。
+</Card>
+
+- 此处还提供便捷的搜索功能，帮助您快速查找联系人。您也可以点击联系人旁边的聊天按钮快速发起私聊。此时，系统会跳转到 chat 页面，所有私聊记录也会保存在其中。
+  <Frame>
+    ![Contactschatwithmember](/images/contactschatwithmember.png)
+  </Frame>
