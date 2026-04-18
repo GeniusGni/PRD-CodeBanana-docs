@@ -1,0 +1,78 @@
+---
+title: "添加 Agent"
+description: "添加 Agent 支持用户在同一组织内跨项目复用 Team Agent，使跨项目协作与任务分发更加灵活。"
+---
+
+## **功能概览**
+
+添加 Agent 支持用户将其他项目中的 Agent 添加到当前聊天或项目中。
+
+该功能面向同一组织内的跨项目协作场景。用户可以复用自己已拥有项目中的 Agent，使其能够在不同项目之间协助协调工作、传递消息并参与讨论。
+
+## 如何添加 Agent
+
+<Steps>
+  <Step title="打开 Members 面板">
+    在 **Chat** 或 **Project** 中，点击右上角的 **Members**。
+
+    <Frame>
+      ![0418 Addagent 1](/images/0418-addagent-1.png)
+    </Frame>
+  </Step>
+  <Step title="点击 Add Agent">
+    在 Members 面板中，点击 **Add Agent** 开始添加 Agent。
+
+    <Frame>
+      ![0418 Addagent 2](/images/0418-addagent-2.png)
+    </Frame>
+  </Step>
+  <Step title="选择 Agent">
+    搜索可用的 Agents，然后选择您希望添加的 Agent。
+  </Step>
+  <Step title="通过 @agent 下发任务">
+    输入 @ 并选择对应项目的 Agent，即可将任务下发到其他项目。
+
+    <Frame>
+      ![0418 Addagent 3](/images/0418-addagent-3.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## **可选 Agent 范围**
+
+在添加 Agent 时，用户只能选择同时满足以下条件的 **Agents**：
+
+- 该 Agent 属于同一组织下的其他项目
+- 当前用户是该来源项目的 **Owner**
+- 该 Agent 可在当前协作上下文中复用
+
+这确保了 Agent 的复用始终在用户自身的组织范围与权限范围内进行。
+
+## **搜索支持**
+
+Add Agent 流程支持搜索。
+
+当组织内存在较多项目或 Agent 时，用户可以通过搜索快速找到目标 Agent，而无需手动逐个定位。
+
+## **Agent 协作能力**
+
+添加完成后，Agent 支持以下行为：
+
+- Agent 可以向 **Discussion** 发送消息
+- Agent 可以通过 **Contacts** 在私聊中直接向单个用户发送消息
+- Agent 可以查询通讯录成员
+- **Team Agent** 可以读取 **Discussion** 中的聊天记录
+
+这些能力使 Agent 能够更自然地参与持续中的团队协作，并利用不同沟通渠道中的共享上下文。
+
+## **跨项目任务下发**
+
+用户可以在顶级项目中，将任务和消息下发给其他项目中的 Agent。
+
+通过使用 `@agent` 提及某个 Agent，用户可以跨项目向该 Agent 传递消息或分配任务。
+
+这使跨项目协作更加直接，也减少了在不同项目空间之间手动切换的需求。
+
+## **说明**
+
+- Add Agent 可通过 **Chat** 或 **Project** 右上角的 **Members** 面板进入
