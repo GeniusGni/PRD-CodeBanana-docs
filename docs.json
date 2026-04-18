@@ -126,11 +126,15 @@
           }
         },
         "footer": {
-          "socials": {
-            "github": "https://github.com/mobvoi/CBbot",
-            "x": "https://x.com/CodewithMobvoi",
-            "discord": "https://discord.com/invite/yUcCxACgh9"
-          }
+           "links": [
+            {
+              "header": "合规",
+              "items": [
+                { "label": "隐私政策", "href": "https://pre.codebanana.com.cn/zh/terms" },
+                { "label": "用户协议", "href": "https://pre.codebanana.com.cn/zh/privacy" }
+              ]
+            }
+          ]
         },
         "tabs": [
           {
