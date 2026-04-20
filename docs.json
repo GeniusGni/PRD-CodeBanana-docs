@@ -113,7 +113,7 @@
       },
       {
         "language": "zh",
-        "visible":"false",
+        "hidden": true,
         "navbar": {
           "links": [
             {
