@@ -35,12 +35,15 @@ Unlike personal AI tools, Team Agent is not private. Every interaction contribut
 
 To maintain consistency and avoid conflicts, Team Agent follows a **controlled interaction model**:
 
-- Only one team member can interact with the agent at a time. By default, interaction with the Team Agent is restricted to the **project owner**
-- When other members want to use the Team Agent:
+- Only one team member can interact with the agent at a time. By default, interaction with the Team Agent is restricted to the **project owner** and **project admins**
+- When the agent is idle, project admins can take control without requiring manual approval from the owner
+
+When other members want to use the Team Agent:
   - They must **request access from the owner**
   - Once approved, **only that member is granted interaction rights with the agent**
   - During this period, all other members do not have access until control is reassigned
-- During an active session:
+
+During an active session:
   - The agent executes tasks based on the current user’s instructions
   - All changes are **immediately visible to the team**
 - Usage is attributed to the **project owner**
@@ -64,11 +67,11 @@ Agent Modes define how the agent interacts with your project, from read-only ass
   ![Agentmode](/images/Agentmode.png)
 </Frame>
 
-#### Private agent
+#### Private Ask
 
-Private Agent mode（My agent before） provides **personal AI assistance within the project**, allowing users to work independently without affecting the shared workflow.
+Private Ask mode（My agent or Private agnet before） provides **personal AI assistance within the project**, allowing users to work independently without affecting the shared workflow.
 
-**What is Private Agent**
+**What is Private** Ask
 
 A private, user-level agent that operates outside of the Team Agent.
 

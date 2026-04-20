@@ -5,7 +5,9 @@ description: "Communicate and collaborate with team members in CodeBanana"
 
 ## **Projects**
 
-Projects are the core unit of work, combining code, environment, and collaboration into a single workspace.
+Projects are the core unit of work in CodeBanana, combining code, environment, and collaboration into a single workspace.
+
+Each project can be accessed from two entry points: **Projects** and **Chats**. These two tabs lead to the same underlying project workspace, but surface different types of activity by default.
 
 #### **Project List**
 
@@ -87,7 +89,7 @@ This directory contains detailed documentation for CodeBanana’s core features,
 
 **Add organization members**
 
-Add existing members from your organization directly into the project group chat without notification.
+Add **existing members from your organization** directly into the project group chat without notification.
 
 <Frame>
   ![Inviteorgnew](/images/inviteorgnew.png)
@@ -137,6 +139,27 @@ Only the **owner** has permission to perform these actions, ensuring that critic
   ![Groupmanagement](/images/groupmanagement.png)
 </Frame>
 
+#### **Project Admins**
+
+Projects and chats support an **Admin** role to make team collaboration more flexible.
+
+Admins can compete for control of the **Team Agent** on equal footing with other users who already have agent access. Previously, members needed the project owner to explicitly grant permission before they could interact with the Team Agent. Now, if a user is a project admin, they can directly take over agent access and start a conversation whenever the agent is not actively responding.
+
+**Admin Permissions**
+
+Project admins can:
+
+- Directly interact with the **Team Agent** when it is idle
+- Access the Team Agent under the same control rules as other authorized users
+
+This reduces the need for the owner to manually assign access for every interaction, while still keeping control structured.
+
+**How Admins Are Assigned**
+
+The **project owner** can assign or remove admin privileges from the member management panel.
+
+- Up to **5 admins** can be assigned per project
+
 #### **Support Access**
 
 Projects can request dedicated support:
@@ -149,14 +172,55 @@ Projects can request dedicated support:
   ![Supportaccess](/images/supportaccess.png)
 </Frame>
 
-## Chat
+## **Tabs**
 
-Chats provide a **dedicated space for human-to-human communication**, separate from agent-driven workflows. They are used for coordination, quick discussions, and cross-team collaboration.
+Projects and Chats are two entry points for accessing the same set of project workspaces. They separate agent activity from human discussion, making message signals easier to follow.
 
-You can start new chats in two ways:
+### **Projects Tab**
 
-- Click **New Chat** to create Group chats
-- Go to **Personal Center → Contacts**, and select a member to start a direct conversation
+The **Projects** tab emphasizes agent-related activity and opens the selected project in **Team Agent** by default.
+
+You can use this tab when you want to focus on:
+
+- Team Agent conversations
+- Agent execution progress
+- Project files and agent-driven workflows
+
+Projects with recent **Team Agent** activity are ranked higher in this tab, so items with new agent messages may appear at the top.
+
+### **Chats Tab**
+
+The **Chats** tab emphasizes human discussion activity and opens the selected project in **Discussion** by default.
+
+You can use this tab when you want to focus on:
+
+- Human discussion
+- Team coordination
+- Discussion-first collaboration
+
+You can also create a new project directly from the **Chats** tab:
+
+- Click **New**
+- Select the people you want to include
+- The system creates a new project with those members and a default file tree
+
+This project is still a full project workspace, with:
+
+- Team Agent
+- Private Ask
+- Discussion
+- File tree and project context
+
+Unlike template-based project creation, this flow is designed for conversation-first collaboration. In this mode, the agent can help:
+
+- Summarize your discussions
+- Organize todos
+- Generate follow-ups
+- Turn conversation into project outputs at any time
+
+Projects with recent **Discussion** messages are ranked higher in this tab, so items with new human messages may appear at the top.
+
+Because the two tabs prioritize different activity types, the same project may appear in a different order in each tab.
 
 <Frame>
   ![Chat](/images/chat.png)
@@ -180,10 +244,10 @@ Chats support essential messaging capabilities for efficient communication:
 
 - Messages can be forwarded to:
   - The current group
-  - Other groups (must selected)
+  - Other groups
 - Restrictions:
   - In **Team Agent**, messages can only be forwarded to destinations with agent access
-  - In **My Agent** and **Discussion**, forwarding is unrestricted
+  - In **Private Ask** and **Discussion**, forwarding is unrestricted
 - **Restore (agent-related)**
   - Available on user prompts in agent conversations
   - Allows reverting the conversation, model memory, and project state to a previous point
@@ -195,14 +259,14 @@ Chats support essential messaging capabilities for efficient communication:
 
 ### **New Messages**
 
-New messages help you quickly identify incoming activity across chats, projects, and notification, so you can stay aligned with your team in real time.
+New messages help you quickly identify incoming activity across tabs and notification, so you can stay aligned with your team in real time.
 
 #### **Where New Messages Appear**
 
 New message indicators are shown across key areas:
 
-- **Chats**
 - **Projects**
+- **Chats**
 - **Notifications**
 
 These indicators highlight where new interactions or updates have occurred.
@@ -213,6 +277,15 @@ Not all messages are treated equally:
 
 - **@mentions are prioritized** over general new messages
 - Mentioned messages are surfaced first, helping you focus on what requires immediate attention
+
+#### **Ranking Logic**
+
+Projects and Chats may show the same project in a different order.
+
+- In **Chats**, projects with new **Discussion** messages are pushed higher
+- In **Projects**, projects with new **Team Agent** messages are pushed higher
+
+This separation helps prevent human discussion from being buried under agent process messages.
 
 <Frame>
   ![Newmessage](/images/newmessage.png)
