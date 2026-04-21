@@ -77,17 +77,63 @@ These permissions are configured by the **Agent owner** for members in the curre
 
 ## **Personal Agent**
 
-Each user has a built-in **Personal Agent** project.
+Each user has a built-in **Personal Agent** in every organization.
 
-When a member is invited into a project, their **Personal Agent** is automatically brought into the group.
+A Personal Agent is the user’s own AI counterpart inside team collaboration. It is not tied to just one temporary project, but follows the user across the projects they participate in within the same organization.
 
-Personal Agent allows each member to:
+### **Core Characteristics**
 
-- Browse the projects they participate in
-- Query project content and related context
-- Manage and edit work across projects they are involved in
+- **One Personal Agent per user per organization**  
+  Each user has a separate Personal Agent in each organization. These agents are isolated from one another, and their configuration, memory, and context do not carry across organizations.
 
-This gives every user a persistent personal agent layer across collaboration spaces.
+- **Automatically joins projects**  
+  When a user is added to a project or Discussion group, their Personal Agent is automatically added as well.
+
+- **Automatically leaves projects**  
+  When a user leaves a project, their Personal Agent leaves the group at the same time.
+
+- **Passive by default**  
+  Personal Agent stays silent unless it is explicitly triggered, such as by being mentioned with `@`.
+
+### **Permission Rules**
+
+Personal Agent is designed as a private user-owned agent space, so interaction permissions depend on who initiates the conversation.
+
+| Initiator | Permission | Description |
+|-----------|------------|-------------|
+| **The user themself** | Read + Write | Can trigger both read and write actions, including modifying files inside the Personal Agent project |
+| **Other users via @mention** | Read only | Can only retrieve information and receive replies, but cannot trigger file changes or other write actions |
+
+> **Security boundary:** Personal Agent is a private agent space. Only the owner can use it to perform write operations. When other users mention it, it responds in read-only mode.
+
+### **What Personal Agent Is For**
+
+Personal Agent gives each member a persistent AI identity inside the organization.
+
+It can help with:
+
+- Answering on the user’s behalf in project discussions
+- Carrying personal preferences and working style across projects
+- Organizing personal notes, tasks, and follow-ups
+- Querying historical information related to the user’s work
+- Supporting personal workflows across multiple projects
+
+### **Typical Use Cases**
+
+- **Answer on the user’s behalf**  
+  Other members can mention a user’s Personal Agent to ask about work that person is responsible for. The agent can respond based on the user’s memory and context.
+
+- **Preserve personal preferences**  
+  Users can teach the agent their working style, collaboration habits, and output preferences, which can then continue to apply across projects.
+
+- **Handle personal workflows**  
+  Users can privately ask the agent to organize notes, review past discussions, plan tasks, or retrieve historical information.
+
+### **Why It Matters**
+
+Personal Agent introduces a personal collaboration layer on top of project collaboration.
+
+Instead of treating AI as something attached only to a project, CodeBanana gives every user an AI counterpart that can participate in teamwork, carry personal context, and respond in a secure and controlled way.
 
 ---
 
