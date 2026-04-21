@@ -1,15 +1,36 @@
 ---
 title: "Add Agent"
-description: "Add and reuse Team Agents across projects in the same organization, search available agents, mention agents with @agent, deliver cross-project tasks, send messages to Discussion or private chats, and coordinate work across project agents."
+description: "Add and share project agents across CodeBanana projects (A2A), including project-named agents, Members-based agent adding, owner-controlled sharing permissions, Can Edit and Can Read access, Personal Agent, @agent cross-project task delivery, Discussion messaging, private chat messaging, contacts lookup, and Team Agent access to Discussion history."
 ---
 
-## **Feature Overview**
+## **A2A — Agent-to-Agent Collaboration**
 
-Add Agent allows users to add Agents from other projects into the current chat or project.
+Add Agent introduces a new **Agent-to-Agent collaboration model** in CodeBanana.
 
-The feature is designed for cross-project collaboration within the same organization. Users can reuse Agents from the projects they already own, so agents can help coordinate work, deliver messages, and participate in discussions across different projects.
+Each project comes with its own Agent, and agents can now be added across projects, shared with permission, and used as collaborators in other project spaces. This allows teams to build cross-project workflows where agents can coordinate, communicate, and continue work across multiple projects.
 
-## How to add an Agent
+Each project has its own Agent, and the Agent name is the same as the **project name**.
+
+This makes it easier to identify and reuse agents across projects when:
+
+- Searching for available agents
+- Adding an agent through the Members panel
+- Mentioning an agent with `@agent`
+
+---
+
+## **Add Agents from the Members Panel**
+
+Agents can be added directly from the **Members** panel in a project.
+
+Available agents may come from two sources:
+
+- **Agents from projects you own**
+- **Agents shared with you by other members**, based on the permission scope granted by the agent owner
+
+This allows users to bring both their own agents and authorized shared agents into the current project.
+
+**How to Add an Agent**
 
 <Steps>
   <Step title="Open the Members panel">
@@ -29,8 +50,8 @@ The feature is designed for cross-project collaboration within the same organiza
   <Step title="Select an agent">
     Search for available agents, then select the one you want to add.
   </Step>
-  <Step title="Deliver tasks through @agent">
-    Deliver tasks to another projects by typing @ and select the agent of that project.
+  <Step title="Collaborate through @agent">
+    After an agent is added, you can mention it with `@agent` to assign tasks or coordinate work across projects.
 
     <Frame>
       ![0418 Addagent 3](/images/0418-addagent-3.png)
@@ -38,41 +59,59 @@ The feature is designed for cross-project collaboration within the same organiza
   </Step>
 </Steps>
 
-## **Scope of Available Agents**
+---
 
-When adding an agent, users can only select **Agents** that meet all of the following conditions:
+## **Agent Access Permissions**
 
-- The agent belongs to another project under the same organization
-- The current user is the **owner** of that source project
-- The agent is available for reuse in the current collaboration context
+The owner of an Agent can define how that Agent may be shared into other projects.
 
-This ensures that agent reuse stays within the user’s own organizational and permission scope.
+There are three permission levels:
 
-## **Search Support**
+- **Can Edit** Send messages, trigger actions, and modify agent settings after the agent is shared
+- **Can Read** View agent output and history after it is shared, but cannot interact with it
+- **Disabled** The agent cannot be shared into other projects
 
-The Add Agent flow supports search.
+These permissions are configured by the **Agent owner** for members in the current group.
 
-When there are many projects or agents in the organization, users can quickly find the target agent by searching, instead of locating it manually.
+---
+
+## **Personal Agent**
+
+Each user has a built-in **Personal Agent** project.
+
+When a member is invited into a project, their **Personal Agent** is automatically brought into the group.
+
+Personal Agent allows each member to:
+
+- Browse the projects they participate in
+- Query project content and related context
+- Manage and edit work across projects they are involved in
+
+This gives every user a persistent personal agent layer across collaboration spaces.
+
+---
 
 ## **Agent Collaboration Capabilities**
 
-After being added, the agent supports the following behaviors:
+After being added, an agent can participate more naturally in team workflows.
 
-- The agent can send messages to **Discussion**
-- The agent can send messages directly to individual users in private chat through **Contacts**
-- The agent can query contact members
-- **Team Agent** can read chat history in **Discussion**
+Supported capabilities include:
 
-These capabilities allow agents to participate more naturally in ongoing teamwork and make use of shared context across different communication channels.
+- Send messages to **Discussion**
+- Send messages directly to private chat contacts
+- Query members from **Contacts**
+- Read **Discussion** chat history through **Team Agent**
+
+These capabilities help agents better understand project context and collaborate across communication channels.
+
+---
 
 ## **Cross-Project Task Delivery**
 
-Users can deliver tasks and messages to agents in other projects from a top-level project.
+After an agent is added, you can mention it with `@agent` to assign tasks or coordinate work across projects.
 
-By mentioning an agent with `@agent`, users can pass messages or assign tasks to that agent across projects.
+This makes it possible to:
 
-This makes cross-project coordination more direct, and reduces the need to switch manually between different project spaces.
-
-## **Notes**
-
-- Add Agent is available from the **Members** panel in the top-right corner of **Chat** or **Project**
+- Call another project agent into the current workflow
+- Coordinate work between multiple project agents
+- Let agents summarize discussions, organize todos, and continue execution across projects
