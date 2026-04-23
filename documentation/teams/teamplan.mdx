@@ -1,6 +1,6 @@
 ---
 title: "Team plan"
-description: "Configure CodeBanana Team Plan for organizations, including centralized billing, prepaid requests, postpaid usage, seats, VM tiers, member quotas, admin controls, upgrades, downgrades, invoices, and removing team plan members."
+description: "Configure CodeBanana Team Plan for organizations, including seats, VM tiers, prepaid requests, postpaid usage, shared token billing, member quotas, model usage limits, admin controls, upgrades, downgrades, invoices, renewals, and team member management."
 ---
 
 import SnippetIntro from '/snippets/snippet-intro.mdx';
@@ -110,6 +110,61 @@ Organization owners manage Team Plan configuration and billing:
 
 <Card title="How to join an Organization?" icon="arrow-right-long" href="/documentation/teams/org">
 </Card>
+
+#### **Model usage limits**
+
+Team Plan Admins can restrict which AI models each team member is allowed to use, giving the organization more precise control over model usage and cost.
+
+**Where to configure**
+
+- Go to **Usage → Members & Quotas**
+- Find the **Models** column in the member table
+- Set model access for each member individually, or apply restrictions in bulk
+
+<Frame>
+  ![0418 Teamplan Modellimite Overview](/images/0418-teamplan-modellimite-overview.png)
+</Frame>
+
+**Per-member model limits**
+
+- Admins can open the **Models** selector for a specific member
+- Each member can be set to:
+  - **All** — all available models
+  - **Selected models only** — only the checked models can be used
+- Any model that is not selected will be unavailable to that member
+
+<Frame>
+  ![0418 Teamplan Modellimite Single](/images/0418-teamplan-modellimite-single.png)
+</Frame>
+
+**Bulk model limits**
+
+- Admins can select multiple members or use **Select All**
+- After selecting members, admins can apply the same model access rules in one action
+- This makes it easier to manage model permissions across larger teams
+
+<Frame>
+  ![0418 Teamplan Modellimit Batch1](/images/0418-teamplan-modellimit-batch1.png)
+</Frame>
+
+<Frame>
+  ![0418 Teamplan Modellimit Batch2](/images/0418-teamplan-modellimit-batch2.png)
+</Frame>
+
+**Filtering and visibility**
+
+- The **Model Limits** filter at the top of **Members & Quotas** helps admins quickly identify which members already have restricted model access
+- Skill and project usage remain visible, but model availability is limited based on the admin’s configuration
+
+**Restriction scope**
+
+- Model limits apply at the **member level**
+- If a restricted member is the **owner** of a project, model selection inside all of that member’s projects will also be limited to the admin-defined range
+- Unavailable models will appear disabled in the model selector
+
+<Frame>
+  ![0418 Teamplan Modellimit Result](/images/0418-teamplan-modellimit-result.png)
+</Frame>
 
 #### **Modify member plans**
 
@@ -235,5 +290,9 @@ Answers to common questions about Team Plan
 
   <Accordion title="Where can I view billing records?">
     Admins can view all billing history and per-member usage details on the Usage page. Billing notifications are also sent to the admin’s registered email.
+  </Accordion>
+
+  <Accordion title="Can admins restrict which AI models team members can use?">
+    Yes. In **Usage → Members & Quotas**, admins can configure model access for each member through the **Models** column. Members can be allowed to use all models or only a selected set. These limits also apply to projects owned by the restricted member.
   </Accordion>
 </AccordionGroup>
