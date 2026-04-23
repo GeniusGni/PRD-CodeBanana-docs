@@ -114,3 +114,11 @@ Usage is calculated based on both requests and tokens:
 - Using more advanced models or larger contexts may increase token consumption
 - Some features (e.g. support sessions or enhanced capabilities) may apply **multipliers to usage**
 - Usage details can be tracked in the **Usage dashboard**
+
+## FAQ
+
+<Accordion title="Does Plan mode count as a request?">
+  Yes. A request is counted each time the Agent returns a response.
+
+  In Plan mode, the agent runs in a read-only configuration under a different system prompt. Your instructions and any read-only tool usage used to inspect the current state are treated as input, and the generated plan is treated as output. Once the agent produces that output, it counts as one request.
+</Accordion>
