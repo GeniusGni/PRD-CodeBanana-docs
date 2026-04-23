@@ -1,133 +1,418 @@
 ---
 title: "Super Organization"
-description: "Explore the CodeBanana super organization philosophy, including agent-first collaboration, communication and execution in one workspace, projects as agent-chat-workspace units, Team Agent, Private Agent, Discussion, cron jobs, Skill Market, enterprise administration, permissions, and productivity gains."
+description: "Explore the CodeBanana super organization philosophy, including why traditional organizations break down as they scale, how agent-first collaboration reshapes structure, and how AI can evolve from an individual tool into a new operating system for teams."
 ---
 
-### Super Organization and the CodeBanana Product Philosophy
+## Super Organization and the CodeBanana Product Philosophy
 
-An excerpt from Mobvoi CEO’s Super Organization sharing session, introducing the product background, core ideas, and design philosophy behind CodeBanana.
+This page is adapted from Mobvoi CEO’s Super Organization keynote, summarizing the organizational philosophy, system design, and real-world practices behind CodeBanana.
 
 ---
 
-## Why Build CodeBanana?
+## Why Traditional Organizations Break Down
 
-There are two kinds of work inside a company, yet they have long been handled with two disconnected sets of tools:
+Traditional organizations scale by adding more people.
 
-| Tool Type | Representative Products | Purpose |
+As headcount grows, management structures become more complex:
+
+- More layers
+- More process
+- More reporting
+- More coordination
+
+This creates a predictable structural problem: the larger the organization becomes, the more information is diluted as it moves across layers.
+
+Typical execution flow often looks like this:
+
+- Requirement
+- Planning
+- Development
+- Testing
+- Release
+
+After weeks or months of work, the final result can still feel disconnected from the original intent.
+
+The core issue is not individual execution. It is structural entropy:
+
+- The people who understand the need best are often farthest from execution
+- Communication cost rises nonlinearly with team size
+- Adding people does not necessarily increase output
+- Management can suppress entropy temporarily, but cannot eliminate it structurally
+
+This is the organizational problem CodeBanana is designed to address.
+
+---
+
+## What Is a Super Organization
+
+A **Super Organization** is a new organizational structure built around Agents rather than purely around human coordination.
+
+In this structure:
+
+- Agents reduce information loss between decision and execution
+- Communication and execution happen in the same place
+- Humans and Agents work in parallel rather than in serial handoff chains
+- The organization scales through **people × agents**, not just by adding more people
+
+Compared with traditional organizations, a super organization changes the basic logic of scale:
+
+| Dimension | Traditional Organization | Super Organization |
 | --- | --- | --- |
-| 💬 Communication & Management | Feishu, DingTalk | Meetings, documentation, coordination |
-| ⚙️ Task Execution | Cursor, Claude Code | Coding, design, execution |
+| How it scales | More people | People \+ Agents |
+| Core productive unit | Human | Human × Agent |
+| Information flow | Layered decay | Real-time shared context |
+| Collaboration model | Serial handoff | Parallel collaboration |
+| Entropy trend | Increases with size | Structurally resisted |
+| Dependence on management | Very high | Significantly reduced |
 
-**The problem:** Meetings happen in Feishu, notes are taken there, but the actual execution happens in another tool—so no one really knows what happened in between.
-
-**The solution:** CodeBanana brings both into one place—communication and execution happen together, with context synced in real time, so decisions can turn directly into action.
-
----
-
-## Three Core Characteristics of CodeBanana
-
-- 🤖 **Agent-first** — The system is centered around Agents. Humans and Agents work together, rather than humans controlling everything alone.
-- 🏢 **Built for organizations** — Supports multi-user collaboration, clear permission management, and isolated file systems across projects for security and efficiency.
-- ⚡ **Communication and execution in one** — Integrates group chat, Agent workspace, and file system so communication and task handling flow seamlessly together.
+This is not a tool upgrade. It is a structural replacement.
 
 ---
 
-## Centered Around the “Project”
+## Five Characteristics of a Super Organization
 
-Each project is a three-in-one entity:
+A super organization is not defined by automation alone, but by how individual capability and collaboration mechanisms are redesigned together.
 
-- 🤖 **An Agent** — Every project comes with its own dedicated Agent, with independent execution capabilities to complete tasks, write code, and handle files.
-- 💬 **A group chat** — At the same time, it is also a real-time collaboration space where team members and the Agent communicate within the same context.
-- 🗂️ **A Workspace** — An independent file system and virtual machine with secure data isolation, where the Agent can directly read, write, run, and deploy.
+### Agent First
+
+Agents are not optional assistants. They are the primary execution layer, while humans remain decision-makers.
+
+### Flatter Organization Structure
+
+Decisions move closer to execution. Fewer layers are required to turn intent into action.
+
+### Full-Stack Individuals
+
+More people are able to handle broader scopes of work, reducing handoff loss between specialized roles.
+
+### Prototype-Driven Workflows
+
+Instead of aligning only through documents or meetings, teams align through working outputs, drafts, and prototypes.
+
+### Human × Agent Collaboration
+
+The whole organization learns to work with AI, not just isolated individuals.
 
 ---
 
-## System Architecture
+## Why CodeBanana Exists
 
-| Component | Description |
+Most existing tools fall into two categories:
+
+| Tool Type | Limitation |
 | --- | --- |
-| 🟣 **Team Agent** | A shared Agent. Only one person can operate it at a time, keeping collaboration focused. |
-| 🔵 **Private Agent** | A personal Agent that runs in an independent private space. |
-| 🟠 **Discussion** | The human communication area, where team discussions and decisions are synced in real time. |
-| 🟢 **Workspace** | Files and virtual machines, forming the foundational layer of the three-in-one collaboration environment. |
+| Personal AI coding tools | Strong for individuals, weak for organizations |
+| Communication tools | Good for discussion, disconnected from execution |
+
+Personal AI tools can create powerful individuals, but they do not create organizational systems. Communication tools help people talk, but they do not help work execute inside the same context.
+
+CodeBanana is built as the system that connects these two worlds.
+
+Its core idea is simple:
+
+**Communication happens where execution happens.**
+
+This is why CodeBanana is designed not as a single-user tool, but as an operating system for super organizations.
 
 ---
 
-## Built for Collaboration
+## Project as the Basic Unit
 
-- 👥 **Real-time multi-user chat** — Team members can communicate freely within the same project space, while the Agent is always present and can be called at any time.
-- ⚡ **Turn chat directly into tasks** — Conversations between people can be forwarded to the Agent with one click for execution; communication becomes instruction.
-- 📤 **Easy flow of files and messages** — Files and messages inside the system can be quickly forwarded, quoted, and shared, so information is no longer isolated.
-- 🛍️ **Skill publishing and sharing** — Custom capabilities can be published to the Skill Market and reused across projects and teams, allowing organizational knowledge to accumulate.
+In CodeBanana, the basic unit is the **project**.
+
+A project is a three-in-one collaboration structure:
+
+- **Agent** — every project comes with its own Agent
+- **Chat** — people collaborate in the same shared context
+- **Workspace** — files, runtime, and execution environment live in one place
+
+Any work that needs communication, execution, and accumulation can be turned into a project.
+
+This turns the project into the natural container for organizational work.
 
 ---
 
-## Separating Human and Agent Messages
+## The Core Collaboration Model
 
-Agent work messages are frequent and dense. If they are mixed with human conversations, no one will want to read them.
+CodeBanana is designed around a collaboration model where humans and Agents work together continuously.
 
-| Tab | Content |
+### Team Agent
+
+Team Agent is the shared project-level Agent.
+
+- Transparent
+- Shared
+- Controlled
+- Able to read and write the project workspace
+
+Only one person controls Team Agent at a time, making execution ordered and reviewable.
+
+### Private Ask
+
+Private Ask is a private, read-only mode for individuals.
+
+- Reads project files, code, and conversation history
+- Helps with understanding, planning, and analysis
+- Remains invisible to others
+
+Together, Team Agent and Private Ask create two complementary modes:
+
+- Shared execution
+- Private reasoning
+
+### Discussion and Agent Tabs
+
+Human communication and Agent execution are separated into two tabs:
+
+| Tab | Purpose |
 | --- | --- |
-| 💬 **Discussion** | Human-to-human communication — discussion, decisions, collaboration |
-| 🤖 **Agent** | Agent execution process — tasks, code, results |
+| Discussion | Human discussion, decisions, collaboration |
+| Agent | Agent tasks, code, execution results |
 
-Two separate tabs with separate notifications ensure that human messages do not get buried.
+This keeps human messages readable and agent process messages structured.
 
----
+### Two Entry Points, Two Views
 
-## Let Agents Work Proactively (Cron Jobs)
+The same project can appear differently depending on user intent:
 
-Agents do not only act when you ask them to—through Cron Jobs, they can execute tasks automatically on schedule:
+- Enter from **Chats** → Discussion-first
+- Enter from **Projects** → Agent-first
 
-- ⏰ **Scheduled triggers** — Set a time or recurring cycle, and the Agent wakes up automatically to work: daily reports, periodic checks, scheduled reminders.
-- 🔁 **Event-driven execution** — File changes, incoming messages, condition-based triggers—the Agent listens for changes and responds immediately.
-- 🤝 **From passive to proactive** — The Agent is no longer just a tool, but a true collaborator that actively helps drive organizational goals forward.
-
----
-
-## Skill Market — Let Great Methods Spread Across the Company
-
-- 📋 **Workflow templates for different roles** — Skills capture the working methods of each function and become effective as soon as they are installed.
-- ⬆️ **One person builds it, the whole company uses it** — When someone discovers an efficient way of working, they can package it as a Skill and publish it to the market for everyone else to use.
-- 🚀 **Best practices spread virally** — Others can install and reuse them with one click, allowing organizational best practices to truly circulate.
+The underlying workspace is the same, but the surface experience adapts to the collaboration goal.
 
 ---
 
-## Enterprise Administration Capabilities
+## Key Capabilities That Support the System
 
-- 📊 **Dashboard for global insights** — Clearly understand enterprise AI model usage: which departments are using it well, and who the standout high-performers are.
-- 🏗️ **Organizational structure configuration** — Configure teams and projects based on the company’s real structure, with clear management hierarchy.
-- 🔐 **Fine-grained permission control** — Configure and restrict access for each individual, ensuring data security, compliance, and control.
+Several product capabilities exist specifically to support the super organization model.
+
+### Forwarding and @ Mentions
+
+Messages, files, people, Agents, and Skills can all be referenced directly in context.
+
+This enables:
+
+- Human discussion to become executable instruction
+- Agent results to flow back into group communication
+- Cross-project collaboration with preserved context
+
+### Skills
+
+Skills turn individual workflows into reusable organizational assets.
+
+- Preinstalled global skills provide common capability
+- Teams can build custom skills
+- Skills can be published and reused across projects
+
+This allows one person’s method to become the organization’s method.
+
+### Cron Jobs
+
+Agents can work proactively through scheduled execution, heartbeats, and event-driven triggers.
+
+This turns the agent from a reactive tool into an active collaborator.
+
+### Personal Agent
+
+Every user has a Personal Agent that belongs to the individual rather than to a project.
+
+Personal Agent carries personal context across projects and helps users operate across multiple collaboration spaces.
+
+### A2A: Agent-to-Agent Collaboration
+
+Projects can collaborate through their Agents.
+
+A project can expose its Team Agent to other projects, making the project’s knowledge and execution ability reusable across collaboration spaces.
+
+This means:
+
+- Project-to-project collaboration becomes agent-to-agent collaboration
+- Shared organizational intelligence can move across projects
+- Visibility and permissions define how open or restricted each project agent should be
+
+### Organization Visibility and Contacts
+
+Agents can understand organizational structure, team roles, and member responsibilities.
+
+This makes it possible for them to:
+
+- Notify the right person
+- Route issues to the right owner
+- Support role-aware coordination
+
+### Enterprise Controls
+
+For organizations, CodeBanana also provides:
+
+- Organization structure management
+- Permission control
+- Usage analytics
+- Audit and export capabilities
+- Team-level governance
+
+These controls make agent collaboration practical in real organizational settings.
 
 ---
 
-## Real-World Deployment Data (Mobvoi)
+## Why This Is More Than a Product
 
-| Metric | Data |
+CodeBanana is not designed to make one person superhuman.
+
+It is designed to make a team evolve structurally.
+
+That distinction matters.
+
+A “super individual” can achieve much more than before, but still hits a ceiling:
+
+- One person still becomes the bottleneck
+- AI remains attached to a single user
+- The rest of the organization continues to work the old way
+
+A super organization changes the structure itself:
+
+- Information flows with less loss
+- Execution is closer to decision-making
+- AI becomes part of the organizational system
+- Team capacity grows without relying entirely on management scale
+
+---
+
+## Real-World Practice at Mobvoi
+
+CodeBanana is grounded in internal transformation, not just theory.
+
+Mobvoi’s internal rollout followed a real shift from old organizational patterns to agent-centered collaboration.
+
+### Internal transformation milestones
+
+| Time | Milestone |
 | --- | --- |
-| Company headcount change | 300 → 150, reduced by half |
-| New product lines | \+2 |
-| R&D productivity | 4x increase |
-| AI token cost | 15% of labor cost |
-| Full-stack ratio in R&D teams | 100% |
-| Full-stack ratio in non-R&D teams | 30%\+ |
+| Early 2025 | Began exploring the super organization model |
+| April 2025 | Shared the concept publicly |
+| Mid 2025 | Validated the ceiling of the “super individual” approach |
+| Late 2025 | Began implementing the new structure |
+| Early 2026 | Expanded the system across the company |
+
+### Operational outcomes
+
+| Metric | Result |
+| --- | --- |
+| R&D productivity | 3× to 4× improvement |
+| AI token cost | About 15% of labor cost |
+| Full-stack ratio in R&D | 100% |
+| Non-R&D AI-enabled work | Significantly increased |
+
+These results did not come from replacing humans, but from redesigning the collaboration structure.
 
 ---
 
-## How CodeBanana Differs from Cursor / Claude Code
+## Department-Level Practice
 
-| Dimension | Cursor / Claude Code | CodeBanana |
-| --- | --- | --- |
-| Positioning | Personal development tool | Team collaboration platform |
-| Communication | None, requires switching to Feishu/DingTalk | Built-in group chat, communication and execution unified |
-| Collaboration | No shared Agent support | Team Agent supports team sharing |
-| Context | Local / individual | Cloud-based, shared team context |
-| Organization management | None | Supports org structure and permission control |
-| Skill reuse | None | Skill Market for cross-project reuse |
+The super organization model is not limited to engineering.
+
+### R&D
+
+- Agents help manage daily reports and risk summaries
+- Bugs and feedback can be tracked continuously
+- Log analysis and issue routing can be automated through A2A and Cron Jobs
+
+### Sales
+
+- Proposal generation can move from days to minutes
+- Multiple Agents can collaborate across projects to produce structured documents quickly
+
+### Marketing
+
+- Non-technical users can build dashboards directly with Agents
+- Teams can create internal tools without relying entirely on engineering bandwidth
+
+### HR
+
+- Resume review, interview preparation, and candidate comparison can all be partially agent-assisted
+- Hiring workflows become more structured and faster to operate
+
+This shows that the model is organizational, not just technical.
 
 ---
 
-## Core Philosophy
+## When to Create a Project
 
-> An Agent is not just a tool—it is an extension of organizational capability.\
-> CodeBanana aims to help every organization evolve into a super organization, using AI to multiply the productivity of every individual.
+A good rule is:
+
+**Anything that needs communication, execution, and accumulation deserves a project.**
+
+Common examples include:
+
+- Department-level ongoing collaboration
+- Cross-functional long-term work
+- Specialized temporary initiatives
+- External client or partner collaboration
+- Leadership workstreams
+- Knowledge bases and organizational memory
+
+This is how organizational work becomes structured and reusable.
+
+---
+
+## Working Habits That Make the System Work
+
+The product alone is not enough. Teams also need the right working habits.
+
+Useful habits include:
+
+1. Set up project basics clearly, including members, roles, admins, and permissions
+2. Upload files and organize folder structure early
+3. Start with the Agent before escalating to humans when appropriate
+4. Use forwarding and @ mentions to keep information flowing precisely
+5. Use Cron Jobs and A2A to automate recurring workflows
+6. Choose the right device for the role: mobile for managers, desktop for hands-on work
+
+These habits help the system produce compounding value.
+
+---
+
+## Resistance and Adoption Reality
+
+Adopting this model is not frictionless.
+
+In practice, the biggest requirement is leadership conviction.
+
+Common challenges include:
+
+- Resistance to AI-driven coding or execution
+- Discomfort with transparent collaboration
+- Reluctance to give demand-side teams more direct operational control
+- The need to adapt to a more agent-centered rhythm of work
+
+The lesson from rollout is direct:
+
+People can be filtered, but not always educated into structural change.
+
+Adoption depends on both product capability and organizational willingness.
+
+---
+
+## Boundaries and Applicability
+
+This model is powerful, but it is not universal in every context.
+
+It is generally more suitable for:
+
+- Small and medium-sized teams
+- Organizations with at least some technical foundation
+- Teams with openness to AI collaboration
+- Leaders willing to redesign workflows rather than simply layer tools onto old structures
+
+The point is not to follow a trend blindly, but to find the right rhythm for your organization.
+
+---
+
+## Final Thought
+
+The old structure is collapsing. A new operating system for organizations is emerging.
+
+CodeBanana is built around the belief that AI should not remain trapped in isolated chat windows or single-user tools. It should become part of how teams actually work.
+
+A super organization is not about making one person stronger.
+
+It is about enabling the whole team to evolve.
