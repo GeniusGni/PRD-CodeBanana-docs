@@ -1,11 +1,11 @@
 ---
 title: "Projects and Chats"
-description: "Work with CodeBanana projects and chats, including project lists, GitHub and local projects, creating projects, User Guide files, adding organization members, inviting external contacts by email, project admins, member management, group chats, Discussion, Forward, Restore, notifications, and Request Support."
+description: "Work with CodeBanana projects and chats, including project lists, GitHub and local projects, creating projects, project visibility across organizations, external projects, Projects and Chats tabs, User Guide files, adding organization members, inviting external contacts, project admins, member management, Discussion, Forward, Restore, notifications, and Request Support."
 ---
 
 ## **Projects**
 
-Projects are the core unit of work in CodeBanana, combining code, environment, and collaboration into a single workspace.
+Projects are the core unit of work in CodeBanana, combining code, environment, and collaboration into a single workspace. Each project belongs to a fixed organization, determined when the project is created, and that organization does not change over the project’s lifecycle.
 
 Each project can be accessed from two entry points: **Projects** and **Chats**. These two tabs lead to the same underlying project workspace, but surface different types of activity by default.
 
@@ -69,6 +69,44 @@ CodeBanana supports multiple ways to initialize a project
 <Frame>
   ![Studio Page](/images/StudioPage.png)
 </Frame>
+
+#### **Project Visibility Across Organizations**
+
+Project visibility is determined by the relationship between:
+
+- The project’s fixed organization
+- The organizations the current member has joined
+- The member’s role in that project
+
+**If you are the project owner**
+
+- The project is shown only under its own organization
+- Even if you are the owner, the project will not appear when your current working organization does not match the project’s organization
+
+**If you are not the project owner**
+
+The system checks whether the project’s organization overlaps with the organizations you have joined.
+
+**When there is overlap**
+
+- If the project’s organization is included in the organizations you have joined, the project is shown only under that organization
+- It will not appear under your other organizations
+
+**When there is no overlap**
+
+- If the project’s organization is not included in any organization you have joined, the project is shown under all organizations you have joined
+- In this case, it is marked as **External**
+
+This helps the system preserve organization boundaries whenever possible, while still making outside projects visible when no matching organization is available.
+
+**Dynamic evaluation**
+
+Project visibility is calculated based on your current organization state, rather than stored as a permanent result.
+
+For example:
+
+- A project may initially appear as **External** because none of your joined organizations match the project’s organization
+- If you later join that organization, the project will automatically switch to the normal organization-based display and the **External** label will disappear
 
 ## **User Guide**
 
@@ -311,3 +349,18 @@ All notifications are centralized in the **Notifications panel**, where you can:
 <Frame>
   ![Notification](/images/notification.png)
 </Frame>
+
+#### **Notification Visibility**
+
+Notification visibility follows the same organization logic as project visibility.
+
+**Standard project notifications**
+
+- Notifications for regular projects are shown only under the organization that owns the project
+- If you switch to another organization, those notifications will not appear there
+
+**External project notifications**
+
+- If a project is treated as **External**, its notifications are shown under every organization you have joined
+
+This keeps notifications aligned with the way projects are surfaced across organizations.
