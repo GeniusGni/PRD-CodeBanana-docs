@@ -1,0 +1,169 @@
+---
+title: "TicNote Subscription"
+description: "Use TicNote Subscription in CodeBanana to connect TicNote Pods, record meetings in Discussion, manage recordings with Team Agent, and automatically receive AI summaries and transcripts in the Recordings workspace."
+---
+
+## **What is TicNote Subscription**
+
+TicNote Subscription is a built-in project that every user gets by default in CodeBanana.
+
+You do not need to create or configure it manually. It is always available from day one and is designed to help you connect TicNote Pods, record meetings, and receive AI-generated summaries and transcripts automatically.
+
+Its core experience combines:
+
+- A built-in **Team Agent**
+- A **Discussion** space for device connection and recording
+- A **Recordings** workspace for storing summaries and transcripts
+
+---
+
+## **Where to Find It**
+
+You can find **TicNote Subscription** directly in your chat or project list.
+
+Important notes:
+
+- Look for the project named **TicNote Subscription**
+- Make sure you are the **Owner** of that project
+- Only the TicNote Subscription project that you own can bind to your device and manage your recordings
+- You can also invite other members into your TicNote Subscription project for shared collaboration
+
+---
+
+## **What Team Agent Can Do**
+
+TicNote Subscription includes a built-in **Team Agent** that is ready to use immediately.
+
+The Team Agent can:
+
+- Answer questions about TicNote features
+- Help you understand hardware and subscription options
+- List your recordings
+- Open summaries and transcripts
+- Rename or delete recording files
+- Help manage your TicNote-related content inside the project
+
+### **Typical Questions**
+
+You can ask the Team Agent about:
+
+- TicNote software features, such as AI summary, transcription, translation, podcast generation, and research workflows
+- TicNote hardware, including Card, Lite, and Pods
+- Subscription plans and pricing
+- API Skill installation and integrations
+- Connecting TicNote Pods with CodeBanana
+
+### **Recording Management**
+
+The Team Agent can also help you manage files in the **Recordings** folder.
+
+Examples:
+
+- “What recordings do I have?”
+- “Show me yesterday’s summary”
+- “Open the transcript for the latest meeting”
+- “Rename this recording”
+- “Delete last week’s meeting recording”
+
+---
+
+## **Recording in Discussion**
+
+The **Discussion** tab acts as the control center for TicNote recording.
+
+Here you can:
+
+- Connect TicNote Pods
+- Start and stop recording
+- Check sync status
+- Receive AI-generated summaries after recording ends
+
+### **Recording Flow**
+
+#### **Connect a device**
+
+When no device is connected, the Discussion view shows a device connection area.
+
+- Click **Connect Device**
+- Scan for TicNote Pods
+- Connect over BLE / Bluetooth
+
+#### **Connected state and file sync**
+
+After connection:
+
+- The connected device name is displayed
+- Online status is shown
+- A **Start Recording** button becomes available
+- Existing recording files on the device begin syncing automatically
+
+### **Sync behavior**
+
+- You can start recording before all historical files finish syncing
+- Recording takes priority over file sync
+- File sync pauses automatically while recording is in progress
+- Sync resumes automatically after recording upload is complete
+
+#### **Recording state**
+
+While recording:
+
+- The device remains visible in Discussion
+- A **Stop Recording** button is shown
+- Recording continues in the background
+- Historical sync stays paused until the recording finishes
+
+#### **Upload and AI summary**
+
+After recording stops:
+
+- The current recording is uploaded automatically
+- Paused sync resumes
+- AI generates:
+  - A meeting summary
+  - A full transcript
+
+These are then pushed back into **Discussion** as a message card.
+
+---
+
+## **Recording File Structure**
+
+Every recording automatically creates a subfolder inside the **Recordings** directory.
+
+The structure looks like this:
+
+```text
+TicNote Subscription/
+├── .codebanana/
+└── Recordings/
+    ├── Product Review 2026-04-17/
+    │   ├── summary
+    │   └── transcript
+    ├── Weekly Meeting 2026-04-16/
+    │   ├── summary
+    │   └── transcript
+    └── ...
+```
+
+This allows the Team Agent to read and manage your recording files directly.
+
+### **What each file contains**
+
+- **summary** — key decisions, highlights, and action items
+- **transcript** — full transcription of the recording
+
+---
+
+## **Built-in TicNote Knowledge**
+
+The Team Agent inside TicNote Subscription includes built-in knowledge about TicNote products and services.
+
+It can answer questions about:
+
+- Software features
+- Hardware devices
+- Subscription plans
+- Integration methods
+
+This makes TicNote Subscription both a recording workspace and a built-in product assistant inside CodeBanana.
