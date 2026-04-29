@@ -5,6 +5,88 @@ icon: "rotate-left"
 rss: true
 ---
 
+<Update label="04/28/2026">
+  ## **Usage Alerts, Forwarding, and Collaboration Experience Updates**
+
+  This release introduces usage alerts and includes a broad set of updates across forwarding, A2A permissions, member management, mentions, quoting, input behavior, search, and avatar display.
+
+  ### **Usage alerts** <Badge color="blue" size="lg">New</Badge>
+
+  CodeBanana now supports usage alerts for both request-based and token-based limits.
+
+  Alerts now apply to free requests, included plan requests, Team Plan token limits, and shared token pools. A warning is shown when remaining usage falls below **20%**, while existing reminders for exhausted usage remain unchanged.
+
+  ### **Forwarding updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Forwarding now supports sending messages directly to contacts in **Contacts**, in addition to forwarding to projects.
+
+  This release also fixes an issue where nested forwarded messages containing images could display incorrectly. It also fixes control conflicts related to forwarded messages under shared-control scenarios.
+
+  ### **Bulk group creation** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Backend support is now available for bulk group chat creation, including multi-member group setup.
+
+  This improves efficiency for large-scale group creation and management workflows.
+
+  ### **Personal Agent project protection** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Projects associated with **Personal Agent** can no longer be deleted.
+
+  This helps prevent accidental deletion of default personal agent workspaces.
+
+  ### **A2A permissions and guidance updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  A2A permissions and related behavior have been refined.
+
+  Agent permission guidance copy has been updated and is now supported across **English**, **Simplified Chinese**, and **Traditional Chinese**.
+
+  ### **Member management and permission dialog improvements** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The member and permission management experience has been simplified.
+
+  The permission dropdown and the three-dot action menu have been removed, and related actions are now managed through a unified settings entry point. Member sorting has also been updated to:
+
+  **coding\_agent → Owner → Admin → Member**
+
+  This release also fixes an issue where permission-related dialogs could display at the wrong visual layer. Under shared-control mode, both **Admin** and **Owner** can now forward messages to **@agent** in **Discussion** without checking presenter status.
+
+  ### **@ mention improvements** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The **@ mention** experience has been improved.
+
+  The mention dialog now provides search result counts and shows **Recent files** by default. This release also fixes an issue where agent names could occasionally be truncated when using **@agent**.
+
+  ### **Copy and paste improvements** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Copy and paste behavior has been improved for messages with attachments.
+
+  Previously, copied messages with attachments could display only the attachment itself. This has been fixed so the actual filename is now shown correctly.
+
+  ### **Quote improvements** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The quoting experience has been improved across both layout and display.
+
+  Attachments now appear above text, and text appears below. Multiple images are now shown as thumbnails. Video and file attachments now display type labels such as **\[Video\] filename**, and sender names are now displayed in a more consistent format.
+
+  ### **Input box improvements** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The input box behavior has been improved after sending long messages.
+
+  This release fixes an issue where the input box could remain stuck at its maximum height after sending a message. After long text is sent, the input box now returns to its default height correctly.
+
+  ### **Search bar redesign** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The search bar has been redesigned for better usability.
+
+  It is now centered and uses a wider layout to better support both file search and content search.
+
+  ### **Avatar display improvements** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Default avatar display logic has been improved.
+
+  If a user name contains Chinese characters, the default avatar now uses the last two Chinese characters. If no Chinese characters are present, the first four characters are used instead. Group avatars in **chatList** have also been updated.
+</Update>
+
 <Update label="04/20/2026">
   ## **Team Plan, Cross-Project Agents, and Onboarding Updates**
 
