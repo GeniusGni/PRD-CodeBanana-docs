@@ -94,29 +94,71 @@ My Agent enables users to stay productive individually, while keeping the team-l
 <Frame>
   ![Myagent](/images/Myagent.png)
 </Frame>
-
+ 
 ### **Discussion**
 
-Discussion mode is a **team-wide communication space** designed for open collaboration without AI intervention.
+Discussion mode is a **team-wide communication space** designed for open collaboration and coordination.
 
 **What is Discussion**
 
-- A shared chat channel where team members can discuss ideas, align on requirements, and coordinate work.
-- It serves as the **human layer of collaboration**, separate from agent-driven execution.
+- A shared chat channel where team members can discuss ideas, align on requirements, and coordinate work
+- It serves as the **human layer of collaboration**, separate from direct agent execution
+- Discussion is also the place where teams can activate a built-in coordination layer when needed
+
+<Frame>
+  ![Disscussion](/images/Disscussion.png)
+</Frame>
 
 **Usage Characteristics**
 
 - All members can **participate freely**
 - Supports **real-time discussions, feedback, and decision-making**
 - Conversations are visible to the entire team and remain part of the project context
+- By default, Discussion stays focused on communication rather than direct execution
 
-**Agent Involvement**
+#### **Discussion Coordinator (DC)**
 
-- No agent is involved in this mode
-- No code execution or automated actions are triggered
+Discussion includes a built-in **Discussion Coordinator (DC)**.
 
-Discussion mode ensures teams have a dedicated space for **clear communication and alignment**, complementing the structured workflows of agent-based collaboration.
+DC acts as a coordinator inside group discussion rather than as a direct execution agent.
 
-<Frame>
-  ![Disscussion](/images/Disscussion.png)
-</Frame>
+It can:
+
+- Understand the current discussion context
+- Track participants and conversation progress
+- Help summarize and organize discussion content
+- Route requests to other agents when users mention them in discussion
+
+#### **How DC Works**
+
+DC is **silent by default**.
+
+It does not actively interrupt the discussion, and only responds when it is explicitly activated.
+
+DC can be activated in two main ways:
+
+- **@mention DC**
+- **Reply to or quote an agent message in Discussion**
+
+Once activated, DC can stay engaged for the current thread if it determines that follow-up coordination is still needed. When the coordination task is complete, it returns to silent mode automatically.
+
+#### **DC Boundaries**
+
+DC is a coordinator, not an execution agent.
+
+It does **not** directly:
+
+- Write code
+- Modify files
+- Create project content
+- Perform write actions in the workspace
+
+Instead, DC helps move discussion forward by:
+
+- Organizing context
+- Clarifying requests
+- Passing work to the appropriate agent when needed
+
+This makes Discussion a lightweight coordination layer, while keeping actual execution in the correct agent mode.
+
+
