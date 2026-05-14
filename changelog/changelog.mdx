@@ -5,6 +5,124 @@ icon: "rotate-left"
 rss: true
 ---
 
+<Update label="05/14/2026">
+  ## **Team Plan, Organization, Agent, Viewer, and Interaction Updates**
+
+  This release includes updates to Team Plan billing and member management, organization structure handling, agent collaboration, archive preview, input behavior, project navigation, A2A interactions, and CBBot.
+
+  ### **Team Plan updates** <Badge color="blue" size="lg">New</Badge>
+
+  CodeBanana now converts **requests** into **usage**, with previously purchased entitlements migrated at a **10:1 ratio**.
+
+  For organizations that already have **Team Plan** enabled, adding seats and upgrading VM tiers can now be charged through the shared usage pool. A confirmation dialog has also been added to make these actions clearer before submission.
+
+  This release also includes pricing updates for selected plans.
+
+  ### **Team Plan alerts** <Badge color="blue" size="lg">New</Badge>
+
+  The Team Plan alert system has been expanded.
+
+  A reminder is now shown when remaining usage falls below **20%**. A synchronized warning is also displayed when the remaining limit balance falls below **\$10**.
+
+  These updates improve visibility before usage or balance is fully exhausted.
+
+  ### **Team Plan member management** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Both organization **Admins** and **Owners** can now update member quotas, VM configurations, and available model access.
+
+  Previously, these actions were limited to the **Owner** only. This change makes day-to-day Team Plan management more flexible for organizations with delegated admins.
+
+  ### **Team Plan top-up backend** <Badge color="blue" size="lg">New</Badge>
+
+  The recharge backend now supports **custom-day top-ups**.
+
+  This includes support for trial quota top-ups and provides more flexibility for temporary or time-based usage allocation.
+
+  ### **Team Plan fixes and billing improvements** <Badge color="yellow" size="lg">Improve</Badge>
+
+  This release also includes a set of Team Plan fixes and billing-related improvements.
+
+  The add-seat and VM-upgrade flows now display the billing amount more clearly. Fixed an issue where used seat counts did not refresh automatically after adding or removing members in Team Plan. Fixed an issue where members could not be removed from the confirmation page when adding members. Fixed an issue where the model list could appear empty in group chats for non-Team Plan members.
+
+  In addition, fixed an issue with incorrect dates in exported **Usage** Excel files, and improved the billing page experience.
+
+  ### **Organization structure update** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Fixed an issue where organization structure data was not written correctly in some registration scenarios.
+
+  This improves data consistency during organization onboarding and setup.
+
+  ### **Agent updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Agent conversations now include message timestamps and cross-date indicators.
+
+  These updates make date changes inside conversations more visible and help reduce confusion in time-sensitive agent interactions.
+
+  This release also introduces the **Discussion Agent (Discussion Coordinator)**.
+
+  The Discussion Agent can summarize group content and answer questions based on discussion context. It can also call other agents through **A2A**, with the Discussion Agent acting as the coordination layer. The Discussion Agent is visible in both the **Members** list and the **@ mention** list, and it can be invoked directly through **@**.
+
+  ### **Viewer update** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The **Viewer** area now supports previewing compressed archive files.
+
+  This expands file preview support for common packaged project assets and documents.
+
+  ### **Input box updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The input experience has been improved across attachments, search, input methods, and quoting behavior.
+
+  Attachments are now cached by tab and project, which prevents uploaded files from being lost when switching pages. Fixed an issue where pinyin-based user search in the input box could return unrelated members. Fixed a case where numbers could be lost when using **Sogou Input Method** in the message input field. Quoted message line wrapping has also been improved.
+
+  ### **@ mention update** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Fixed an occasional issue where the **@ mention** panel could appear after sending **@** even when no content had been entered.
+
+  This makes the mention interaction more stable and predictable.
+
+  ### **Project name display update** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Fixed an issue where project names could fail to display correctly when the **Owner** nickname was too long.
+
+  This improves readability in project-related views.
+
+  ### **GitLab import updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  GitLab and GitHub merged project names are now derived from the Git URL.
+
+  The **GitLab import** dialog has also been improved, including better content height handling and layout refinement.
+
+  ### **Project list updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The **Project List** and **Chat List** now support automatic positioning.
+
+  When switching between the two tabs, the system now automatically associates the corresponding item and keeps it within the visible area. The pin and unpin prompt copy has also been updated in Chinese.
+
+  ### **Members and agent name updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The **Members** dialog has been improved so that it closes automatically after an invite is sent.
+
+  This release also improves the display and naming behavior of **Personal Agent**. Fixed an issue where the **Owner** could be missing from the Members list, and fixed a case where entering **@** could send directly in unintended scenarios.
+
+  ### **A2A dialog update** <Badge color="yellow" size="lg">Improve</Badge>
+ 
+  The A2A dialog has been optimized for group owners.
+
+  Group owners no longer see the permission dropdown in this flow and now default to **Can Edit**.
+
+  ### **Conversation flow updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The **MermaidDiagram** flowchart component now includes a close button in fullscreen mode.
+
+  This release also fixes and improves formatting behavior for user-sent **rich\_content** messages.
+
+  ### **CBBot update** <Badge color="yellow" size="lg">Improve</Badge>
+
+  **CBBot** now supports creating cloud projects.
+
+  This expands project creation options for users working across local and cloud-based workflows.
+</Update>
+
 <Update label="04/28/2026">
   ## **Usage Alerts, Forwarding, and Collaboration Experience Updates**
 
