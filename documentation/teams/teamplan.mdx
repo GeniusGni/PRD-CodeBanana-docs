@@ -1,9 +1,7 @@
 ---
-title: "Team plan"
-description: "Configure CodeBanana Team Plan for organizations with customizable seats, per-seat VM tiers, a shared token pool, monthly or yearly billing, usage management, usage alert in team plan, add seats, token top-ups, member limits, model usage limits, renewals, enterprise payments, and team-wide visibility into requests, tokens, and expiration timelines."
+title: "Team Plan"
+description: "Configure CodeBanana Team Plan for organizations with customizable seats, shared token pool billing, seat-based VM configurations, flexible validity periods, usage alerts, member limits, model usage limits, renewals, enterprise payment support, and visibility into requests, tokens, and expiration timelines."
 ---
-
-import SnippetIntro from '/snippets/snippet-intro.mdx';
 
 ## **What is Team Plan**
 
@@ -16,6 +14,8 @@ It allows teams to configure and manage:
 - A shared token pool for team-wide usage
 
 All billing and usage management are handled at the organization level, giving admins centralized control over seats, compute, token consumption, and member limits.
+
+---
 
 ## **Get Team Plan**
 
@@ -31,29 +31,41 @@ Team Plan supports flexible purchase configuration based on actual team needs:
 
 - Seat quantity can be selected freely
 - Minimum purchase starts from **1 seat**
-- The token pool top-up amount can be customized
+- The token pool amount can be customized
 - No minimum token pool amount is required
-- A token pool of **\$0** is allowed
+- A token pool of **$0** is allowed
 - The token pool is shared across the entire team
+
+### **Validity period**
+
+Team Plan supports multiple validity options:
+
+- **1 month**
+- **3 months**
+- **6 months**
+- **12 months**
+
+### **Included token quota**
+
+Each seat includes a fixed amount of token quota:
+
+- **$25 / seat / month**
+
+When the included token quota is exhausted, additional usage is deducted from the shared team token pool.
 
 ### **VM tiers**
 
 Each seat can be configured with one of three VM tiers:
 
-- **2 vCPU / 4GB** — **\$45 / seat / month**
-- **4 vCPU / 8GB** — **\$65 / seat / month**
-- **8 vCPU / 16GB** — **\$105 / seat / month**
-
-### **Billing cycle**
-
-Team Plan supports both monthly and yearly purchase options:
-
-- **Monthly billing** — standard pricing with flexible renewal
-- **Yearly billing** — seat fees receive a **20% discount**
+- **2 vCPU / 4GB** — **$45 / seat / month**
+- **4 vCPU / 8GB** — **$65 / seat / month**
+- **8 vCPU / 16GB** — **$105 / seat / month**
 
 <Note>
-  Team Plan supports both monthly and yearly purchase. Yearly billing applies a 20% discount to seat fees.
+  Team Plan seat pricing follows the same VM tier structure as Personal Plan.
 </Note>
+
+---
 
 ## **Usage Entry**
 
@@ -72,6 +84,8 @@ This is the main entry for:
   ![0418 Teamplan Entry](/images/0418-teamplan-entry.png)
 </Frame>
 
+---
+
 ## **Usage Management**
 
 The **Usage** page provides both team-level and member-level visibility.
@@ -82,17 +96,10 @@ The **Usage** page provides both team-level and member-level visibility.
 
 ### **Usage Alerts**
 
-Team Plan provides usage alerts across both member-level and team-level quotas.
+CodeBanana provides usage alerts to help teams track remaining quota.
 
-- A warning is shown when remaining usage falls below **20%**
-- When usage is fully consumed, a **Notification** is sent to inform the relevant user or team
-
-Usage alerts apply to:
-
-- Included requests
-- Member token usage limits
-- Shared token pool balance
-
+- For included token usage, a reminder is sent when remaining usage falls below **20%**
+- For Team Plan, a reminder is sent when the shared token pool balance falls below **$10**
 
 ### **Team usage (Admin view)**
 
@@ -129,11 +136,13 @@ Each member can view their own usage details, including:
 - Personal token consumption amount
 - Current VM configuration
 
+---
+
 ## **Admin Controls**
 
-Organization owners manage Team Plan configuration and billing:
+Organization owners and admins can manage Team Plan configuration and usage.
 
-#### **Add members to Team Plan**
+### **Add members to Team Plan**
 
 <Steps>
   <Step title="Go to Usage">
@@ -170,9 +179,9 @@ Admins can add members into Team Plan within the range of already purchased seat
 <Card title="How to join an Organization?" icon="arrow-right-long" href="/documentation/teams/org">
 </Card>
 
-#### **Model usage limits**
+### **Model usage limits**
 
-Team Plan Admins can restrict which AI models each team member is allowed to use, giving the organization more precise control over model usage and cost.
+Team Plan admins can restrict which AI models each team member is allowed to use, giving the organization more precise control over model usage and cost.
 
 **Where to configure**
 
@@ -218,20 +227,20 @@ Team Plan Admins can restrict which AI models each team member is allowed to use
 **Restriction scope**
 
 - Model limits apply at the **member level**
-- If a restricted member is the **owner** of a project, model selection inside all of that member’s projects will also be limited to the admin-defined range
+- If a restricted member creates a project, everyone in that project will only be able to use the models allowed under that member’s restriction
 - Unavailable models will appear disabled in the model selector
 
 <Frame>
   ![0418 Teamplan Modellimit Result](/images/0418-teamplan-modellimit-result.png)
 </Frame>
 
-#### **Modify member plans**
+### **Modify member plans**
 
 Admins can update:
 
 - Monthly token usage limits
 - VM configuration
-- Team Plan member assignments
+- Team Plan membership
 
 **Limit controls**
 
@@ -242,6 +251,11 @@ Admins can update:
 
 - VM upgrades are supported
 - Changes take effect immediately
+
+If the shared token pool has sufficient balance:
+
+- Upgrade costs can be deducted from the token pool
+- Additional seat costs can also be deducted from the token pool
 
 **VM downgrades**
 
@@ -268,6 +282,8 @@ Admins can update:
   ![Teamplanbill](/images/teamplanbill.png)
 </Frame>
 
+---
+
 ## **Renewal**
 
 Team Plan supports renewal before expiration.
@@ -284,23 +300,21 @@ This allows teams to continue using their seats and token pool without interrupt
   ![0418 Teamplan Renewalconfirm](/images/0418-teamplan-renewalconfirm.png)
 </Frame>
 
+---
+
 ## **Enterprise Payment**
 
-The new Team Plan also supports **enterprise offline payment and backend recharge** for contracted customers.
+Team Plan also supports enterprise offline payment for contracted customers.
 
-This mode is designed for enterprise clients who do not manage purchases directly from the frontend.
+This option is designed for enterprise clients who do not manage purchases directly from the frontend.
 
-Supported workflow:
+For enterprise payment support, users should contact the CodeBanana team.
 
-- Seats and token pool can be recharged from the backend based on enterprise agreements
-- No frontend purchase action is required from the customer
-- Product or engineering teams can assist with the setup and recharge process
-
-For enterprise payment support, users should contact the product or engineering team.
+---
 
 ## **Visibility of Time Information**
 
-Team Plan now provides better visibility into expiration and reset timelines.
+Team Plan provides visibility into expiration and reset timelines.
 
 <Frame>
   ![0418 Teamplan Timeline](/images/0418-teamplan-timeline.png)
@@ -323,34 +337,46 @@ Team Plan now provides better visibility into expiration and reset timelines.
 - The time when a member was added to Team Plan
 - This is shown in the **Added** column of **Members & Quotas**
 
+---
+
 ## **What’s Included**
 
 Team Plan includes the following benefits:
 
-- **300 requests / seat / month**
-  The reset cycle follows the purchase cycle, calculated on a 31-day monthly basis
-- **Flexible Seat Management**
+- **$25 token quota / seat / month**  
+  Each seat includes a fixed monthly token quota
+
+- **300 requests / seat / month**  
+  The reset cycle follows the purchase cycle and is shown in the usage view
+
+- **Flexible Seat Management**  
   Admins can manage Team Plan members at any time, and later add seats or top up the token pool
-- **Team Usage Limit Controls**
+
+- **Team Usage Limit Controls**  
   Admins can set monthly token usage limits for members to better control spending
-- **Custom VM Configurations**
+
+- **Custom VM Configurations**  
   Member VM configurations can be upgraded as needed
-- **Top up anytime, use on-demand**
+
+- **Top up anytime, use on-demand**  
   The token pool can be recharged at any time, with no minimum threshold
-- **Shared On-Demand Token Usage**
+
+- **Shared On-Demand Token Usage**  
   Team members share a common token resource pool for more flexible team-level usage allocation
 
-## **Legacy Team Plan Transition**
+---
 
-After the new Team Plan goes live, the previous Team Plan will be retired.
+## **Transition Note**
 
-- The old Team Plan entry is currently hidden
-- Existing customers are not affected
-- Purchased benefits remain valid until they are fully used
+The new Team Plan replaces the previous version.
+
+Existing customer benefits remain valid until they are fully used.
+
+---
 
 ## FAQs
 
-Answers to common questions about Team Plan
+Answers to common questions about Team Plan.
 
 <AccordionGroup>
   <Accordion title="Where can I purchase Team Plan?">
@@ -361,12 +387,20 @@ Answers to common questions about Team Plan
     Yes. Team Plan supports customizable seat counts, starting from a minimum of **1 seat**.
   </Accordion>
 
+  <Accordion title="What validity periods are available for Team Plan?">
+    Team Plan supports **1, 3, 6, and 12 months**.
+  </Accordion>
+
   <Accordion title="Does the token pool have a minimum top-up amount?">
-    No. The token pool amount is fully customizable, and **\$0** is allowed.
+    No. The token pool amount is fully customizable, and **$0** is allowed.
   </Accordion>
 
   <Accordion title="Is the token pool shared across the team?">
     Yes. The token pool is shared across all members in the Team Plan and can be used on demand.
+  </Accordion>
+
+  <Accordion title="What happens when the included token quota is exhausted?">
+    After the included token quota is used up, additional usage is deducted automatically from the shared team token pool.
   </Accordion>
 
   <Accordion title="Can different VM configurations be assigned to different members?">
@@ -385,6 +419,10 @@ Answers to common questions about Team Plan
     Yes. Admins can use **Top Up** from the Usage page to recharge the shared token pool at any time.
   </Accordion>
 
+  <Accordion title="Can seat upgrades or VM upgrades be paid from the token pool?">
+    Yes. If the shared token pool has sufficient balance, additional seat costs and member VM upgrade costs can be deducted from the token pool.
+  </Accordion>
+
   <Accordion title="How do admins add members to Team Plan?">
     Admins can add members from **Usage → Members & Quotas**, as long as the members are already in the organization and there are available purchased seats.
   </Accordion>
@@ -397,12 +435,16 @@ Answers to common questions about Team Plan
     Yes. In **Usage → Members & Quotas**, admins can configure model access for each member through the **Models** column. Members can be allowed to use all models or only a selected set. If a restricted member creates a project, everyone in that project will only be able to use the models allowed under that member’s restriction.
   </Accordion>
 
+  <Accordion title="When will Team Plan show usage warnings?">
+    CodeBanana sends a reminder when the shared token pool balance falls below **$10**.
+  </Accordion>
+
   <Accordion title="Where can I renew Team Plan?">
     Team Plan can be renewed from the **Usage** page by clicking **Renew** before expiration.
   </Accordion>
 
   <Accordion title="Can enterprise customers use offline payment instead of frontend purchase?">
-    Yes. Enterprise customers can use backend recharge and offline payment flows handled by the product or engineering team.
+    Yes. Enterprise customers can contact the CodeBanana team for offline payment support.
   </Accordion>
 
   <Accordion title="Will existing users of the old Team Plan lose their benefits?">
