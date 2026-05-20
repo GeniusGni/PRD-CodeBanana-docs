@@ -1,138 +1,178 @@
 ---
 title: "Billing & Plan"
-description: "Compare CodeBanana Free, Personal, and Professional plans, upgrade with monthly or yearly billing, apply promo codes, usage alerts for individual plans, understand requests, tokens, quotas, pay-as-you-go usage, VM tiers, and usage-based costs."
+description: "Compare CodeBanana Free, Personal, and Professional plans, including included token quota, VM tiers, monthly or yearly billing, token top-up, usage alerts for individual plans, and how token-based billing works."
 ---
 
-## Choosing your plan
+## **Choosing your plan**
 
-We offer flexible plans designed to scale with your application. Whether you are building a proof of concept or deploying for production, explore the feature breakdown below to find the tier that best aligns with your current needs.
+CodeBanana offers flexible plans for different levels of usage, from free trial access to heavier personal workloads.
 
-<AccordionGroup>
-  <Accordion title="Free">
-    Access all of core features at no cost and see what CodeBanana can do.
+### **Free**
 
-    - **30 agent requests** / month
-    - **20 MB** cloud storage
-    - **Mutiple** organization
-    - **2 vCPU, 4 GB RAM** cloud machine
+Free gives you full access to CodeBanana with a one-time trial quota.
 
-    <Card title="Plan features" icon="light-emergency-on">
-      No feature gating. Access everything, including collaboration, on the free plan.
-    </Card>
-  </Accordion>
+- **\$5 free token quota**
+- Valid during the **registration month**
+- **20 MB** cloud storage
+- No feature gating
 
-  <Accordion title="Personal">
-    Supercharge your workflow with dedicated power and privacy for serious individual projects.
+<Note>
+  Free plan token quota is issued once only. It expires at the end of the registration month and is not reissued.
+</Note>
 
-    - **300 agent requests** / month
-    - **1GB** cloud storage
-    - **Mutiple Tiers** of VM （2v 4GB, 4v 8GB, 8v 16GB)
+### **Personal**
 
-    <Card title="Plan features" icon="light-emergency-on">
-      - Higher request quotas
-      - Massive cloud storage
-      - Flexible VM tiers
-      - Complete environment isolation.
-    </Card>
-  </Accordion>
+Personal is designed for individual developers who need a dedicated environment and a higher included token quota.
 
-  <Accordion title="Professional">
-    Empower your team with maximum performance and advanced collaboration tools for scaling applications.
+- **\$25 included token quota / month**
+- **1 GB** cloud storage
+- Multiple VM tiers:
+  - **2 vCPU / 4 GB RAM**
+  - **4 vCPU / 8 GB RAM**
+  - **8 vCPU / 16 GB RAM**
 
-    - **1000 agent requests** / month
-    - **5GB** cloud storage
+<Note>
+  Personal plan pricing is made up of two parts: the VM fee and the included monthly token quota fee.
+</Note>
 
-    <Card title="Plan features" icon="light-emergency-on">
-      Massive request limits and cloud storage tailored for team collaboration.
-    </Card>
-  </Accordion>
-</AccordionGroup>
+### **Professional**
+
+Professional is designed for heavier individual workloads and larger projects.
+
+- **\$130 included token quota / month**
+- **5 GB** cloud storage
+- Available VM tiers:
+  - **4 vCPU / 8 GB RAM**
+  - **8 vCPU / 16 GB RAM**
+
+<Note>
+  Professional plan pricing also combines the VM fee and the included monthly token quota fee.
+</Note>
 
 <Card title="Ready to purchase?" icon="arrow-right" href="https://www.codebanana.com/en/membership">
-  View the price to find the most suitable plan.
+  View pricing and choose the plan that fits your needs.
 </Card>
 
-## Purchasing a plan
+---
 
-Once you have selected the plan that fits your needs, you can upgrade using the following methods：
+## **Purchasing a plan**
+
+Once you have selected the plan that fits your needs, you can upgrade from the pricing page.
 
 <Tip>
-  **Have a promo code?** Please apply it **before** proceeding to checkout, as it will not take effect automatically.
+  **Have a promo code?** Apply it **before** proceeding to checkout, as it will not take effect automatically afterward.
 </Tip>
 
 **To purchase a plan:**
 
 1. Click the **upgrade button** at the top right of your workspace
-2. Choose a suitable Plan
-3. Select a preferred billing cycle:
-   - **Yearly:** Save with an annual discount.
-   - **Monthly:** Pay month to month.
-4. Click the **VM tiers** to customize
-5. Click **Upgrade** inside the Plan you choose to checkout
+2. Choose a plan
+3. Select a VM tier
+4. Select a billing cycle:
+   - **Monthly** — pay month to month
+   - **Yearly** — save with an annual discount
+5. Click **Upgrade** to continue to checkout
 
 <Frame>
-  ![Price](/images/price.png)
+  ![Price](/images/0418-pricing.png)
 </Frame>
 
-## Requests & Token
+### **Yearly pricing**
 
-#### **What is a Request**
+Yearly billing applies a discount to the combined annual cost of:
 
-A **request** represents is counted every time the Agent returns a response.
+- The VM fee
+- The included token quota fee
 
-- Each prompt sent to the agent counts as one request
-- Includes:
-  - Code generation
-  - Q&A
-  - Task execution
+This means yearly pricing is calculated from the full plan value rather than from the VM fee alone.
 
-Plans typically include a fixed number of requests per month, depending on your subscription tier.
+---
 
-#### **What are Tokens**
+## **Token Quota and Billing**
 
-**Tokens** measure the actual amount of computation used by the model.
+### **What are Tokens**
 
-- Includes:
-  - Input (your prompt, context, files)
-  - Output (agent responses, generated code)
-- More complex tasks or larger context will consume more tokens
+**Tokens** measure the actual amount of model computation used during a task.
 
-Tokens are used to calculate **usage-based costs**, especially beyond included quotas.
+This includes:
 
-#### **How Billing Works**
+- **Input** — prompts, context, files, and instructions
+- **Output** — agent responses, generated code, and plans
 
-Usage is calculated based on both requests and tokens:
+More complex tasks, larger context windows, and more advanced models typically consume more tokens.
 
-1. **Within plan limits** Requests are deducted from your monthly quota
-2. **Beyond plan limits** Usage may switch to **pay-as-you-go (token-based billing)**
-3. **Team Agent vs Private Agent (My agent before)**
-   - Team Agent usage is charged to the **project owner**
-   - Private Agent usage is also charged to the **project owner**
+### **Included Token Quota**
 
-#### **Additional Considerations**
+Each plan includes a built-in token quota:
 
-- Using more advanced models or larger contexts may increase token consumption
-- Some features (e.g. support sessions or enhanced capabilities) may apply **multipliers to usage**
-- Usage details can be tracked in the **Usage dashboard**
+- **Free** — **\$5** one-time token quota
+- **Personal** — **\$25 / month**
+- **Professional** — **\$130 / month**
 
-#### **Usage Alerts**
+This included quota is part of the plan itself.
 
-CodeBanana provides usage alerts to help users track remaining quota before it is exhausted.
+### **Token Top-up**
 
-- A warning is shown when remaining usage falls below **20%**
-- When usage is fully consumed, a **Notification** is sent to inform the user
+If your included token quota is exhausted, you can continue using CodeBanana through **On-demand Usage (Top-up)**.
+
+Top-up is available for individual plans and lets you add token balance as needed without changing your current subscription.
+
+<Note>
+  Team Plan does not use personal top-up. Team usage is handled through the shared team token pool.
+</Note>
+
+### **How Billing Works**
+
+For individual plans, billing follows this structure:
+
+1. Your subscription price includes:
+   - A **VM fee**
+   - An **included token quota fee**
+2. Included token quota resets on your **subscription renewal date**
+3. Unused included quota does **not** roll over into the next cycle
+4. If your included quota is exhausted, you can continue through **Top-up**
+
+### **Usage Alerts**
+
+CodeBanana provides usage alerts to help individual users track remaining quota.
+
+- A reminder is shown when remaining **included token quota** falls below **20%**
 
 Usage alerts apply to:
 
-- Free plan requests
-- Included requests in paid plans
-- Token-related usage thresholds where applicable
+- Free plan token quota
+- Included token quota in paid individual plans
 
+---
 
-## FAQ
+## **FAQ**
 
-<Accordion title="Does Plan mode count as a request?">
-  Yes. A request is counted each time the Agent returns a response.
+<AccordionGroup>
+  <Accordion title="What is included in Free plan now?">
+    Free plan includes a one-time **\$5 token quota**, **20 MB** cloud storage, and access to all core product features without feature gating.
+  </Accordion>
 
-  In Plan mode, the agent runs in a read-only configuration under a different system prompt. Your instructions and any read-only tool usage used to inspect the current state are treated as input, and the generated plan is treated as output. Once the agent produces that output, it counts as one request.
-</Accordion>
+  <Accordion title="Does Free plan quota renew every month?">
+    No. Free plan quota is issued once during the registration month. It expires at the end of that month and is not reissued.
+  </Accordion>
+
+  <Accordion title="What happens when my included token quota is exhausted?">
+    If you are using an individual paid plan, you can continue through **On-demand Usage (Top-up)** without changing your subscription.
+  </Accordion>
+
+  <Accordion title="Can I top up tokens on Personal or Professional plans?">
+    Yes. Individual paid plans support token top-up after the included quota is used up.
+  </Accordion>
+
+  <Accordion title="How does yearly pricing work?">
+    Yearly pricing is based on the annual combined value of the VM fee and the included token quota fee, with an annual discount applied.
+  </Accordion>
+
+  <Accordion title="When will I receive a usage warning?">
+    CodeBanana shows a reminder when your remaining included token quota falls below **20%**.
+  </Accordion>
+
+  <Accordion title="Do unused tokens roll over to the next cycle?">
+    No. Unused included token quota does not roll over into the next billing cycle.
+  </Accordion>
+</AccordionGroup>
