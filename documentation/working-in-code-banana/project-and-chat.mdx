@@ -1,6 +1,6 @@
 ---
 title: "Projects and Chats"
-description: "Work with CodeBanana projects and chats, including project lists, GitHub and local projects, creating projects, project visibility across organizations, external projects, Projects and Chats tabs, User Guide files, adding organization members, inviting external contacts, project admins, member management, Discussion, Forward, Restore, notifications, and Request Support."
+description: "Work with CodeBanana projects and chats, including project lists, GitHub and local projects, creating projects, project visibility across organizations, external projects, Projects and Chats tabs, User Guide files, adding organization members, inviting external contacts, project admins, member management, Discussion, queue visibility, Forward, Restore, notifications, and Request Support."
 ---
 
 ## **Projects**
@@ -137,7 +137,7 @@ Add **existing members from your organization** directly into the project group 
 
 Bring external collaborators into the project using the **Invite external contacts** feature by email:
 
-- Sent a notification and email to invite an external friends
+- Sends a notification and email invitation to the external collaborator
 - They do **not become members of your organization**
 - Their access is limited to the project they are invited to
 
@@ -181,7 +181,7 @@ Only the **owner** has permission to perform these actions, ensuring that critic
 
 Projects and chats support an **Admin** role to make team collaboration more flexible.
 
-Admins can compete for control of the **Team Agent** on equal footing with other users who already have agent access. Previously, members needed the project owner to explicitly grant permission before they could interact with the Team Agent. Now, if a user is a project admin, they can directly take over agent access and start a conversation whenever the agent is not actively responding.
+Admins can take control of the **Team Agent** under the same access rules as other authorized users. Previously, members needed the project owner to explicitly grant permission before they could interact with the Team Agent. Now, if a user is a project admin, they can directly take over agent access and start a conversation whenever the agent is not actively responding.
 
 **Admin Permissions**
 
@@ -295,6 +295,16 @@ Chats support essential messaging capabilities for efficient communication:
   ![Messageaction](/images/messageaction.png)
 </Frame>
 
+#### **Queue Visibility**
+
+When multiple messages are sent to the **Team Agent**, the project shows queue status directly in the Team Agent view.
+
+- Team Agent displays how many messages are still waiting to be processed
+- All project members can see the current queue count
+- This helps the team understand whether the agent is currently busy or still processing earlier messages
+
+Queueing behavior is different in **Private Ask**, where each user has an isolated personal queue.
+
 ### **New Messages**
 
 New messages help you quickly identify incoming activity across tabs and notification, so you can stay aligned with your team in real time.
@@ -338,7 +348,7 @@ Notifications cover key events such as:
 - Agent permission requests and approvals
 - Organization join requests and status updates
 - External project invitation
-- Billing and usage updates (reach limited)
+- Billing and usage limit updates
 - Group invitation
 
 All notifications are centralized in the **Notifications panel**, where you can:
