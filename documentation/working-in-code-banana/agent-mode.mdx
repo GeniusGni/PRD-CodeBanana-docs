@@ -1,6 +1,6 @@
 ---
 title: "Agent modes"
-description: "Understand CodeBanana chat modes and agent modes, including Team Agent, Private Ask, Discussion, Discussion Coordinator (DC), Ask-only mode, Coding mode, CB Optimized Model, Claude Code, agent access control, project admins, and shared team collaboration."
+description: "Understand CodeBanana chat modes and agent modes, including Team Agent, Private Ask, Discussion, Discussion Coordinator (DC), Ask-only mode, Coding mode, shared and individual queue behavior, stopping controls, agent access control, project admins, and team collaboration."
 ---
 
 ## Project and Chat modes
@@ -11,7 +11,7 @@ Each project in CodeBanana has a corresponding group chat that supports three di
 
 Every project group chat includes three modes:
 
-#### Team agent
+#### **Team Agent**
 
 Team Agent mode is designed for **shared, controlled collaboration with AI** in a team environment. Instead of each individual interacting with a separate assistant, the team works with a **single, project-level agent** that operates on a shared codebase, shared context, and shared objectives.
 
@@ -56,6 +56,38 @@ This model ensures that AI actions are **sequential, reviewable, and non-conflic
   ![Teamagentrequest](/images/Teamagentrequest.png)
 </Frame>
 
+#### **Queueing and Stopping**
+
+When multiple users send messages to the **Team Agent**, they are processed through a shared queue.
+
+**Queueing behavior**
+
+- All messages are processed in **send-time order**
+- The entire project shares **one Team Agent queue**
+- Multiple messages from the same user are placed at the **end of the queue** in sequence
+- The queue limit is **50 messages**
+- If the queue is full, the user will see: **“Agent is busy, please try again later”**
+- After one message finishes, the next queued message starts automatically
+- If a queued message is withdrawn, its position is released and later messages move forward automatically
+
+**Queue visibility**
+
+- The Team Agent view shows the current queue status, including how many messages are still waiting
+- All members in the project can see the current queue count
+
+**Who can stop a message**
+
+- The **message sender** can stop their own message, whether it is currently running or still waiting in the queue
+- The **project owner** can stop any message in the Team Agent queue
+- Other members cannot stop messages started by other users
+
+**What happens after stopping**
+
+- Any content already generated is **kept**
+- The queue slot is released immediately
+- The next queued message starts automatically
+- The user can send a new message, which will enter the end of the queue
+
 #### **Agent Modes**
 
 Agent Modes define how the agent interacts with your project, from read-only assistance to direct code execution.
@@ -69,9 +101,9 @@ Agent Modes define how the agent interacts with your project, from read-only ass
   ![Agentmode](/images/Agentmode.png)
 </Frame>
 
-#### Private Ask
+#### **Private Ask**
 
-Private Ask mode（My agent or Private agnet before） provides **personal AI assistance within the project**, allowing users to work independently without affecting the shared workflow.
+Private Ask mode (previously My Agent / Private Agent) provides **personal AI assistance within the project**, allowing users to work independently without affecting the shared workflow.
 
 **What is Private Ask**
 
@@ -81,13 +113,25 @@ It is designed for:
 
 - Asking questions
 - Planning tasks
-- Exploring ideas All interactions are **isolated from the team’s active workflow**.
-- **Usage Characteristics**
-  - Primarily operates in **ask mode (read-only)**
-  - Can be used **in parallel with Team Agent sessions**
-  - Does not modify the shared project
-  - Usage is **charged to** the project owner, not the **individual user**
-  - Follows the user’s personal plan or usage-based billing
+- Exploring ideas
+
+All interactions are **isolated from the team’s active workflow**.
+
+**Usage Characteristics**
+
+- Primarily operates in **ask mode (read-only)**
+- Can be used **in parallel with Team Agent sessions**
+- Does not modify the shared project
+- Usage is attributed according to the project’s billing context
+
+#### **Queueing behavior**
+
+Private Ask uses an **individual queue** instead of the shared Team Agent queue.
+
+- Only your own messages are queued together
+- Your Private Ask queue is fully isolated from other users
+- Messages are still processed in send-time order
+- Stopping a message only affects your own Private Ask session
 
 My Agent enables users to stay productive individually, while keeping the team-level collaboration **structured and conflict-free**.
 
@@ -102,12 +146,8 @@ Discussion mode is a **team-wide communication space** designed for open collabo
 **What is Discussion**
 
 - A shared chat channel where team members can discuss ideas, align on requirements, and coordinate work
-- It serves as the **human layer of collaboration**, separate from direct agent execution
+- It serves as the **human-first layer of collaboration**, separate from direct execution workflows
 - Discussion is also the place where teams can activate a built-in coordination layer when needed
-
-<Frame>
-  ![Disscussion](/images/Disscussion.png)
-</Frame>
 
 **Usage Characteristics**
 
@@ -140,7 +180,7 @@ DC can be activated in two main ways:
 - **@mention DC**
 - **Reply to or quote an agent message in Discussion**
 
-Once activated, DC can stay engaged for the current thread if it determines that follow-up coordination is still needed. When the coordination task is complete, it returns to silent mode automatically.
+Once activated, DC can remain engaged if it determines that the current thread still requires follow-up coordination. When the coordination task is complete, it returns to silent mode automatically.
 
 #### **DC Boundaries**
 
@@ -160,3 +200,7 @@ Instead, DC helps move discussion forward by:
 - Passing work to the appropriate agent when needed
 
 This makes Discussion a lightweight coordination layer, while keeping actual execution in the correct agent mode.
+
+<Frame>
+  ![Disscussion](/images/Disscussion.png)
+</Frame>
