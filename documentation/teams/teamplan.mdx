@@ -1,6 +1,6 @@
 ---
 title: "Team Plan"
-description: "Configure CodeBanana Team Plan for organizations with customizable seats, shared token pool billing, seat-based VM configurations, flexible validity periods, usage alerts, member limits, model usage limits, renewals, enterprise payment support, and visibility into requests, tokens, and expiration timelines."
+description: "Configure CodeBanana Team Plan for organizations with customizable seats, shared token pool billing, seat-based VM configurations, flexible validity periods, usage alerts, member limits, model usage limits, renewals, enterprise payment support, and visibility into tokens, limits, and expiration timelines."
 ---
 
 ## **What is Team Plan**
@@ -33,7 +33,7 @@ Team Plan supports flexible purchase configuration based on actual team needs:
 - Minimum purchase starts from **1 seat**
 - The token pool amount can be customized
 - No minimum token pool amount is required
-- A token pool of **$0** is allowed
+- A token pool of **\$0** is allowed
 - The token pool is shared across the entire team
 
 ### **Validity period**
@@ -49,7 +49,7 @@ Team Plan supports multiple validity options:
 
 Each seat includes a fixed amount of token quota:
 
-- **$25 / seat / month**
+- **\$25 / seat / month**
 
 When the included token quota is exhausted, additional usage is deducted from the shared team token pool.
 
@@ -57,9 +57,9 @@ When the included token quota is exhausted, additional usage is deducted from th
 
 Each seat can be configured with one of three VM tiers:
 
-- **2 vCPU / 4GB** — **$45 / seat / month**
-- **4 vCPU / 8GB** — **$65 / seat / month**
-- **8 vCPU / 16GB** — **$105 / seat / month**
+- **2 vCPU / 4GB** — **\$45 / seat / month**
+- **4 vCPU / 8GB** — **\$65 / seat / month**
+- **8 vCPU / 16GB** — **\$105 / seat / month**
 
 <Note>
   Team Plan seat pricing follows the same VM tier structure as Personal Plan.
@@ -91,7 +91,10 @@ This is the main entry for:
 The **Usage** page provides both team-level and member-level visibility.
 
 <Frame>
-  ![0418 Teamplan Usermanage](/images/0418-teamplan-usermanage.png)
+  <img
+    src="/images/0418-teamplan-usermanage.png"
+    alt="0418 Teamplan Usermanage"
+  />
 </Frame>
 
 ### **Usage Alerts**
@@ -99,7 +102,7 @@ The **Usage** page provides both team-level and member-level visibility.
 CodeBanana provides usage alerts to help teams track remaining quota.
 
 - For included token usage, a reminder is sent when remaining usage falls below **20%**
-- For Team Plan, a reminder is sent when the shared token pool balance falls below **$10**
+- For Team Plan, a reminder is sent when the shared token pool balance falls below **\$10**
 
 ### **Team usage (Admin view)**
 
@@ -132,8 +135,8 @@ Validity rule:
 
 Each member can view their own usage details, including:
 
-- Requests used / total requests
 - Personal token consumption amount
+- Current token limit status
 - Current VM configuration
 
 ---
@@ -324,13 +327,13 @@ Team Plan provides visibility into expiration and reset timelines.
 
 - Team Plan seat expiration time
 - Token pool expiration time
-- Reset time for personal requests
 - Reset time for on-demand token limits
+- Reset time for member token limits
 
 ### **Member can view**
 
-- Their own request reset time
 - Their own on-demand token limit reset time
+- Their own monthly token limit reset time
 
 ### **Everyone can view**
 
@@ -343,25 +346,17 @@ Team Plan provides visibility into expiration and reset timelines.
 
 Team Plan includes the following benefits:
 
-- **$25 token quota / seat / month**  
+- **\$25 token quota / seat / month**\
   Each seat includes a fixed monthly token quota
-
-- **300 requests / seat / month**  
-  The reset cycle follows the purchase cycle and is shown in the usage view
-
-- **Flexible Seat Management**  
+- **Flexible Seat Management**\
   Admins can manage Team Plan members at any time, and later add seats or top up the token pool
-
-- **Team Usage Limit Controls**  
+- **Team Usage Limit Controls**\
   Admins can set monthly token usage limits for members to better control spending
-
-- **Custom VM Configurations**  
+- **Custom VM Configurations**\
   Member VM configurations can be upgraded as needed
-
-- **Top up anytime, use on-demand**  
+- **Top up anytime, use on-demand**\
   The token pool can be recharged at any time, with no minimum threshold
-
-- **Shared On-Demand Token Usage**  
+- **Shared On-Demand Token Usage**\
   Team members share a common token resource pool for more flexible team-level usage allocation
 
 ---
@@ -392,7 +387,7 @@ Answers to common questions about Team Plan.
   </Accordion>
 
   <Accordion title="Does the token pool have a minimum top-up amount?">
-    No. The token pool amount is fully customizable, and **$0** is allowed.
+    No. The token pool amount is fully customizable, and **\$0** is allowed.
   </Accordion>
 
   <Accordion title="Is the token pool shared across the team?">
@@ -436,7 +431,7 @@ Answers to common questions about Team Plan.
   </Accordion>
 
   <Accordion title="When will Team Plan show usage warnings?">
-    CodeBanana sends a reminder when the shared token pool balance falls below **$10**.
+    CodeBanana sends a reminder when the shared token pool balance falls below **\$10**.
   </Accordion>
 
   <Accordion title="Where can I renew Team Plan?">
