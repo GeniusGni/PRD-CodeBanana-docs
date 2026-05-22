@@ -1,6 +1,6 @@
 ---
 title: "Agent modes"
-description: "Understand CodeBanana chat modes and agent modes, including Team Agent, Private Ask, Discussion, Discussion Coordinator (DC), Ask-only mode, Coding mode, shared and individual queue behavior, stopping controls, agent access control, project admins, and team collaboration."
+description: "Understand CodeBanana chat modes and agent modes, including Team Agent, Private Ask, Discussion, Discussion Coordinator (DC), Coding mode, read-only agent behavior, shared and individual queue behavior, stopping controls, agent access control, project admins, and team collaboration."
 ---
 
 ## Project and Chat modes
@@ -133,7 +133,7 @@ Private Ask uses an **individual queue** instead of the shared Team Agent queue.
 - Messages are still processed in send-time order
 - Stopping a message only affects your own Private Ask session
 
-My Agent enables users to stay productive individually, while keeping the team-level collaboration **structured and conflict-free**.
+Private Ask enables users to stay productive individually, while keeping team-level collaboration **structured and conflict-free**.
 
 <Frame>
   ![Myagent](/images/Myagent.png)
@@ -158,9 +158,7 @@ Discussion mode is a **team-wide communication space** designed for open collabo
 
 #### **Discussion Coordinator (DC)**
 
-Discussion includes a built-in **Discussion Coordinator (DC)**.
-
-DC acts as a coordinator inside group discussion rather than as a direct execution agent.
+Discussion includes a built-in **Discussion Coordinator (DC)**. DC acts as a coordinator inside group discussion rather than as a direct execution agent.
 
 It can:
 
@@ -171,22 +169,27 @@ It can:
 
 #### **How DC Works**
 
-DC is **silent by default**.
-
-It does not actively interrupt the discussion, and only responds when it is explicitly activated.
-
-DC can be activated in two main ways:
+DC is **silent by default**. It does not actively interrupt the discussion, and only responds when it is explicitly activated. DC can be activated in two main ways:
 
 - **@mention DC**
-- **Reply to or quote an agent message in Discussion**
+- **Reply to a DC message in Discussion**
+
+**Activation paths**
+
+- In the **Team Agent** chat box, mentioning DC activates it through **A2A**, which is useful for multi-agent collaboration
+- In the **Discussion** chat box, mentioning DC activates it directly for in-group coordination
+- In **Discussion**, replying to a message sent by DC activates it again
+
+**Reply limitations**
+
+- Only replies to messages with the **Discussion** label can reactivate DC
+- Replying to messages from other agents does **not** activate DC
 
 Once activated, DC can remain engaged if it determines that the current thread still requires follow-up coordination. When the coordination task is complete, it returns to silent mode automatically.
 
 #### **DC Boundaries**
 
-DC is a coordinator, not an execution agent.
-
-It does **not** directly:
+DC is a coordinator, not an execution agent. It does **not** directly:
 
 - Write code
 - Modify files
@@ -197,9 +200,7 @@ Instead, DC helps move discussion forward by:
 
 - Organizing context
 - Clarifying requests
-- Passing work to the appropriate agent when needed
-
-This makes Discussion a lightweight coordination layer, while keeping actual execution in the correct agent mode.
+- Passing work to the appropriate agent when needed This makes Discussion a lightweight coordination layer, while keeping actual execution in the correct agent mode.
 
 <Frame>
   ![Disscussion](/images/Disscussion.png)
