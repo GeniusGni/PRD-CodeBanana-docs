@@ -5,6 +5,104 @@ icon: "rotate-left"
 rss: true
 ---
 
+<Update label="05/19/2026">
+  ## **DC Agent, Messaging, Skill Market, and Collaboration Experience Updates**
+
+  This release includes updates across Discussion, messaging, Skill Market, organization structure, agent capabilities, viewer support, and multiple interaction improvements across the product.
+
+  ### **DC Agent** <Badge color="blue" size="lg">New</Badge>
+
+  **Discussion** now supports **DC Agent**.
+
+  This gives teams an additional agent directly inside Discussion, making it easier to coordinate conversations, keep context together, and support group collaboration workflows.
+
+  ### **Message queue mechanism** <Badge color="blue" size="lg">New</Badge>
+
+  Messaging now includes a **queue mechanism**.
+
+  This improves message handling in scenarios where multiple actions or requests happen in sequence, making the overall interaction flow more stable and easier to follow.
+
+  ### **Skill Market updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The installed Skill list now includes an **Org Badge** indicator.
+
+  Skill-related services have also been significantly improved, with better stability for skill download and backup workflows. These updates make Skill usage and management more reliable across projects.
+
+  ### **Organization structure and Contacts updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  This release includes several improvements to organization structure and contact management.
+
+  Fixed an issue where organization structure data was not written correctly in some registration scenarios. The department tree in **Contacts** now supports expand and collapse behavior, making organization browsing clearer. Organization nodes and external contact nodes now also include icons for better visual recognition.
+
+  ### **Agent updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Agent conversations now include **message timestamps** and **cross-date markers**.
+
+  These updates make date changes in conversations easier to recognize and help reduce confusion in time-sensitive agent interactions.
+
+  Agent capabilities have also been expanded with new workflow support. Agents can now create **webhook tasks**, enabling more flexible integrations and automation scenarios. Group chat management has also been expanded, with support for deleting group chats and updating group chat information.
+
+  This release also adds multimedia generation capabilities. Agents can now support both image and video generation workflows.
+
+  In addition, new model options have been added, model-related configuration issues have been fixed, and the model list order has been updated. Project creation now also supports improved multilingual behavior, with better support for internationalized experiences.
+
+  ### **Viewer update** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The **Viewer** area now supports previewing compressed archive files.
+
+  This expands in-product preview support and makes it easier to inspect packaged files without leaving the workspace.
+
+  ### **Input box and message experience updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The input and message experience has been improved across attachments, search, quoting, and long-message handling.
+
+  Attachments are now cached by tab and project, which helps prevent uploaded files from being lost when switching pages. Fixed an issue where pinyin-based user search in the input box could return unrelated members. Fixed a case where numbers could occasionally be lost when using **Sogou Input Method**. Quoted message line wrapping has also been improved.
+
+  Sent long messages now support automatic **expand / collapse** behavior, making lengthy content easier to read.
+
+  ### **@ mention update** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Fixed an occasional issue where the **@ mention** panel could appear even when no content had been entered after triggering **@**.
+
+  This makes the mention experience more stable and predictable.
+
+  ### **Project name display update** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Fixed an issue where project names could fail to display correctly when the **Owner** nickname was too long.
+
+  This improves readability in project-related views.
+
+  ### **Project list updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The **Project List** and **Chat List** now support automatic positioning.
+
+  When switching between the two tabs, the system now automatically associates the corresponding item and keeps it within the visible area. The pin and unpin prompt copy has also been updated in Chinese.
+
+  ### **Members and agent name updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The **Members** dialog has been improved so that it closes automatically after an invite is sent.
+
+  This release also improves the display and naming behavior of **Personal Agent**. Fixed an issue where the **Owner** could be missing from the Members list, and fixed a case where entering **@** could send directly in unintended scenarios.
+
+  ### **A2A dialog update** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The A2A dialog has been optimized for group owners.
+
+  Group owners no longer see the permission dropdown in this flow and now default to **Can Edit**.
+
+  ### **Forwarding and avatar display updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  Fixed an issue affecting avatar and display name presentation in forwarded messages.
+
+  This makes forwarded content easier to read and improves message source recognition.
+
+  ### **Conversation flow updates** <Badge color="yellow" size="lg">Improve</Badge>
+
+  The **MermaidDiagram** flowchart component now includes a close button in fullscreen mode.
+
+  This release also fixes and improves formatting behavior for user-sent rich content, making conversation rendering more consistent.
+</Update>
+
 <Update label="05/14/2026">
   ## **Team Plan, Organization, Agent, Viewer, and Interaction Updates**
 
@@ -105,7 +203,7 @@ rss: true
   This release also improves the display and naming behavior of **Personal Agent**. Fixed an issue where the **Owner** could be missing from the Members list, and fixed a case where entering **@** could send directly in unintended scenarios.
 
   ### **A2A dialog update** <Badge color="yellow" size="lg">Improve</Badge>
- 
+
   The A2A dialog has been optimized for group owners.
 
   Group owners no longer see the permission dropdown in this flow and now default to **Can Edit**.
