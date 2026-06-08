@@ -51,7 +51,7 @@ Each seat includes a fixed amount of token quota:
 
 - **\$25 / seat / month**
 
-When the included token quota is exhausted, additional usage is deducted from the shared team token pool.
+Team Plan usage is also managed through member-level limits and the shared organization token pool.
 
 ### **VM tiers**
 
@@ -96,10 +96,23 @@ The **Usage** page provides both team-level and member-level visibility.
 
 ### **Usage Alerts**
 
-CodeBanana provides usage alerts to help teams track remaining quota.
+CodeBanana provides usage alerts for Team Plan across both member-level limits and the shared organization token pool.
 
-- For included token usage, a reminder is sent when remaining usage falls below **20%**
-- For Team Plan, a reminder is sent when the shared token pool balance falls below **\$10**
+**Member on-demand limit**
+
+- A reminder is shown when a member’s remaining on-demand limit is **10% or less and no more than \$10**
+- Each user receives this reminder at most **once per day**
+- The reminder is triggered independently for each user
+- The reminder asks the user to contact the organization owner or admin before usage is interrupted
+  **_Reminder text_**
+  > You're almost at your on-demand limit ({usedPct}% used). Reach out to your organization owner or admin to increase your limit before usage is interrupted.
+
+**Shared organization token pool**
+
+- A reminder is shown when the shared token pool balance falls below **10%**
+- This reminder is intended for the organization owner or admin so the pool can be topped up in time
+  **_Reminder text_**
+  > Your organization's shared token budget is almost depleted — \${remaining} left. Please contact your organization owner or admin to top up soon and keep your team running smoothly.
 
 ### **Team usage (Admin view)**
 
@@ -238,7 +251,7 @@ Admins can update:
 **Limit controls**
 
 - Members can only use token resources within the configured monthly limit
-- Usage beyond the limit will be blocked until the limit is adjusted or the cycle resets
+- Usage beyond the limit will be handled according to the current Team Plan limit and shared pool settings
 
 **VM upgrades**
 
@@ -309,13 +322,11 @@ Team Plan provides visibility into expiration and reset timelines.
 
 - Team Plan seat expiration time
 - Token pool expiration time
-- Reset time for on-demand token limits
-- Reset time for member token limits
+- Reset time for member on-demand limits
 
 ### **Member can view**
 
-- Their own on-demand token limit reset time
-- Their own monthly token limit reset time
+- Their own on-demand limit reset time
 
 ### **Everyone can view**
 
@@ -347,7 +358,7 @@ Team Plan includes the following benefits:
 
 The new Team Plan replaces the previous version.
 
-Existing customer benefits remain valid until they are fully used.
+Existing Team Plan users are not affected by the transition. They can continue using their current Team Plan benefits until those benefits expire or are fully used.
 
 ---
 
@@ -377,7 +388,7 @@ Answers to common questions about Team Plan.
   </Accordion>
 
   <Accordion title="What happens when the included token quota is exhausted?">
-    After the included token quota is used up, additional usage is deducted automatically from the shared team token pool.
+    Team Plan usage can continue according to the current organization token pool and member limit configuration.
   </Accordion>
 
   <Accordion title="Can different VM configurations be assigned to different members?">
@@ -412,8 +423,8 @@ Answers to common questions about Team Plan.
     Admins can add members from **Usage → Members & Quotas**, as long as the members are already in the organization and there are available purchased seats.
   </Accordion>
 
-  <Accordion title="What happens when a member reaches their token usage limit?">
-    Once a member reaches the configured monthly token limit, they can no longer continue using token-based resources until the limit is adjusted by the admin or the usage cycle resets.
+  <Accordion title="How are member token limits used in Team Plan?">
+    Team Plan supports member-level token limits so organizations can control usage more precisely. When a member approaches their configured on-demand limit, CodeBanana may show a reminder based on the current warning rules. Limit handling and available usage also depend on the organization’s shared token pool configuration.
   </Accordion>
 
   <Accordion title="Can admins restrict which AI models team members can use?">
@@ -421,7 +432,10 @@ Answers to common questions about Team Plan.
   </Accordion>
 
   <Accordion title="When will Team Plan show usage warnings?">
-    CodeBanana sends a reminder when the shared token pool balance falls below **\$10**.
+    Team Plan uses different warning rules for different types of usage.
+
+    - A member receives a reminder when their remaining on-demand limit is **10% or less and no more than \$10**
+    - The organization owner or admin receives a reminder when the shared token pool balance falls below **10%**
   </Accordion>
 
   <Accordion title="Where can I renew Team Plan?">
@@ -433,6 +447,6 @@ Answers to common questions about Team Plan.
   </Accordion>
 
   <Accordion title="Will existing users of the old Team Plan lose their benefits?">
-    No. Existing Team Plan users can continue using their current benefits until they are fully exhausted.
+    No. Existing Team Plan users are not affected by the transition. They can continue using their current Team Plan benefits until those benefits expire or are fully used.
   </Accordion>
 </AccordionGroup>

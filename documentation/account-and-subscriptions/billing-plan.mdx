@@ -136,12 +136,18 @@ For individual plans, billing follows this structure:
 
 CodeBanana provides usage alerts to help individual users track remaining quota.
 
-- A reminder is shown when remaining **included token quota** falls below **20%**
+- A reminder is shown when the remaining token balance in your plan falls below **10%**
+  **_Reminder text_**
+  > You're running low on tokens — \${remaining} left in your plan. Top up or upgrade now to keep your work uninterrupted.
 
 Usage alerts apply to:
 
 - Free plan token quota
 - Included token quota in paid individual plans
+
+<Note>
+  If you upgrade from Free to a paid individual plan while your remaining balance is already low, CodeBanana will not immediately send the same low-token reminder again.
+</Note>
 
 ---
 
@@ -169,7 +175,11 @@ Usage alerts apply to:
   </Accordion>
 
   <Accordion title="When will I receive a usage warning?">
-    CodeBanana shows a reminder when your remaining included token quota falls below **20%**.
+    CodeBanana shows a reminder when the remaining token balance in your plan falls below **10%**.
+
+    Reminder text:
+
+    > You're running low on tokens — \${remaining} left in your plan. Top up or upgrade now to keep your work uninterrupted.
   </Accordion>
 
   <Accordion title="Do unused tokens roll over to the next cycle?">
