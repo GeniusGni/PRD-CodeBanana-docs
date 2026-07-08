@@ -74,6 +74,9 @@ This allows teams to interact with the agent **without entering the CodeBanana i
 
 ## **IM Integration Guide**
 
+<Frame>
+</Frame>
+
 <AccordionGroup>
   <Accordion title="Feishu (Lark)">
     #### **Setup**
@@ -119,24 +122,39 @@ This allows teams to interact with the agent **without entering the CodeBanana i
   <Accordion title="WeCom (Enterprise WeChat)">
     #### **Setup**
 
-    - Admin Console → Applications → Create
-    - Configure name, logo, and visibility （All）
+    - Log in to [https://work.weixin.qq.com/wework\_admin/frame#/manageTools](https://work.weixin.qq.com/wework_admin/frame#/manageTools)
+    - Go to Security and Management → Management Tool
+
+    Create Intelligent Zone / Intelligent robot → Create Intelligent robot → Create manually
+
+    <Frame>
+      ![Image](/images/image-2.png)
+    </Frame>
+
+    - Configure name, logo, and visibility （All）→ **Save**
 
     #### **Messaging Configuration**
 
-    - Enable API message receiving
-    - Generate:
-      - Token
-      - EncodingAESKey
+    - Edit the robot → Click **create by API mode**\
+      <Frame>
+        ![Image](/images/image-3.png)
+      </Frame>
+    - Choose keep-alive mode, and get **Bot ID** and **Secret**\
+      <Frame>
+        ![Image](/images/image-4.png)
+      </Frame>
+    - Go back to CodeBanana,
+      - Go to IM Setting
+      - Add a new bot
+    - Configure as follow & **Save**\
+      <Frame>
+        ![Image](/images/image-5.png)
+      </Frame>
 
-    #### **Webhook Setup**
-
-    - Copy Webhook URL from **IM Settings**
-    - Paste into WeCom server configuration
-
-    #### **Constraints**
-
-    - Webhook domain must match the enterprise’s registered domain
+    - **\[Important\]** Link a CodeBanana project to use the IM channel\
+      <Frame>
+        ![Image](/images/image-6.png)
+      </Frame>
   </Accordion>
 
   <Accordion title="QQ">
