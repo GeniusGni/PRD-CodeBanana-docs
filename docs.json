@@ -199,7 +199,8 @@
               "zh/changelog/changelog"
             ]
           }
-        ]
+        ],
+        "hidden": true
       }
     ]
   },
