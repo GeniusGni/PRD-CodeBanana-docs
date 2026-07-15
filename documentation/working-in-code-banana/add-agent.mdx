@@ -83,25 +83,18 @@ A Personal Agent is the user’s own AI counterpart inside team collaboration. I
 
 ### **Core Characteristics**
 
-- **One Personal Agent per user per organization**  
-  Each user has a separate Personal Agent in each organization. These agents are isolated from one another, and their configuration, memory, and context do not carry across organizations.
-
-- **Automatically joins projects**  
-  When a user is added to a project or Discussion group, their Personal Agent is automatically added as well.
-
-- **Automatically leaves projects**  
-  When a user leaves a project, their Personal Agent leaves the group at the same time.
-
-- **Passive by default**  
-  Personal Agent stays silent unless it is explicitly triggered, such as by being mentioned with `@`.
+- **One Personal Agent per user per organization**<br />Each user has a separate Personal Agent in each organization. These agents are isolated from one another, and their configuration, memory, and context do not carry across organizations.
+- **Automatically joins projects**<br />When a user is added to a project or Discussion group, their Personal Agent is automatically added as well.
+- **Automatically leaves projects**<br />When a user leaves a project, their Personal Agent leaves the group at the same time.
+- **Passive by default**<br />Personal Agent stays silent unless it is explicitly triggered, such as by being mentioned with `@`.
 
 ### **Permission Rules**
 
 Personal Agent is designed as a private user-owned agent space, so interaction permissions depend on who initiates the conversation.
 
 | Initiator | Permission | Description |
-|-----------|------------|-------------|
-| **The user themself** | Read + Write | Can trigger both read and write actions, including modifying files inside the Personal Agent project |
+| --- | --- | --- |
+| **The user themself** | Read \+ Write | Can trigger both read and write actions, including modifying files inside the Personal Agent project |
 | **Other users via @mention** | Read only | Can only retrieve information and receive replies, but cannot trigger file changes or other write actions |
 
 > **Security boundary:** Personal Agent is a private agent space. Only the owner can use it to perform write operations. When other users mention it, it responds in read-only mode.
@@ -120,14 +113,9 @@ It can help with:
 
 ### **Typical Use Cases**
 
-- **Answer on the user’s behalf**  
-  Other members can mention a user’s Personal Agent to ask about work that person is responsible for. The agent can respond based on the user’s memory and context.
-
-- **Preserve personal preferences**  
-  Users can teach the agent their working style, collaboration habits, and output preferences, which can then continue to apply across projects.
-
-- **Handle personal workflows**  
-  Users can privately ask the agent to organize notes, review past discussions, plan tasks, or retrieve historical information.
+- **Answer on the user’s behalf**<br />Other members can mention a user’s Personal Agent to ask about work that person is responsible for. The agent can respond based on the user’s memory and context.
+- **Preserve personal preferences**<br />Users can teach the agent their working style, collaboration habits, and output preferences, which can then continue to apply across projects.
+- **Handle personal workflows**<br />Users can privately ask the agent to organize notes, review past discussions, plan tasks, or retrieve historical information.
 
 ### **Why It Matters**
 
