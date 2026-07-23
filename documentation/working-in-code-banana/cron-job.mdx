@@ -15,7 +15,7 @@ This allows the agent to operate **asynchronously**, even when you are not activ
 
 ## **Types of Cron Jobs**
 
-There are two main types:
+There are three main types:
 
 ### **Heartbeat (Interval-based)**
 
@@ -38,7 +38,24 @@ Runs tasks at specific times or based on triggers.
   - Custom intervals
 - **Event-based**:
   - File Watch（Triggered when files are added, modified, or deleted）
-  - Webhook
+
+### **Webhook（External Event-based）**
+
+Webhook allows external systems to trigger an agent task through an HTTP POST request.
+
+Instead of running automatically based on time, webhook tasks are executed when an external service sends a request to the generated webhook endpoint.
+
+Common use cases:
+
+- Trigger an agent workflow after a system event
+- Connect CodeBanana with external services
+- Automate workflows based on third-party events
+
+Examples:
+
+- A CI/CD system triggers an agent to review deployment results
+- A monitoring system sends an alert and asks the agent to analyze the issue
+- An external application triggers a report generation workflow
 
 ### **How to Choose**
 
@@ -72,7 +89,7 @@ Task management:
 - Click **Reset** to restore the default configuration
 
 <Frame>
-  ![Heartbeat](/images/heartbeat.png)
+  ![Heartbeat](/images/0723-heartbeat.png)
 </Frame>
 
 **Scheduled Task**
@@ -90,9 +107,10 @@ Task management:
      - File modified
      - File deleted Example: trigger a task when an Excel file is deleted from a folder
 3. Configure the **Execution Flow**
+   - Choose a model to execute the task, which can be edited later
    - Define what the agent should do when the task is triggered
    - This can include any automated action or workflow handled by the agent
 
 <Frame>
-  ![Schaduled](/images/schaduled.png)
+  ![Schaduled](/images/0723-createacron.png)
 </Frame>
