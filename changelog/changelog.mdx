@@ -5,6 +5,72 @@ icon: "rotate-left"
 rss: true
 ---
 
+<Update label="07/07/2026">
+  ## **Internationalization, Model Updates, and Mention Experience Improvements**
+
+  This release includes updates across internationalization, default model settings, message forwarding, @Mention experience, navigation interactions, file tree display, and GitLab project creation.
+
+  ## **Internationalization updates**
+
+  CodeBanana now supports language switching across key user-facing pages.
+
+  Users can now switch between **English** and **Chinese** from the login page, homepage header, and Personal Center. Main-level pages now support Chinese display for a more localized experience.
+
+  ## **Default model update**
+
+  The default model for new projects has been updated to **GLM-5.2**.
+
+  New projects will now use GLM-5.2 as the default model, while users can still select other available models based on their needs.
+
+  ## **Message forwarding improvements**
+
+  The forwarding experience has been improved across message display and interaction.
+
+  Updates include:
+
+  - Improved forwarding titles and message prompts
+  - Added source group information to forwarded messages
+  - Fixed an issue where chat history and images in forwarded messages could be incorrectly clickable
+
+  These updates make forwarded conversations easier to understand and navigate.
+
+  ## **@Mention improvements**
+
+  The **@Mention** experience has been significantly improved across file selection, input behavior, and stability.
+
+  Files in the @Mention panel are now displayed as a file tree by default, making project structure easier to browse. Skill filtering has also been improved, and highlight colors are now aligned with the App experience.
+
+  Input behavior has been optimized with fixes for multiple scenarios, including:
+
+  - Incorrect line breaks when using Command \+ Enter
+  - @Mention not triggering correctly
+  - Incorrect insertion position after mentioning
+  - Project names containing special characters not being recognized
+  - Unexpected @ triggering behavior at the beginning, middle, or end of text
+
+  Additional stability improvements include fixes for React #300 errors in the Mention system, popup positioning issues, cursor calculation problems involving BR tags, ineffective line breaks after @Mention, and occasional crashes.
+
+  The @Mention project list now also refreshes in real time.
+
+  ## **Interaction improvements**
+
+  Navigation and switching behavior have been optimized.
+
+  Debounce handling has been added to **Sidebar**, **ChatList**, and **ProjectList** to reduce unnecessary requests caused by frequent switching between chats and projects.
+
+  ## **File tree improvements**
+
+  The file tree interface has been visually optimized.
+
+  These updates improve readability and make project file navigation more consistent.
+
+  ## **GitLab project creation improvements**
+
+  Fixed an issue where saved passwords could become unavailable after logging out of GitLab during project creation.
+
+  GitLab project import and creation flows are now more stable.
+</Update>
+
 <Update label="06/30/2026">
   ## **Team Plan, Organization Management, and Agent Updates**
 
