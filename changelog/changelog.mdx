@@ -5,6 +5,89 @@ icon: "rotate-left"
 rss: true
 ---
 
+<Update label="07/14/2026">
+  ## **Personal Agent, Project Management, and Message Experience Updates**
+
+  This release includes major improvements to **Personal Agent**, project customization, model availability, member management, message forwarding, and multiple stability improvements.
+
+  ## **Project avatar support**
+
+  Projects now support custom avatars.
+
+  Users can configure project avatars from:
+
+  **Chat area → Top-right “…” → Settings**
+
+  This provides more flexibility for identifying and managing projects across different collaboration scenarios.
+
+  ## **Personal Agent improvements**
+
+  **Personal Agent** has been significantly enhanced with broader project and usage awareness.
+
+  Personal Agent can now query and summarize:
+
+  - Project data, member information, and newly joined projects
+  - Personal usage and consumption data
+  - Team Agent and Private Ask messages (previously only Discussion messages were supported)
+  - Daily, weekly, and monthly summaries
+  - Project activity data
+  - Usage breakdown by model
+
+  These updates make Personal Agent more capable as a personal workspace assistant for understanding project progress, activity, and usage patterns.
+
+  ## **New model support**
+
+  CodeBanana now supports additional models:
+
+  - **GPT-5.6-sol**
+  - **GPT-5.6-terra**
+  - **GPT-5.6-luna**
+  - **Claude Sonnet 5**
+
+  These new models expand available choices for different development scenarios.
+
+  ## **Members dialog improvements**
+
+  The Members dialog has been updated with improved management capabilities.
+
+  New updates include:
+
+  - Improved admin configuration for group administrators
+  - Agent access permission settings
+  - Robot management through **Add Robot**, including webhook URL display and copy support
+  - Improved **Add Agent** dialog with an **Added Agents** filter category
+
+  Additional visual improvements will continue in future iterations.
+
+  ## **Message forwarding improvements**
+
+  Message forwarding now supports **i18n** and quoted messages.
+
+  Forwarded messages now preserve original reference relationships and support multilingual content handling, making shared conversations easier to understand across different languages.
+
+  ## **Agent and Skill improvements**
+
+  Fixed an issue where HTML-related tasks did not prioritize loading the **single-file-html Skill**.
+
+  HTML generation tasks now consistently trigger the HTML Skill by default, improving HTML generation quality.
+
+  Fixed an issue where the Read File tool could not correctly process **TicNote** share links.
+
+  TicNote `shareDetail` links are now automatically converted to the correct `shareDetailReal` format for reading.
+
+  ## **Bug fixes and stability improvements**
+
+  This release includes multiple fixes across messaging, sharing, surveys, avatars, and references.
+
+  - Fixed an issue where forwarded messages could contain an incorrect `message_id` and display the previous message instead
+  - Fixed an issue where HTML detail content could return empty during sharing scenarios
+  - Fixed an issue where survey return page links could contain unnecessary language path prefixes
+  - Fixed group avatar validation logic to support empty `avatarUrl` values in text-based avatar mode
+  - Fixed an issue where quoted messages from previous pages were not displayed correctly
+
+  These improvements enhance message consistency, sharing reliability, and overall product stability.
+</Update>
+
 <Update label="07/07/2026">
   ## **Internationalization, Model Updates, and Mention Experience Improvements**
 
