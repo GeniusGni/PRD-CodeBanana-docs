@@ -88,9 +88,18 @@ Task management:
 - Click **Edit** next to **HEARTBEAT.md** to modify tasks
 - Click **Reset** to restore the default configuration
 
-<Frame>
-  ![Heartbeat](/images/0723-heartbeat.png)
-</Frame>
+<Steps>
+  <Step title="Open cron job panel">
+    <Frame>
+      ![0723 Cronjobentry](/images/0723-cronjobentry.png "0723 Cronjobentry")
+    </Frame>
+  </Step>
+  <Step title="Create a heartbeat task">
+    <Frame>
+      ![Heartbeat](/images/0723-heartbeat.png)
+    </Frame>
+  </Step>
+</Steps>
 
 **Scheduled Task**
 
@@ -113,4 +122,23 @@ Task management:
 
 <Frame>
   ![Schaduled](/images/0723-createacron.png)
+</Frame>
+
+**Webhook Task**
+
+1. Select **Webhook** as the trigger type
+2. Click **Create Webhook Task**
+3. Configure:
+   - Task Name
+   - Model
+   - Execution Flow
+
+<Frame>
+  ![0723 Creatawebhooktask](/images/0723-creatawebhooktask.png "0723 Creatawebhooktask")
+</Frame>
+
+When the endpoint receives an HTTP POST request, the agent automatically starts executing the configured workflow.
+
+<Frame>
+  ![CreateWebhookTask](/images/0723-cronjobwebhook.png)
 </Frame>
