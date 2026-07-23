@@ -15,7 +15,7 @@ Basic Info is a set of structured configurations that shape how the agent:
 Before each response or action, the system injects this information into the agent’s context, making it the **baseline for all reasoning and execution**.
 
 <Frame>
-  ![Basicinfo](/images/basicinfo.png)
+  ![Basicinfo](/images/0723-basicinfo.png)
 </Frame>
 
 ## **Configuration Fields**
@@ -112,14 +112,103 @@ Maintained by the agent to:
 - Track preferences or recurring patterns
 - Improve future responses
 
-## **Editing and Management**
+### **Teams**
+
+Defines the team members, roles, and collaboration context that the agent should understand.
+
+Teams helps the agent know:
+
+- Who is involved in the project
+- Each member’s role and responsibility
+- How different people collaborate
+- Which tasks should involve specific team members
+
+This information allows the agent to better coordinate teamwork and provide more relevant assistance in collaborative scenarios.
+
+Example:
+
+```markdown teams.md
+
+# Team Members
+
+## Alice
+Role: Product Manager
+
+Responsibilities:
+- Define product requirements
+- Prioritize features
+- Coordinate between users and engineering teams
+
+## Bob
+Role: Backend Engineer
+
+Responsibilities:
+- Maintain backend services
+- Design APIs
+- Handle database-related tasks
+
+## Design Team
+
+Responsibility:
+- Provide UI/UX solutions
+- Review product interfaces
+```
+
+### **Tools**
+
+Defines local environment information, tool configurations, and project-specific instructions that help the agent use available tools correctly.
+
+Tools provides additional context about:
+
+- Available tools and their intended usage
+- Local development environment
+- Project-specific commands or configurations
+- Important operational notes
+
+This information is included in the agent’s system context and helps prevent incorrect tool usage.
+
+Example:
+
+```markdown
+# TOOLS.md — Local Notes
+
+## Environment
+
+- Framework: Next.js
+
+- Package manager: pnpm
+
+- Deployment: Vercel
+
+## Commands
+
+Install dependencies:
+
+pnpm install
+
+Run development server:
+
+pnpm dev
+
+Build project:
+
+pnpm build
+
+## Notes
+
+- Always run tests before creating a pull request
+
+- Do not modify environment variables directly
+```
+
+### **Editing and Management**
 
 - Each field can be **individually edited** within the Basic Info panel
 - Changes take effect immediately in subsequent agent interactions
 - A **reset option** is available to revert to default configurations
 
 <Frame>
-  ![Setbasicinfo 1](/images/setbasicinfo-1.png)
+  ![Setbasicinfo 1](/images/0723-infodetail.png)
 </Frame>
 
 #### **Why It Matters**
