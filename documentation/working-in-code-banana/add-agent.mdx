@@ -144,6 +144,8 @@ These capabilities help agents better understand project context and collaborate
 
 After an agent is added, you can mention it with `@agent` to assign tasks or coordinate work across projects.
 
+When an Agent receives multiple requests at the same time, requests are handled through the A2A queue mechanism to ensure ordered execution.
+
 This makes it possible to:
 
 - Call another project agent into the current workflow
@@ -155,3 +157,61 @@ You can see the A2A history by clicking A2A record panel：
 <Frame>
   ![0723 Open A2arecord](/images/0723-openA2Arecord.png "0723 Open A2arecord")
 </Frame>
+
+## **A2A Queue and Stop Mechanism**
+
+When multiple users or agents send requests to the same Agent at the same time, CodeBanana uses a queue mechanism to ensure requests are processed in order.
+
+This applies to:
+
+- Team Agent requests
+- A2A requests between projects
+
+Requests are processed based on their arrival time, with no priority override or manual insertion.
+
+### **Queue Rules**
+
+- Requests are processed in the order they are received
+- Multiple requests from the same user are also queued sequentially
+- The maximum queue size is **50 requests**
+- When the queue is full, new requests cannot be added and users will be notified to try again later
+- After the current task is completed, the Agent automatically starts processing the next queued request
+
+For queued requests:
+
+- The sender can see the current queue status
+- A2A requests receive status updates when:
+  - The request enters the queue
+  - The request starts execution
+
+### **Stop Running Tasks**
+
+Users can stop Agent tasks based on their permissions.
+
+| User | Permission |
+| --- | --- |
+| Request sender | Can stop their own requests, including running or queued requests |
+| Project / chat owner | Can stop all requests in the current conversation |
+| Other users | Cannot stop requests created by others |
+
+After stopping:
+
+- Generated content before stopping is preserved
+- The current task is terminated
+- The next queued request automatically starts processing
+- Users can send new requests, which will enter the end of the queue
+
+### **A2A Stop Behavior**
+
+For cross-project A2A requests, stopping behavior depends on where the request is initiated.
+
+**A2A request from Team Agent**
+
+- Both the source project and target project provide a stop entry
+- Stopping from either side only stops that specific response generation
+- The two sides do not affect each other
+
+**A2A request from Discussion**
+
+- The stop entry is only available in the target Agent's Team Agent window
+- Stopping the task terminates the target Agent response
