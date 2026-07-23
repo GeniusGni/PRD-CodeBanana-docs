@@ -5,6 +5,210 @@ icon: "rotate-left"
 rss: true
 ---
 
+<Update label="06/30/2026">
+  ## **Team Plan, Organization Management, and Agent Updates**
+
+  This release includes updates across Team Plan member management, model controls, organization contacts, onboarding experience, Agent capabilities, IM integrations, and multiple stability improvements.
+
+  ## **Team Plan member management and model settings**
+
+  Team Plan now supports more flexible member-level configuration.
+
+  Organizations can now configure different available models and token limits based on organizational structure from:
+
+  **Usage → Members & Quotas → Batch Settings**
+
+  Admins can also manage model configurations from:
+
+  **Usage → Members & Quotas → Manage Models**
+
+  Supported capabilities include:
+
+  - Save model lists as templates
+  - Customize model ordering
+  - Set default models for members
+
+  This release also fixes an issue where Team Plan members with a token limit set to **0** could not have their limit updated afterward.
+
+  ## **Organization contacts and management updates**
+
+  The Contacts experience has been improved to support more complex organizational structures, including cases where one person manages multiple departments or members within the same department have different direct managers.
+
+  New capabilities include:
+
+  - Set department heads from **Contacts → Department list → Edit**
+  - Set direct managers from **Contacts → Member list → Edit**
+  - Display **Direct Manager** information in member profile cards
+
+  These updates provide better visibility into reporting relationships and organizational ownership.
+
+  ## **System notification updates**
+
+  Global system message types have been expanded.
+
+  Organization join notifications and friend invitation notifications are now displayed globally and are no longer restricted by organization filtering.
+
+  ## **Survey page localization**
+
+  Survey-related pages now support multilingual display.
+
+  This improves accessibility for users across different language environments.
+
+  ## **Friend invitation notifications**
+
+  Friend invitation flows now include two-way notifications.
+
+  When a friend invitation is accepted or rejected, the original sender will receive a corresponding system notification.
+
+  ## **Model selection persistence**
+
+  CodeBanana now remembers the model selected by the user.
+
+  When returning to the product, the previously selected model will be automatically restored.
+
+  ## **Preset project configuration updates**
+
+  Preset projects now support parameter-level configuration.
+
+  Different preset project types can now define whether users can invite members, add agents, and other project-specific behaviors.
+
+  Preset projects also now support additional protections:
+
+  - Preset projects cannot be deleted or dissolved
+  - Preset project avatars have been improved, including **TN Subscription**, **Personal Agent**, and **Approval Workflow** projects
+
+  ## **Personal Agent updates**
+
+  The **Personal Agent** experience has been improved.
+
+  Updates include:
+
+  - Improved avatar display
+  - Expanded data query scope
+
+  Personal Agent can now query messages sent across **Team Agent**, **Private Ask**, and **Discussion** contexts.
+
+  Historical Personal Agent skills are still being updated progressively.
+
+  ## **Agent updates**
+
+  Agent workflows now include additional safeguards and improvements.
+
+  Cross-project Discussion delegation is now restricted to ensure correct project-level chat boundaries and prevent unintended context sharing.
+
+  Scheduler cost tracking now includes task creator information, improving usage attribution and cost visibility.
+
+  ## **IM integration updates**
+
+  Several improvements have been made to IM channel integrations.
+
+  Updates include:
+
+  - Fixed and optimized channel icons
+  - IM pages now retain selected engine and model settings
+  - Fixed message reply limitations for QQ, Telegram, and other supported channels
+
+  ## **Discussion reply improvements**
+
+  Fixed an issue where Discussion could not correctly respond when users referenced quoted messages.
+
+  Discussion replies now handle referenced content more reliably.
+
+  ## **Friend invitation notification fixes**
+
+  Fixed an issue where friend invitation accept/reject notifications could contain incorrect organization IDs.
+
+  Notifications are now correctly routed to the intended users.
+
+  ## **CBBot project permission fixes**
+
+  Fixed an issue where members joining CBBot-created projects through invite links or direct invitations could incorrectly receive admin permissions.
+
+  New members in CBBot-created projects now join with standard member permissions by default.
+
+  ## **Private Ask queue display fixes**
+
+  Fixed an issue where **Private Ask** could display other users’ queue information while waiting.
+
+  Users now only see their own queue status during request processing.
+</Update>
+
+<Update label="06/09/2026">
+  ## **Image Generation, Approval Workflow, and Billing Updates**
+
+  This release includes updates across agent capabilities, image and video generation, Cron Jobs, approval workflows, billing management, onboarding, contacts, context management, and model availability.
+
+  ## **Image and video generation**
+
+  CodeBanana now supports **image and video generation** capabilities within Agent workflows.
+
+  Agents can now generate visual content directly during conversations. Related usage tracking and billing logic have also been added to the **Usage** page, providing clearer visibility into generation usage.
+
+  ## **Cron Job updates**
+
+  Cron Job management has been improved.
+
+  Users can now specify the task creator and select the model used for scheduled tasks, providing more control over automated workflows.
+
+  ## **Approval Workflow**
+
+  CodeBanana now includes the **Approval Workflow** project.
+
+  Organization **Owners** and **Admins** can configure approval workflows, while organization members can view and submit approval requests.
+
+  This enables teams to manage internal approval processes directly within the workspace.
+
+  ## **Billing mode settings**
+
+  A new **Billing mode** setting is now available under:
+
+  **Personal Center → Billing mode**
+
+  Organizations can now choose whether usage costs are calculated based on the **presenter** or **owner**.
+
+  This setting is available to **Owners** and **Admins**, providing more flexibility for organization-level cost management.
+
+  ## **Billing improvements**
+
+  Preset project bootstrap operations are now excluded from billing.
+
+  This means initial project setup processes will no longer consume user quotas or generate usage charges.
+
+  ## **Onboarding improvements**
+
+  Organization onboarding now includes duplicate organization name validation.
+
+  This helps prevent naming conflicts when creating or joining organizations.
+
+  ## **Contacts updates**
+
+  The **Contacts** page has been improved with better organization and contact management.
+
+  Contacts can now be displayed separately by internal and external groups. The page layout has also been optimized, and contacts can now be sorted by employee ID and department.
+
+  ## **Context Clear improvements**
+
+  The **Context Clear** experience has been improved.
+
+  The context clear status in the text input area now supports persistent display. The displayed state automatically adapts based on the current **CB/CC mode** and whether the user is working with **Team Agent** or **Private Agent**.
+
+  The `/clear` command behavior remains unchanged.
+
+  ## **Model updates**
+
+  The default model has been updated to **GLM-5.1**.
+
+  **Claude Sonnet 4.6** remains available and can still be selected manually.
+
+  This release also adds support for new models, including:
+
+  - **Qwen3.7-Max**
+  - **GPT-5.5**
+  - **Claude Opus 4.8**
+
+  These updates expand model availability and provide users with more options for different development scenarios.
+</Update>
+
 <Update label="05/19/2026">
   ## **DC Agent, Messaging, Skill Market, and Collaboration Experience Updates**
 
