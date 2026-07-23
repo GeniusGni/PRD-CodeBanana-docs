@@ -36,9 +36,9 @@ Runs tasks at specific times or based on triggers.
   - Daily, weekly, monthly
   - One-time execution
   - Custom intervals
-- **Event-based (File Watch)**:
-  - Triggered when files are added, modified, or deleted
-  - Example: notify when a file is removed
+- **Event-based**:
+  - File Watch（Triggered when files are added, modified, or deleted）
+  - Webhook
 
 ### **How to Choose**
 
@@ -53,6 +53,9 @@ Runs tasks at specific times or based on triggers.
    - No → Use **Scheduled Task**
 4. **Is the task triggered by file changes or events?**
    - Yes → Use **Scheduled Task (File Watch)**
+   - No → Contine
+5. **Is the task triggered by external event？**
+   - Yes → Use **Webhook**
    - No → Follow the rules above
 
 #### **Configuration**
@@ -76,19 +79,16 @@ Task management:
 
 1. Click **Create New Task** to create a task
 2. Define **Trigger Conditions**, which determine when the task runs:
-   - **Scheduled (time-based)**
-     Choose from:
+   - **Scheduled (time-based)** Choose from:
      - Daily — run at a specific time each day
      - Weekly — run on a specific day and time
      - Monthly — run on a specific date and time
      - Once — run a single time
      - Every — run at a fixed interval
-   - **File Watch (event-based)**
-     Triggered when changes occur in a selected directory:
+   - **File Watch (event-based)** Triggered when changes occur in a selected directory:
      - File created
      - File modified
-     - File deleted
-     Example: trigger a task when an Excel file is deleted from a folder
+     - File deleted Example: trigger a task when an Excel file is deleted from a folder
 3. Configure the **Execution Flow**
    - Define what the agent should do when the task is triggered
    - This can include any automated action or workflow handled by the agent
