@@ -1,129 +1,180 @@
 ---
 title: "Skills"
-description: "Skills 允许您为 Agent 封装可复用的能力，从而实现一致的工作流，并便于在不同项目之间复用。"
+description: "使用 SKILL.md、脚本、参考资料和资源创建、上传、发布、更新、分享和复用 CodeBanana Skill，并了解 Skill Market、公开 Skill、私有 Skill、项目 Skill、Add to Project、组织可见性和版本化工作流。"
 ---
 
 ## **什么是 Skill**
 
-Skill 是一个结构化模块，用于定义 Agent 应如何执行某项特定任务。
+Skill 是一种结构化模块，用于定义 Agent 应如何执行特定任务。
 
 它通常包括：
 
-- 一个 [**SKILL.md**](http://SKILL.md) 文件（用于定义 Agent 的指令与行为）
+- 一个 [**SKILL.md**](http://SKILL.md) 文件（定义 Agent 的指令和行为）
 - 可选资源，例如：
   - 脚本
   - 参考资料
   - 资源文件
 
-Skills 是 **可复用的能力单元**，可以将一次性的解决方案沉淀为可重复使用的能力。
+Skill 相当于**可复用的构建模块**，可以将一次性解决方案转化为可重复使用的能力。
 
 #### **Skill 类型**
 
-CodeBanana 中的 Skills 分为三类：
+CodeBanana 中的 Skill 分为三类：
 
-**Public Skills**
+**公开 Skill**
 
-- 在 Skill Market 中可见
-- 由社区创建并分享
-- 可浏览、添加到项目以及分享
+- 可在 Skill Market 中获取
+- 由社区创建和分享
+- 可以浏览、添加到项目和分享
 
-**Private Skills**
+**私有 Skill**
 
 - 由个人用户创建和管理
-- 除非发布，否则仅自己可见
-- 可在自己的多个项目中复用
+- 除非发布，否则只有你自己可见
+- 可以在自己的多个项目中复用
 
-**Project Skills**
+**项目 Skill**
 
-- **当前已应用在某个具体项目中** 的 Skills
+- **当前应用于特定项目**的 Skill
 - 仅在该项目的 Agent 上下文中生效
 
-#### **使用 Skills**
+#### **使用 Skill**
 
-您可以通过不同方式将 Skills 应用到项目中：
+可以通过不同方式将 Skill 应用到项目：
 
 **从 Skill Market 添加**
 
-- 在市场中搜索相关 Skills
-- 点击 **Add to Project**，将其应用到项目中
+- 在市场中搜索相关 Skill
+- 点击 **Add to Project**，将其应用到项目
+
+<Steps>
+  <Step title="打开 Skill Market">
+    <Frame>
+      ![Skill 入口](/images/0723-skillentry.png "Skill 入口")
+    </Frame>
+  </Step>
+  <Step title="安装 Skill">
+    <Frame>
+      ![安装 Skill](/images/0723-skillinstalling.png "安装 Skill")
+    </Frame>
+  </Step>
+</Steps>
+
+**创建并复用自己的 Skill**
+
+- 通过与 Agent 对话，将工作流打包为 Skill
+- 将其上传到私有 Skill 库
+- 打开项目并将其添加到当前项目，即可在多个项目中复用
+
+**上传 Skill**
+
+- 将 Skill 上传到你的 **Private** 库
+- 上传后的 Skill 可以在不同项目中复用
+- 当你希望将现有工作流或成果转化为可复用 Skill 时，可以使用此功能
+
+**分享 Skill**
+
+- 生成分享链接
+- 其他人可以导入 Skill，并在自己的项目中使用
 
 <Frame>
-  ![Skillmarket](/images/skillmarket.png)
+  ![分享 Skill](/images/0723-sharingskill.png)
 </Frame>
 
-**创建并复用自己的 Skills**
+**发布 Skill**
 
-- 将您的工作流封装为一个 Skill
-- 上传到您的私有 Skill 库
-- 在多个项目中打开并添加到当前项目，以实现复用
+- 将私有 Skill 转换为已发布 Skill
+- 发布时选择可见范围：
+  - 所有人可见
+  - 仅组织内可见
 
-<Frame>
-  ![Createskill](/images/createskill.png)
-</Frame>
+<Steps>
+  <Step title="打开 Skill 管理面板">
+    <Frame>
+      ![Skill 管理入口](/images/0723-manageskillentry.png "Skill 管理入口")
+    </Frame>
+  </Step>
+  <Step title="点击发布 Skill">
+    <Frame>
+      ![发布 Skill](/images/0723-publishskill.png "发布 Skill")
+    </Frame>
+  </Step>
+  <Step title="编辑 Skill 详情">
+    <Frame>
+      ![Skill 发布详情](/images/0723-publishskilldetail.png "Skill 发布详情")
+    </Frame>
+  </Step>
+</Steps>
 
-**分享 Skills**
+**更新 Skill**
 
-- 生成可分享链接
-- 其他人可以导入并在自己的项目中使用该 Skill
+- Skill 创建后仍可更新
+- Skill 内容发生变化时，可以发布新版本
+- 更新过程中可以添加新的版本号
 
-<Frame>
-  ![Shareskill](/images/shareskill.png)
-</Frame>
+#### **在哪里管理 Skill**
 
-**发布 Skills**
-
-- 将私有 Skills 转为公开 Skills
-- 使其在 Skill Market 中可见
-
-<Frame>
-  ![Pubishskill](/images/pubishskill.png)
-</Frame>
-
-#### **在哪里管理 Skills**
-
-Skills 有两个入口：
+可以从两个入口访问 Skill：
 
 - **Personal Center → Skills**
   - 浏览 Skill Market
-  - 管理 private 和 public skills
+  - 管理私有和公开 Skill
+  - 在 Skill 列表中查看作者信息
 
 <Frame>
-  ![Skillsentrance](/images/skillsentrance.png)
+  ![Skills 入口](/images/0723-manageskillall.png)
 </Frame>
 
 - **Project → Agent Config → Skills**
-  - 查看并管理当前项目中已生效的 Skills
-  - 添加或移除 Skills
+  - 查看和管理当前项目中已启用的 Skill
+  - 添加或移除 Skill
 
 <Frame>
-  ![Basicinfo](/images/basicinfo.png)
+  ![项目 Skill](/images/0723-skillentry.png)
 </Frame>
 
 #### **常见使用场景**
 
-**查找并将 Skill 应用到项目中**
+**查找 Skill 并应用到项目**
 
 - 前往 **Skill Market**
 - 搜索相关 Skill
 - 点击 **Add to Project** 并选择目标项目
 
+**将 Skill 上传到私有库**
+
+- 前往 **Agent Config → Skills → Skill Market → Private → Upload**
+- 将 Skill 上传到私有库
+- 之后可以将上传的 Skill 添加到其他项目
+
 **创建 Skill 并在多个项目中复用**
 
 - 前往 **Agent Config → Skills → Skill Market → Private → Upload**
-- 将 Skill 上传到您的私有库
+- 将 Skill 上传到私有库
 - 在另一个项目中：
   - 前往 **Skills → Skill Market → Private → Add to Project**
 
-**发布一个 Skill**
+**发布 Skill**
 
 - 前往 **Skill Market → Private**
-- 选择目标 Skill，并点击 **Publish** 将其公开
+- 选择 Skill 并点击 **Publish**
+- 选择 Skill 的可见范围：
+  - 所有人可见
+  - 仅组织内可见
 
-## **为什么 Skills 很重要**
+**更新 Skill**
 
-Skills 可以帮助团队：
+- 打开现有 Skill
+- 更新其内容或资源
+- 前往 Skill 库并点击 **this project** 标签页
+- 点击 **update**
+- 使用更新后的**版本号**发布新版本
+
+## **Skill 为什么重要**
+
+Skill 可以帮助团队：
 
 - 标准化工作流
 - 减少重复指令
-- 在项目之间共享最佳实践
-- 将经验沉淀为可复用资产
+- 在项目间分享最佳实践
+- 将经验转化为可复用资产

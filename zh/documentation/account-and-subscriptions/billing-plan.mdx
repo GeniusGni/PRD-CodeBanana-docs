@@ -1,116 +1,187 @@
 ---
-title: "账单与套餐"
-description: "免费开始，按需扩展。"
+title: "计费与套餐"
+description: "比较 CodeBanana Free、Personal 和 Professional 套餐，了解套餐包含的 Token 额度、虚拟机配置、月付或年付方式、Token 充值、个人套餐用量提醒，以及基于 Token 的计费方式。"
 ---
 
-## 选择您的套餐
+## **选择套餐**
 
-我们提供可随应用规模灵活扩展的套餐方案。无论您是在构建概念验证，还是面向生产环境进行部署，都可以通过下方的功能对比，找到最符合当前需求的版本。
+CodeBanana 为不同用量需求提供灵活的套餐，从免费试用到高负载的个人工作场景均可覆盖。
 
-<AccordionGroup>
-  <Accordion title="Free">
-    免费使用全部核心功能，体验 CodeBanana 的完整能力。
+### **Free**
 
-    - **30 次 agent requests** / 月
-    - **20 MB** 云存储
-    - **多个**组织
-    - **2 vCPU、4 GB RAM** 云主机
+Free 套餐提供 CodeBanana 的完整功能，并包含一次性试用额度。
 
-    <Card title="套餐功能" icon="light-emergency-on">
-      无功能限制。即使在免费版中，您也可以使用包括协作能力在内的全部功能。
-    </Card>
-  </Accordion>
+- **价值 \$5 的免费 Token 额度**
+- 在**注册当月**有效
+- **20 MB** 云存储空间
+- 不限制功能
 
-  <Accordion title="Personal">
-    为严肃的个人项目提供更强性能与更高私密性，全面提升您的工作效率。
+<Note>
+  Free 套餐的 Token 额度仅发放一次。额度将在注册当月结束时过期，且不会再次发放。
+</Note>
 
-    - **300 次 agent requests** / 月
-    - **1GB** 云存储
-    - **多档位** VM 配置（2v 4GB、4v 8GB、8v 16GB）
+### **Personal**
 
-    <Card title="套餐功能" icon="light-emergency-on">
-      - 更高的请求额度
-      - 更大的云存储空间
-      - 灵活的 VM 档位选择
-      - 完整的环境隔离
-    </Card>
-  </Accordion>
+Personal 套餐面向需要专属环境和更高 Token 额度的个人开发者。
 
-  <Accordion title="Professional">
-    为团队提供更强性能与高级协作能力，支持应用进一步扩展。
+- **每月包含价值 \$25 的 Token 额度**
+- **1 GB** 云存储空间
+- 多种虚拟机配置：
+  - **2 vCPU / 4 GB RAM**
+  - **4 vCPU / 8 GB RAM**
+  - **8 vCPU / 16 GB RAM**
 
-    - **1000 次 agent requests** / 月
-    - **5GB** 云存储
+<Note>
+  Personal 套餐价格由两部分组成：虚拟机费用和每月包含的 Token 额度费用。
+</Note>
 
-    <Card title="套餐功能" icon="light-emergency-on">
-      更高的请求额度与更大的云存储空间，满足团队协作需求。
-    </Card>
-  </Accordion>
-</AccordionGroup>
+### **Professional**
 
-<Card title="准备购买了吗？" icon="arrow-right" href="https://www.codebanana.com/en/membership">
-  查看价格，选择最适合您的套餐。
+Professional 套餐面向负载更高的个人工作场景和大型项目。
+
+- **每月包含价值 \$130 的 Token 额度**
+- **5 GB** 云存储空间
+- 可选虚拟机配置：
+  - **4 vCPU / 8 GB RAM**
+  - **8 vCPU / 16 GB RAM**
+
+<Note>
+  Professional 套餐价格同样由虚拟机费用和每月包含的 Token 额度费用组成。
+</Note>
+
+<Card title="准备好购买了吗？" icon="arrow-right" href="https://www.codebanana.com/en/membership">
+  查看价格并选择适合你的套餐。
 </Card>
 
-## 购买套餐
+---
 
-当您选择好适合自身需求的套餐后，可以通过以下方式完成升级：
+## **购买套餐**
+
+选定符合需求的套餐后，可以从价格页面进行升级。
 
 <Tip>
-  **有优惠码？** 请务必在结账前先进行使用，否则系统不会自动生效。
+  **有优惠码？** 请在进入结算流程**之前**使用，否则优惠码之后不会自动生效。
 </Tip>
 
-**购买套餐的方法：**
+**购买套餐：**
 
-1. 点击工作空间右上角的 **upgrade 按钮**
-2. 选择合适的 Plan
-3. 选择您偏好的计费周期：
-   - **Yearly：** 享受年度优惠价格
-   - **Monthly：** 按月支付
-4. 点击 **VM tiers** 进行自定义配置
-5. 在所选 Plan 中点击 **Upgrade** 进入结账流程
+1. 点击工作区右上角的**升级按钮**
+2. 选择套餐
+3. 选择虚拟机配置
+4. 选择计费周期：
+   - **月付** — 按月支付
+   - **年付** — 享受年度折扣
+5. 点击 **Upgrade** 继续结算
 
 <Frame>
-  ![Price](/images/price.png)
+  ![价格](/images/0715-price.png)
 </Frame>
 
-## Requests 与 Token
+### **年付价格**
 
-#### **什么是 Request**
+年付方式会根据以下两项费用的年度总价提供折扣：
 
-**Request** 表示 Agent 进行一次输出。
+- 虚拟机费用
+- 套餐内 Token 额度费用
 
-- 每次 Agent 成功回复一次都会消耗一个 request
-- 包括：
-  - 代码生成
-  - 问答
-  - 任务执行
+这意味着年付价格基于套餐的完整价值计算，而不是只根据虚拟机费用计算。
 
-不同套餐通常会根据订阅档位，按月提供固定数量的 requests。
+---
 
-#### **什么是 Token**
+## **Token 额度与计费**
 
-**Token** 用于衡量模型实际消耗的计算量。
+### **什么是 Token**
 
-- 包括：
-  - 输入内容（您的 prompt、上下文、文件）
-  - 输出内容（Agent 回复、生成的代码）
-- 任务越复杂、上下文越大，消耗的 token 通常也会越多
+**Token** 用于衡量任务实际使用的模型计算量。
 
-Token 用于计算 **按用量计费成本**，尤其适用于超出套餐额度后的使用部分。
+其中包括：
 
-#### **计费方式如何运作**
+- **输入** — 提示词、上下文、文件和指令
+- **输出** — Agent 回复、生成的代码和计划
 
-用量将基于 requests 和 tokens 共同计算：
+任务越复杂、上下文窗口越大、模型能力越强，通常消耗的 Token 越多。
 
-1. **在套餐额度内** requests 会从您的月度配额中扣除
-2. **超出套餐额度后** 计费可能会切换为 **按用量计费（基于 token）**
-3. **Team Agent 与 Private Agent（此前称为 My agent）**
-   - Team Agent 的使用费用由 **项目 Owner** 承担
-   - Private Agent 的使用费用同样由 **项目 Owner** 承担
+### **套餐内 Token 额度**
 
-#### **其他说明**
+每种套餐都包含一定的 Token 额度：
 
-- 使用更高级的模型或更大的上下文，可能会增加 token 消耗
-- 某些功能（例如支持服务会话或增强能力）可能会对用量 적용 **倍数系数**
-- 您可以在 **Usage dashboard** 中查看详细的用量信息
+- **Free** — 一次性提供价值 **\$5** 的 Token 额度
+- **Personal** — **每月 \$25**
+- **Professional** — **每月 \$130**
+
+这些额度是套餐本身的一部分。
+
+### **Token 充值**
+
+套餐内 Token 额度用完后，可以通过 \*\*On-demand Usage（按需用量/充值）\*\*继续使用 CodeBanana。
+
+个人套餐支持充值，你可以在不更改当前订阅的情况下，根据需要增加 Token 余额。
+
+<Note>
+  Team Plan 不使用个人充值。团队用量通过团队共享 Token 池管理。
+</Note>
+
+### **计费方式**
+
+个人套餐采用以下计费结构：
+
+1. 订阅价格包括：
+   - **虚拟机费用**
+   - **套餐内 Token 额度费用**
+2. 套餐内 Token 额度会在**订阅续费日**重置
+3. 未使用的套餐内额度**不会**结转到下一个周期
+4. 套餐内额度用完后，可以通过 \*\*Top-up（充值）\*\*继续使用
+
+### **用量提醒**
+
+CodeBanana 提供用量提醒，帮助个人用户掌握剩余额度。
+
+- 当套餐内剩余 Token 余额低于 **10%** 时，系统会显示提醒 **_提醒文案_**
+  > Token 余额不足，你的套餐还剩 \${remaining}。立即充值或升级，确保工作不被中断。
+
+用量提醒适用于：
+
+- Free 套餐的 Token 额度
+- 个人付费套餐包含的 Token 额度
+
+<Note>
+  如果你从 Free 升级为个人付费套餐时，剩余余额已经较低，CodeBanana 不会立即重复发送相同的低余额提醒。
+</Note>
+
+---
+
+## **常见问题**
+
+<AccordionGroup>
+  <Accordion title="Free 套餐目前包含哪些内容？">
+    Free 套餐包含一次性发放的**价值 \$5 的 Token 额度**、**20 MB** 云存储空间，以及不受功能限制的所有核心产品功能。
+  </Accordion>
+
+  <Accordion title="Free 套餐额度会每月续发吗？">
+    不会。Free 套餐额度仅在注册当月发放一次，并在当月结束时过期，之后不会再次发放。
+  </Accordion>
+
+  <Accordion title="套餐内 Token 额度用完后会怎样？">
+    如果你使用个人付费套餐，可以通过 \*\*On-demand Usage（按需用量/充值）\*\*继续使用，无需更改订阅。
+  </Accordion>
+
+  <Accordion title="Personal 或 Professional 套餐可以充值 Token 吗？">
+    可以。个人付费套餐支持在套餐内额度用完后充值 Token。
+  </Accordion>
+
+  <Accordion title="年付价格如何计算？">
+    年付价格基于虚拟机费用和套餐内 Token 额度费用的年度总价计算，并在此基础上应用年度折扣。
+  </Accordion>
+
+  <Accordion title="什么时候会收到用量提醒？">
+    当套餐内剩余 Token 余额低于 **10%** 时，CodeBanana 会显示提醒。
+
+    提醒文案：
+
+    > Token 余额不足，你的套餐还剩 \${remaining}。立即充值或升级，确保工作不被中断。
+  </Accordion>
+
+  <Accordion title="未使用的 Token 会结转到下一个周期吗？">
+    不会。未使用的套餐内 Token 额度不会结转到下一个计费周期。
+  </Accordion>
+</AccordionGroup>

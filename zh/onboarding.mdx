@@ -1,79 +1,133 @@
 ---
 title: "用户引导"
-description: "引导流程区分个人用户与企业用户，并为不同用户提供对应的设置流程。"
+description: "完成 CodeBanana 的个人、团队和企业用户引导，包括创建或加入组织、注册和登录、编辑团队信息、导入部门与成员结构、预览组织数据、使用内置 CB-FAQ Skill，以及进入 Org Admin Workspace 管理组织、分析用量并获取 AI 成熟度洞察。"
 ---
 
-## **个人用户引导**
+## **注册与登录**
 
-新用户需要完成两步引导流程，以便个性化配置其工作空间。这些选择与后续新建项目的模板分类直接对应。
+开始用户引导前，你需要先创建 CodeBanana 账户并登录。
 
 <Steps>
-  <Step title="选择使用类型">
-    选择您计划如何使用 CodeBanana：
-
-    - **个人** — 适用于个人工作流与任务
-    - **团队 / 企业** — 适用于协作与组织场景
+  <Step title="打开 CodeBanana">
+    访问 CodeBanana 网站，然后点击右上角的 **Sign Up（注册）**。
 
     <Frame>
-      ![Onboardingchooseperson](/images/onboardingchooseperson.png)
+      ![注册](/images/0715-signup.png)
     </Frame>
   </Step>
-  <Step title="选择使用场景">
-    选择您的主要用途，该选择将直接映射到 **项目模板分类**，以确保您在创建新项目时获得一致的使用体验。
+  <Step title="创建账户">
+    填写注册表单：
+
+    - 用户名
+    - 邮箱地址
+    - 密码
+
+    点击 \*\*Get Code（获取验证码）\*\*接收验证码，输入验证码后点击 **Register（注册）**。
 
     <Frame>
-      ![Onboardingchoosepurpose](/images/onboardingchoosepurpose.png)
+      ![注册信息](/images/0715-signupinfo.png)
+    </Frame>
+  </Step>
+  <Step title="验证邮箱">
+    打开 CodeBanana 发送的验证邮件。
+
+    - 复制**四位验证码**
+    - 在注册页面输入验证码，完成验证
+
+    <Note>
+      验证码将在 **15 分钟**后失效。如果没有收到邮件，请检查垃圾邮件文件夹。
+    </Note>
+
+    <Frame>
+      ![邮箱验证](/images/0715-emailverify.png)
+    </Frame>
+  </Step>
+  <Step title="登录">
+    完成注册后：
+
+    - 选择 **Log in with Email（使用邮箱登录）**
+    - 输入邮箱地址和密码
+    - 点击 **Log In（登录）**
+
+    登录成功后，你将进入用户引导流程。
+
+    <Frame>
+      ![登录](/images/0715-login.png)
     </Frame>
   </Step>
 </Steps>
 
-## **组织引导**
+## **个人用户引导**
 
-对于团队和企业用户，引导流程包括创建组织或加入现有组织。
+新用户需要完成两步引导，以个性化设置工作区。这些选择与项目模板分类直接对应。
+
+<Steps>
+  <Step title="选择使用类型">
+    选择你计划如何使用 CodeBanana：
+
+    - **Personal（个人）** — 个人工作流和任务
+    - **Team / Enterprise（团队/企业）** — 团队协作和组织使用
+
+    <Frame>
+      ![选择个人使用类型](/images/onboardingchooseperson.png)
+    </Frame>
+  </Step>
+  <Step title="选择使用场景">
+    选择主要用途。该选项会直接对应到**项目模板分类**，确保创建新项目时获得一致的使用体验。
+
+    <Frame>
+      ![选择使用场景](/images/onboardingchoosepurpose.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## **组织用户引导**
+
+对于团队和企业用户，引导流程还包括设置组织或加入现有组织。
 
 ### 管理员操作
 
 <Steps>
   <Step title="创建新组织">
-    选择您计划如何使用 CodeBanana：
+    选择你计划如何使用 CodeBanana：
 
-    - **创建新组织**
-    - **加入团队**
+    - **Create New Organization（创建新组织）**
+    - **Join a Team（加入团队）**
 
     <Frame>
-      ![Onboardingchooseteam](/images/onboardingchooseteam.png)
+      ![选择团队使用方式](/images/onboardingchooseteam.png)
     </Frame>
   </Step>
   <Step title="编辑团队信息">
     1. 输入组织名称
-       - 默认根据管理员邮箱自动生成
-       - 支持修改
+       - 默认根据管理员邮箱生成
+       - 可以修改
     2. 配置：
        - 角色（Owner / Admin）
        - 团队规模
 
     <Frame>
-      ![Onboardingeditteam](/images/onboardingeditteam.png)
+      ![编辑团队信息](/images/onboardingeditteam.png)
     </Frame>
   </Step>
   <Step title="导入组织架构">
-    通过我们提供的 Excel 模板上传组织数据：
+    使用我们提供的 Excel 模板上传组织数据：
 
-    - 部门架构
+    - 部门结构
     - 成员列表
 
     <Frame>
-      ![Onboardingteaminfo](/images/onboardingteaminfo.png)
+      ![组织信息](/images/onboardingteaminfo.png)
     </Frame>
   </Step>
-  <Step title="确认信息">
-    在导入前，您可以使用 **结构预览** 来确认以下信息：
+  <Step title="确认">
+    导入前，可以使用 \*\*Structure Preview（结构预览）\*\*检查：
 
     - 部门层级
     - 成员归属
 
     <Frame>
-      ![Onboardingpreviewteam](/images/onboardingpreviewte.png)
+      ![预览团队结构](/images/onboardingpreviewte.png)
     </Frame>
   </Step>
 </Steps>
@@ -81,18 +135,18 @@ description: "引导流程区分个人用户与企业用户，并为不同用户
 上传完成后：
 
 - 系统会自动发送邀请邮件
-- 成员可直接注册并加入组织
+- 成员可以注册并直接加入组织
 
-此步骤为可选项，您可以先跳过，稍后再在 **Contacts** 页面中管理组织架构。
+此步骤为可选步骤，可以跳过。之后你仍可在 \*\*Contacts（联系人）\*\*页面中管理组织结构。
 
 ### 成员操作
 
 <Steps>
   <Step title="加入组织">
-    选择加入一个现有组织
+    选择加入现有组织
 
     <Frame>
-      ![Onboardingjointeam](/images/onboardingjointeam.png)
+      ![加入团队](/images/onboardingjointeam.png)
     </Frame>
   </Step>
   <Step title="搜索组织">
@@ -100,13 +154,61 @@ description: "引导流程区分个人用户与企业用户，并为不同用户
     - 提交加入申请
 
     <Frame>
-      ![Onboardingsendrequest](/images/onboardingsendrequest.png)
+      ![发送加入申请](/images/onboardingsendrequest.png)
     </Frame>
   </Step>
-  <Step title="等待审批">
-    在组织 Owner 审批通过后：
+  <Step title="等待批准">
+    组织 Owner 批准后：
 
-    - 您会被自动添加为成员
-    - 您的工作空间将自动切换至所选组织
+    - 你会被自动添加为组织成员
+    - 工作区会切换到所选组织
   </Step>
 </Steps>
+
+## **用户引导增强功能**
+
+CodeBanana 提供多项内置增强功能，帮助新用户更顺畅地开始使用。
+
+### **CB-FAQ Skill**
+
+每个项目都内置 **CB-FAQ** Skill。
+
+该 Skill 会与产品更新保持同步。用户可以直接向 Agent 询问 CodeBanana 的使用方法，并在项目中获得产品相关指导。
+
+<Frame>
+  ![用户引导 FAQ](/images/0715-CBFAQ.png)
+</Frame>
+
+### **Org Admin Workspace**
+
+CodeBanana 为组织 Owner 和 Admin 提供专用的 **Org Admin Workspace（组织管理工作区）**。
+
+该工作区是一个智能运营控制台，用于组织管理、用量分析和 AI 成熟度洞察。
+
+**进入方式**：
+
+- 新用户可能会在引导过程中默认获得该工作区
+- 现有用户可以通过 **New Project → Template → Data & Analyst** 创建
+
+<Frame>
+  ![组织管理工作区](/images/0715-orgAdmin.png)
+</Frame>
+
+<Frame>
+  ![组织管理工作区详情](/images/0418-onboarding-orgadmin2.png)
+</Frame>
+
+**权限说明**：
+
+- 所有查询和操作都会根据组织角色和架构进行权限校验
+- 只有组织 **Owner** 和 **Admin** 可以使用这些管理能力
+
+**支持的能力**：
+
+- **组织架构设置及导入/导出**<br />使用自然语言描述组织，由系统将其结构化；预览结果并确认后即可导入。同时支持 Excel 导入和导出。
+- **部门管理**<br />浏览组织树，创建、重命名或删除部门。所有写入操作都需要确认。
+- **成员管理**<br />按部门查看成员、分配或更新所属部门、编辑成员信息以及移除成员。
+- **邀请管理**<br />邀请新成员，并查看或取消待处理的邀请。
+- **AI 运营指标**<br />使用自然语言查询 Token 消耗、活跃用户和部门排名等用量数据。
+- **每日 AI 成熟度建议**<br />启用每日自动分析，生成改进建议并更新数据看板。
+- **手动生成 AI 成熟度建议**<br />按需为任意选定时间范围生成 AI 成熟度建议。

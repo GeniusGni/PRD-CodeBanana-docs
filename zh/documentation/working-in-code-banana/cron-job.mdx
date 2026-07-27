@@ -1,98 +1,144 @@
 ---
 title: "定时任务"
-description: "定时任务支持 Agent 基于时间或事件自动执行任务。"
+description: "使用定时任务：Heartbeat、HEARTBEAT.md、定时任务、每日或每周执行、自定义间隔、文件监控触发器和事件自动化，让 CodeBanana Agent 自动执行重复的后台工作流。"
 ---
 
 ## **什么是定时任务**
 
-定时任务是一种 **在合适时间触发 Agent 执行任务** 的机制，支持以下方式：
+定时任务是一种在**适当时机触发 Agent** 的机制，可以：
 
-- 在指定时间执行（例如每天早上 7 点）
-- 按固定间隔执行（例如每 30 分钟）
-- 在特定事件发生时执行（例如文件变更）
+- 在指定时间触发（例如每天早上 7 点）
+- 按固定间隔触发（例如每 30 分钟）
+- 在特定事件发生时触发（例如文件发生变化）
 
-这使 Agent 即使在您未主动与其交互时，也能够 **异步运行**。
+这样，即使你没有主动与 Agent 交互，Agent 也能**异步**执行任务。
 
 ## **定时任务类型**
 
-主要分为两类：
+定时任务主要分为三种类型：
 
-### **Heartbeat（基于间隔）**
+### **Heartbeat（按间隔执行）**
 
-按固定时间间隔重复运行任务。
+按照固定时间间隔重复运行任务。
 
 - 配置时间间隔（例如每 30 分钟）
-- 执行 **HEARTBEAT.md** 中定义的全部任务
+- 执行 **HEARTBEAT.md** 中定义的所有任务
 - 适用于：
-  - 周期性检查
-  - 监控类工作流
-  - 批处理任务
+  - 定期检查
+  - 监控工作流
+  - 批量处理
 
-### **Scheduled Tasks（基于时间 / 事件）**
+### **Scheduled Task（按时间/事件执行）**
 
-在指定时间或触发条件下运行任务。
+在指定时间或触发条件满足时运行任务。
 
-- **基于时间的方式**：
-  - Daily、Weekly、Monthly
-  - One-time execution
-  - Custom intervals
-- **基于事件的方式（File Watch）**：
-  - 当文件被新增、修改或删除时触发
-  - 例如：当文件被删除时发送通知
+- **按时间触发的选项**：
+  - 每日、每周、每月
+  - 单次执行
+  - 自定义间隔
+- **按事件触发**：
+  - File Watch（添加、修改或删除文件时触发）
+
+### **Webhook（由外部事件触发）**
+
+Webhook 允许外部系统通过 HTTP POST 请求触发 Agent 任务。
+
+Webhook 任务不会按照时间自动运行，而是在外部服务向生成的 Webhook 端点发送请求时执行。
+
+常见使用场景：
+
+- 系统事件发生后触发 Agent 工作流
+- 将 CodeBanana 与外部服务连接
+- 根据第三方事件自动执行工作流
+
+示例：
+
+- CI/CD 系统触发 Agent 审查部署结果
+- 监控系统发送警报，并要求 Agent 分析问题
+- 外部应用触发报告生成工作流
 
 ### **如何选择**
 
 1. **这是一次性任务或提醒吗？**
    - 是 → 使用 **Scheduled Task**
-   - 否 → 继续
-2. **任务是否需要在精确时间运行？**
+   - 否 → 继续判断
+2. **任务需要在准确时间运行吗？**
    - 是 → 使用 **Scheduled Task**
-   - 否 → 继续
-3. **此任务能否与其他周期性检查统一处理？**
-   - 是 → 使用 **Heartbeat**（将其添加到 **HEARTBEAT.md**）
+   - 否 → 继续判断
+3. **该任务可以与其他周期性检查合并吗？**
+   - 是 → 使用 **Heartbeat**（将任务添加到 **HEARTBEAT.md**）
    - 否 → 使用 **Scheduled Task**
-4. **此任务是否由文件变化或其他事件触发？**
+4. **任务由文件变化或事件触发吗？**
    - 是 → 使用 **Scheduled Task（File Watch）**
-   - 否 → 按以上规则选择
+   - 否 → 继续判断
+5. **任务由外部事件触发吗？**
+   - 是 → 使用 **Webhook**
+   - 否 → 按照上述规则选择
 
-#### **配置方式**
+#### **配置**
 
 **Heartbeat**
 
-1. 通过打开 **右侧面板中的开关** 启用 Heartbeat
-2. 设置 **执行间隔**（例如每 10 分钟、每 30 分钟等）
-3. 系统会在每个间隔到达时，自动执行 **HEARTBEAT.md** 中定义的所有任务
+1. 打开**右侧面板中的开关**，启用 Heartbeat
+2. 设置**执行间隔**（例如每 10 分钟、每 30 分钟等）
+3. 系统会在每个时间间隔自动执行 **HEARTBEAT.md** 中定义的所有任务
 
-任务管理方式：
+任务管理：
 
-- 点击 **HEARTBEAT.md** 旁的 **Edit** 修改任务内容
+- 点击 **HEARTBEAT.md** 旁的 **Edit** 修改任务
 - 点击 **Reset** 恢复默认配置
 
-<Frame>
-  ![Heartbeat](/images/heartbeat.png)
-</Frame>
+<Steps>
+  <Step title="打开 Cron Job 面板">
+    <Frame>
+      ![Cron Job 入口](/images/0723-cronjobentry.png "Cron Job 入口")
+    </Frame>
+  </Step>
+  <Step title="创建 Heartbeat 任务">
+    <Frame>
+      ![Heartbeat](/images/0723-heartbeat.png)
+    </Frame>
+  </Step>
+</Steps>
 
 **Scheduled Task**
 
 1. 点击 **Create New Task** 创建任务
-2. 定义 **Trigger Conditions**，即任务的触发时机：
-   - **Scheduled（基于时间）**
-     可选择：
-     - Daily — 每天在指定时间执行
-     - Weekly — 每周在指定日期和时间执行
-     - Monthly — 每月在指定日期和时间执行
-     - Once — 仅执行一次
-     - Every — 按固定时间间隔执行
-   - **File Watch（基于事件）**
-     当选定目录下发生以下变化时触发：
-     - 文件创建
-     - 文件修改
-     - 文件删除
-     例如：当某个文件夹中的 Excel 文件被删除时触发任务
-3. 配置 **Execution Flow**
+2. 定义决定任务何时运行的**触发条件**：
+   - **Scheduled（按时间触发）**，可以选择：
+     - Daily — 每天在指定时间运行
+     - Weekly — 每周在指定日期和时间运行
+     - Monthly — 每月在指定日期和时间运行
+     - Once — 只运行一次
+     - Every — 按固定间隔运行
+   - **File Watch（按事件触发）**，所选目录发生变化时触发：
+     - 创建文件
+     - 修改文件
+     - 删除文件，例如：从文件夹中删除 Excel 文件时触发任务
+3. 配置**执行流程**
+   - 选择执行任务的模型，之后可以修改
    - 定义任务触发后 Agent 应执行的操作
-   - 可包含任意由 Agent 执行的自动化动作或工作流
+   - 可以设置任何由 Agent 处理的自动操作或工作流
 
 <Frame>
-  ![Schaduled](/images/schaduled.png)
+  ![定时任务](/images/0723-createacron.png)
+</Frame>
+
+**Webhook Task**
+
+1. 选择 **Webhook** 作为触发类型
+2. 点击 **Create Webhook Task**
+3. 配置：
+   - 任务名称
+   - 模型
+   - 执行流程
+
+<Frame>
+  ![创建 Webhook 任务](/images/0723-creatawebhooktask.png "创建 Webhook 任务")
+</Frame>
+
+端点收到 HTTP POST 请求后，Agent 会自动开始执行已配置的工作流。
+
+<Frame>
+  ![Webhook 任务](/images/0723-cronjobwebhook.png)
 </Frame>

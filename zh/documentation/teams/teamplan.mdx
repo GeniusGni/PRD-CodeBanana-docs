@@ -1,150 +1,303 @@
 ---
-title: "团队套餐"
-description: "面向需要共享资源、统一计费以及对多成员进行受控访问的组织而设计。"
+title: "Team Plan"
+description: "为组织配置 CodeBanana Team Plan，包括自定义席位、共享 Token 池计费、按席位设置虚拟机配置、灵活的有效期、用量提醒、成员限额、模型使用限制、续费、企业付款支持，以及查看 Token、限额和到期时间。"
 ---
 
-import SnippetIntro from '/snippets/snippet-intro.mdx';
+## **什么是 Team Plan**
 
-## **什么是团队套餐**
+Team Plan 是 CodeBanana 面向组织提供的灵活团队订阅方案。
 
-团队套餐提供一种 **协作式使用模式**，其特点包括：
+团队可以配置和管理：
 
-- 资源（requests、算力、usage limits）在 **组织层级** 统一管理
-- 账单由 **组织 Owner** 统一支付
+- 自定义席位数量
+- 每个席位的虚拟机配置
+- 供整个团队使用的共享 Token 池
 
-### **套餐结构**
+所有计费和用量都在组织层级统一管理，管理员可以集中控制席位、计算资源、Token 消耗和成员限额。
 
-团队套餐由两个主要部分组成：
+---
 
-**预付费（包含用量）**
+## **购买 Team Plan**
 
-- 每位成员每月可获得 **300 次 requests**
-- 可根据使用需求选择 VM 配置，由 **组织管理员** 统一控制
-- 费用会根据所选 VM 档位而变化（以席位费形式收取）
+可以通过 **Pricing → Team Plan** 购买 Team Plan。
 
-**后付费**
+<Frame>
+  ![Team Plan 价格](/images/0418-teamplan-pricing.png)
+</Frame>
 
-- 当包含的 requests 用尽后启用
-- 额外用量将按实际消耗计费
-- Usage limits 由 **组织管理员** 进行定义和控制
+### **自定义席位与共享 Token 池**
 
-## **升级到团队套餐**
+Team Plan 支持根据团队实际需求灵活配置购买内容：
 
-**_管理员操作_**
+- 可以自由选择席位数量
+- 最少购买 **1 个席位**
+- 可以自定义 Token 池金额
+- Token 池没有最低金额要求
+- 允许将 Token 池金额设置为 **\$0**
+- Token 池由整个团队共享
 
-<Steps>
-  <Step title="前往 Pricing 页面">
-    登录后，管理员进入 **Pricing / Subscription** 页面，并找到 **团队套餐**。
+### **有效期**
 
-    <Frame>
-      ![Upgradetoteam](/images/upgradetoteam.png)
-    </Frame>
-  </Step>
-  <Step title="点击“Subscribe”并完成支付">
-    点击 **Subscribe** 按钮完成支付流程。
+Team Plan 提供多种有效期选项：
 
-    - 激活后，系统会立即收取首个席位费用（即管理员自己的席位）。
+- **1 个月**
+- **3 个月**
+- **6 个月**
+- **12 个月**
 
-    <Frame>
-      ![Teampayment](/images/teampayment.png)
-    </Frame>
+### **套餐内 Token 额度**
 
-    <Note>
-      默认情况下，激活团队套餐时会先收取一个席位的费用（管理员本人）。后续新增席位将根据实际添加的成员数量进行计费。请确保已绑定有效信用卡，且卡内余额充足。
-    </Note>
-  </Step>
-</Steps>
+每个席位包含固定的 Token 额度：
+
+- **每席位每月 \$25**
+
+Team Plan 的用量还会通过成员级限额和组织共享 Token 池进行管理。
+
+### **虚拟机配置**
+
+每个席位可以选择以下三种虚拟机配置之一：
+
+- **2 vCPU / 4GB** — **每席位每月 \$45**
+- **4 vCPU / 8GB** — **每席位每月 \$65**
+- **8 vCPU / 16GB** — **每席位每月 \$105**
+
+<Note>
+  Team Plan 的席位价格采用与 Personal Plan 相同的虚拟机配置体系。
+</Note>
+
+---
+
+## **用量入口**
+
+购买 Team Plan 后，管理员可以通过 **Avatar → Usage** 管理席位、Token 用量和成员。
+
+这是以下功能的主要入口：
+
+- 团队席位用量
+- Token 池余额和消耗
+- 成员级用量与限额
+- 续费
+- 购买额外席位
+- Token 充值
+
+<Frame>
+  ![Team Plan 用量入口](/images/0715-usagenew.png)
+</Frame>
+
+---
+
+## **用量管理**
+
+**Usage** 页面同时提供团队级和成员级用量信息。
+
+<Frame>
+  ![Team Plan 用量管理](/images/0520-teamplan-usagemanage.png)
+</Frame>
+
+### **用量提醒**
+
+CodeBanana 会针对成员级限额和组织共享 Token 池提供 Team Plan 用量提醒。
+
+**成员按需用量限额**
+
+- 当成员的按需用量剩余额度**不超过 10%，且不超过 \$10** 时，系统会显示提醒
+- 每位用户每天最多收到**一次**此提醒
+- 每位用户的提醒独立触发
+- 提醒会要求用户在用量中断前联系组织 Owner 或 Admin **_提醒文案_**
+  > 你即将达到按需用量限额（已使用 {usedPct}%）。请联系组织 Owner 或 Admin 提高限额，以免用量中断。
+
+**组织共享 Token 池**
+
+- 当共享 Token 池余额低于 **10%** 时，系统会显示提醒
+- 该提醒面向组织 Owner 或 Admin，以便及时为 Token 池充值 **_提醒文案_**
+  > 组织的共享 Token 预算即将用尽，目前还剩 \${remaining}。请联系组织 Owner 或 Admin 尽快充值，确保团队工作顺利进行。
+
+### **团队用量（管理员视图）**
+
+管理员可以查看和管理：
+
+- 已使用席位数/总席位数
+- 共享 Token 池消耗
+- Token 池剩余余额
+- **Add Seats（增加席位）**
+- 为 Token 池执行 **Top Up（充值）**
+
+当前限制：
+
+- 额外购买的席位目前仅支持与初次购买 Team Plan 时**相同的虚拟机配置**
+- 后续版本将支持更灵活的混合席位加购方式
+
+有效期规则：
+
+- 额外席位和 Token 充值与当前 Team Plan 周期采用相同的到期日期
+- 如果在 Team Plan 有效期内增加席位，新增席位费用及其包含的 Token 额度均会根据该周期的剩余时间按比例计算
+
+<Frame>
+  ![增加 Team Plan 席位](/images/0520-teamplan-addseat.png)
+</Frame>
+
+### **个人用量（成员视图）**
+
+每位成员可以查看自己的用量详情，包括：
+
+- 个人 Token 消耗量
+- 当前 Token 限额状态
+- 当前虚拟机配置
+
+---
 
 ## **管理员控制**
 
-组织 Owner 负责管理团队套餐的配置与计费：
+组织 Owner 和 Admin 可以管理 Team Plan 配置与用量。
 
-#### **将成员添加到团队套餐**
+### **将成员添加到 Team Plan**
 
 <Steps>
-  <Step title="前往 Usage">
-    点击右上角头像
+  <Step title="进入 Usage">
+    点击右上角的头像。
 
-    在下拉菜单中选择 “Usage”，进入用量管理页面
+    在下拉菜单中选择 **Usage**，进入用量管理页面。
 
     <Frame>
-      ![Teamplanstep1](/images/Teamplanstep1.png)
+      ![Team Plan 第一步](/images/0715-usagenew.png)
     </Frame>
   </Step>
   <Step title="Members & Quotas">
-    切换到 “Members & Quotas” 标签页。
-
-    <Frame>
-      ![Teamplanstep2](/images/Teamplanstep2.png)
-    </Frame>
+    切换到 **Members & Quotas** 标签页。
   </Step>
-  <Step title="点击「Add Members」">
-    点击蓝色的 “Add Members” 按钮，打开成员选择弹窗
+  <Step title="点击 Add Members">
+    点击蓝色的 **Add Members** 按钮，打开成员选择弹窗。
 
     <Frame>
-      ![Teamplanstep3](/images/Teamplanstep3.png)
-    </Frame>
-
-    <Frame>
-      ![Teamplanstep3](/images/addnewteam.png)
-    </Frame>
-  </Step>
-  <Step title="选择 VM 规格与计费设置">
-    进入配置步骤，为成员分配 VM 规格
-
-    支持批量配置，也支持按成员单独自定义
-
-    <Frame>
-      ![Teamplanstep4](/images/Teamplanstep4.png)
+      ![Team Plan 第三步](/images/0520-teamplan-step3.png)
     </Frame>
   </Step>
 </Steps>
 
-<Warning>
-  席位费用会根据所选 VM 配置，**立即** 从 **Owner 的支付方式** 中扣除
-</Warning>
+管理员可以在已购买的席位数量范围内，将成员添加到 Team Plan。
+
+- 成员必须已经属于该组织
+- 可以直接从组织联系人中选择成员
+- 席位只能在当前已购数量范围内分配
 
 <Info>
-  在将成员添加到团队套餐之前，用户必须先申请加入管理员所在的组织。只有在管理员审批通过后，才能为其分配席位。
+  将成员添加到 Team Plan 前，用户必须先加入组织。只有管理员批准加入申请后，才能为其分配席位。
 </Info>
 
 <Card title="如何加入组织？" icon="arrow-right-long" href="/documentation/teams/org">
 </Card>
 
-#### **修改成员套餐**
+### **计费模式**
 
-**管理员可以更新：**
+组织 Owner 和 Admin 可以选择组织内 AI 用量费用的计费方式。
 
-- VM 配置
-- On-demand usage limits
-  - 成员只能在已配置的额度内使用资源
-  - 超出额度后将无法继续使用
+**配置位置**
+
+- 点击右上角的**头像**
+- 选择 **Billing Mode**
+- 为组织选择计费模式
+- 点击 **Save** 应用更改
 
 <Frame>
-  ![Addteamplanmember](/images/addteamplanmember.png)
+  ![计费模式](/images/0715-billingmode.png)
+</Frame>
+
+**可用计费模式**
+
+- **Owner Mode** — 组织内的所有 AI 用量均从**项目 Owner** 的额度中扣除。
+- **Presenter Mode** — AI 用量根据当前 **Presenter** 自己的额度和实际用量计费。
+
+<Note>
+  只有组织 **Owner** 和 **Admin** 可以更改计费模式。所选计费模式会应用于整个组织。
+</Note>
+
+### **模型使用限制**
+
+Team Plan 管理员可以限制每位团队成员能够使用的 AI 模型，让组织更精确地控制模型使用和成本。
+
+**配置位置**
+
+- 前往 **Usage → Members & Quotas**
+- 在成员表格中找到 **Models** 列
+- 为每位成员单独设置模型权限，或批量应用限制
+
+<Frame>
+  ![模型限制概览](/images/0520-teamplan-modellimite-overview.png)
+</Frame>
+
+**单个成员的模型限制**
+
+- 管理员可以打开指定成员的 **Models** 选择器
+- 每位成员可以设置为：
+  - **All** — 所有可用模型
+  - **Selected models only** — 只能使用勾选的模型
+- 未选中的模型对该成员不可用
+
+<Frame>
+  ![单个成员模型限制](/images/0520-teamplan-singlemodel.png)
+</Frame>
+
+**批量模型限制**
+
+- 管理员可以选择多位成员，也可以使用 **Select All**
+- 选择成员后，管理员可以一次性应用相同的模型访问规则
+- 这样可以更轻松地管理大型团队的模型权限
+
+<Frame>
+  ![批量设置模型限制](/images/0520-teamplan-batchmodel.png)
+</Frame>
+
+**筛选与可见性**
+
+- **Members & Quotas** 顶部的 **Model Limits** 筛选器可帮助管理员快速识别已经受到模型访问限制的成员
+- Skill 和项目用量仍然可见，但可用模型会根据管理员配置受到限制
+
+**限制范围**
+
+- 模型限制应用于**成员级别**
+- 如果受限成员创建了项目，该项目中的所有人都只能使用该成员获准使用的模型
+- 不可用的模型会在模型选择器中显示为禁用
+
+![模型限制结果](/images/0715-modellimit.png)
+
+### **修改成员套餐**
+
+管理员可以更新：
+
+- 每月 Token 用量限额
+- 虚拟机配置
+- Team Plan 成员资格
+
+**限额控制**
+
+- 成员只能在所配置的每月限额内使用 Token 资源
+- 超出限额的用量会根据当前 Team Plan 限额和共享池设置进行处理
+
+**升级虚拟机**
+
+- 支持升级虚拟机
+- 更改立即生效
+
+如果共享 Token 池余额充足：
+
+- 升级费用可以从 Token 池中扣除
+- 额外席位费用也可以从 Token 池中扣除
+
+**降级虚拟机**
+
+- 目前**不支持**降级虚拟机
+
+**移除成员**
+
+- 管理员可以移除 Team Plan 成员
+- 被释放的席位之后可以在已购席位数量范围内重新分配给其他成员
+
+<Frame>
+  ![移除或编辑 Team Plan 成员](/images/0418-teamplan-remove-editlimit.png)
 </Frame>
 
 <Frame>
-  ![Chang Vm](/images/changVm.png)
-</Frame>
-
-**升级行为**：
-
-- 立即生效
-- 差价将由 Owner 扣费（**仅适用于 VM 变更**）
-
-**降级行为**：
-
-- 剩余余额将保留在 Stripe 中（**仅适用于 VM 变更**），用于抵扣后续账单
-- 如需退款，需通过邮件手动申请
-
-**移除成员**：
-
-- 管理员可以移除团队套餐成员
-- 只有在冷却期结束后，才可再次添加该成员
-
-<Frame>
-  ![Teamplanremove](/images/teamplanremove.png)
+  ![更改虚拟机](/images/0418-teamplan-upgradeVm.png)
 </Frame>
 
 **账单管理**
@@ -152,88 +305,162 @@ import SnippetIntro from '/snippets/snippet-intro.mdx';
 - 所有账单均可在 **Personal Center → Billing** 中查看
 
 <Frame>
-  ![Teamplanbill](/images/teamplanbill.png)
+  ![Team Plan 账单](/images/0715-invoice.png)
 </Frame>
 
-#### **升级 / 降级的价格计算逻辑**
+---
 
-使用成本按以下 **两者中的较高值** 计算：
+## **续费**
 
-- **（套餐总价 / 总天数）× 已使用天数**，或
-- **每次 request \$0.15**
+Team Plan 支持在到期前续费。
 
-剩余余额计算方式：
+管理员可以在 **Usage** 页面点击 **Renew**，直接续订套餐。
 
-- 余额 = 已支付金额 − 已使用金额
-- 升级费用 = 新价格 − 剩余余额
+这样可以确保团队持续使用席位和 Token 池，不会中断。
 
-#### **成员使用体验**
+---
 
-启用团队套餐后：
+## **企业付款**
 
-成员需要由 **管理员手动添加**
+Team Plan 还支持签约客户通过企业线下方式付款。
 
-添加成功后，成员将获得：
+该选项面向不直接通过前端管理采购的企业客户。
 
-- 每月 300 次 requests
-- 已分配的 VM 资源
-- 已配置的 usage limits
+如需企业付款支持，请联系 CodeBanana 团队。
 
-当额度用尽时：
+---
 
-- 成员需要联系管理员提升配额
+## **时间信息可见性**
 
-如果成员 **未被添加到团队套餐**：
-
-- 其用量将按 **个人套餐** 进行计费
-
-#### **计费机制**
-
-**席位费**
-
-- 激活团队套餐时，会先收取管理员席位费用
-- 添加成员时，会向 Owner 收取对应席位费用
-
-**用量计费**
-
-- 在以下任一条件满足时自动扣费：
-  - On-demand usage 达到 **\$2000**
-  - 每满 **30 天**
-
-#### **用量查看**
-
-前往 **Personal Center → Usage** 可查看：
-
-- Token 消耗
-- Request 使用情况
-- 整体配额与限制
+Team Plan 会显示到期和重置时间。
 
 <Frame>
-  ![Teamplanusage](/images/teamplanusage.png)
+  ![Team Plan 重置时间](/images/05201-teamplanreset.png)
 </Frame>
 
-## FAQs
+### **Owner 可以查看**
 
-团队套餐常见问题解答
+- Team Plan 席位到期时间
+- Token 池到期时间
+- 成员按需用量限额重置时间
+
+### **成员可以查看**
+
+- 自己的按需用量限额重置时间
+
+### **所有人都可以查看**
+
+- 成员加入 Team Plan 的时间
+- 该时间显示在 **Members & Quotas** 的 **Added** 列中
+
+---
+
+## **包含的权益**
+
+Team Plan 包含以下权益：
+
+- **每席位每月 \$25 Token 额度**<br />每个席位包含固定的每月 Token 额度
+- **灵活的席位管理**<br />管理员可以随时管理 Team Plan 成员，并在之后增加席位或为 Token 池充值
+- **团队用量限额控制**<br />管理员可以设置成员每月 Token 用量限额，更好地控制支出
+- **自定义虚拟机配置**<br />可以根据需要升级成员的虚拟机配置
+- **随时充值，按需使用**<br />Token 池可以随时充值，没有最低金额限制
+- **共享按需 Token 用量**<br />团队成员共享同一个 Token 资源池，从而更灵活地分配团队用量
+
+---
+
+## **版本过渡说明**
+
+新版 Team Plan 将替代之前的版本。
+
+现有 Team Plan 用户不受此次过渡影响。在现有权益到期或全部用完之前，他们可以继续使用当前 Team Plan 权益。
+
+---
+
+## 常见问题
+
+以下是有关 Team Plan 的常见问题解答。
 
 <AccordionGroup>
-  <Accordion title="为什么我在“Add Members”列表里找不到某个成员？">
-    该成员尚未完成加入组织的申请。请让其登录 CodeBanana，前往 “Personal Center → Organization”，搜索您的组织名称并提交申请。待审批通过后，该成员才会出现在可添加列表中。
+  <Accordion title="在哪里可以购买 Team Plan？">
+    可以通过 **Pricing → Team Plan** 购买 Team Plan。
   </Accordion>
 
-  <Accordion title="是否可以为不同成员分配不同的 VM 配置？">
-    可以。在 Add Members 步骤中，“Per-Member Configuration” 区域支持为每位成员单独设置 VM 规格和 usage limits。
+  <Accordion title="购买 Team Plan 时可以自行选择席位数量吗？">
+    可以。Team Plan 支持自定义席位数量，最少购买 **1 个席位**。
   </Accordion>
 
-  <Accordion title="成员超出 usage limit 后会发生什么？">
-    当 On-Demand limit 超出后，该成员将无法继续使用按量资源，直到管理员提升其额度。
+  <Accordion title="Team Plan 提供哪些有效期？">
+    Team Plan 支持 **1、3、6 和 12 个月**的有效期。
   </Accordion>
 
-  <Accordion title="30 天计费周期是固定日期，还是滚动周期？">
-    其采用自团队套餐激活之日起开始计算的滚动 30 天周期，而非固定自然月日期。如果总用量先达到 \$2,000，则会提前触发扣费。
+  <Accordion title="Token 池有最低充值金额吗？">
+    没有。Token 池金额可以完全自定义，也允许设置为 **\$0**。
   </Accordion>
 
-  <Accordion title="在哪里可以查看账单记录？">
-    管理员可以在 Usage 页面查看全部账单历史以及各成员的详细用量信息。系统也会将账单通知发送至管理员的注册邮箱。
+  <Accordion title="Token 池由整个团队共享吗？">
+    是。Token 池由 Team Plan 中的所有成员共享，并可按需使用。
+  </Accordion>
+
+  <Accordion title="套餐内 Token 额度用完后会怎样？">
+    Team Plan 可以根据当前组织 Token 池和成员限额配置继续提供用量。
+  </Accordion>
+
+  <Accordion title="可以为不同成员分配不同的虚拟机配置吗？">
+    可以。每个席位都可以单独配置，管理员之后也可以为个别成员升级虚拟机配置。
+  </Accordion>
+
+  <Accordion title="可以降级虚拟机配置吗？">
+    不可以。目前支持升级虚拟机，但不支持降级。
+  </Accordion>
+
+  <Accordion title="管理员之后可以增加席位吗？">
+    可以。管理员可以在 Usage 页面使用 **Add Seats**。目前，额外席位必须采用与初次购买时相同的虚拟机配置。
+  </Accordion>
+
+  <Accordion title="如果在 Team Plan 有效期中途增加席位，会怎样计算？">
+    如果在 Team Plan 有效期内增加席位，新增席位会沿用当前 Team Plan 的到期日期。
+
+    额外席位费用及其包含的 Token 额度都会**根据当前周期的剩余时间按比例计算**。
+
+    例如，如果 Team Plan 有效期为 **6 月 1 日至 6 月 30 日**，并在 **6 月 15 日**增加一个席位，则新增席位将在 **6 月 30 日**到期，席位费用和套餐内 Token 额度也会根据剩余时间按比例计算。
+  </Accordion>
+
+  <Accordion title="管理员之后可以为 Token 池充值吗？">
+    可以。管理员可以在 Usage 页面使用 **Top Up**，随时为共享 Token 池充值。
+  </Accordion>
+
+  <Accordion title="席位升级或虚拟机升级可以从 Token 池中支付吗？">
+    可以。如果共享 Token 池余额充足，额外席位费用和成员虚拟机升级费用都可以从 Token 池中扣除。
+  </Accordion>
+
+  <Accordion title="管理员如何将成员添加到 Team Plan？">
+    只要成员已经加入组织且有可用的已购席位，管理员就可以通过 **Usage → Members & Quotas** 添加成员。
+  </Accordion>
+
+  <Accordion title="Team Plan 如何使用成员 Token 限额？">
+    Team Plan 支持成员级 Token 限额，让组织更精确地控制用量。当成员接近所配置的按需用量限额时，CodeBanana 可能会根据当前提醒规则显示提示。限额处理方式和可用用量还取决于组织共享 Token 池的配置。
+  </Accordion>
+
+  <Accordion title="管理员可以限制团队成员使用哪些 AI 模型吗？">
+    可以。在 **Usage → Members & Quotas** 中，管理员可以通过 **Models** 列配置每位成员的模型访问权限。成员可以使用所有模型，也可以只使用选定的模型。如果受限成员创建了项目，该项目中的所有人都只能使用该成员获准使用的模型。
+  </Accordion>
+
+  <Accordion title="Team Plan 什么时候会显示用量提醒？">
+    Team Plan 针对不同类型的用量采用不同的提醒规则。
+
+    - 当成员的按需用量剩余额度**不超过 10%，且不超过 \$10** 时，成员会收到提醒
+    - 当共享 Token 池余额低于 **10%** 时，组织 Owner 或 Admin 会收到提醒
+  </Accordion>
+
+  <Accordion title="在哪里可以续订 Team Plan？">
+    可以在到期前进入 **Usage** 页面，点击 **Renew** 续订 Team Plan。
+  </Accordion>
+
+  <Accordion title="企业客户可以使用线下付款，而不是通过前端购买吗？">
+    可以。企业客户可以联系 CodeBanana 团队获取线下付款支持。
+  </Accordion>
+
+  <Accordion title="旧版 Team Plan 的现有用户会失去权益吗？">
+    不会。现有 Team Plan 用户不受此次过渡影响。在当前权益到期或全部用完之前，他们可以继续使用现有 Team Plan 权益。
   </Accordion>
 </AccordionGroup>
