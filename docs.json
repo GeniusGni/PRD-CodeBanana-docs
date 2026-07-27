@@ -140,7 +140,8 @@
                     "group": "快速开始",
                     "pages": [
                       "zh/quickstarts/firstapp",
-                      "zh/quickstarts/templates"
+                      "zh/quickstarts/templates",
+                      "zh/quickstarts/github"
                     ]
                   },
                   "zh/onboarding",
