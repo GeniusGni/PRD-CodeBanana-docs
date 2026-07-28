@@ -1,19 +1,22 @@
 ---
 title: "Team Plan"
-description: "Configure CodeBanana Team Plan for organizations with customizable seats, shared token pool billing, seat-based VM configurations, flexible validity periods, usage alerts, member limits, model usage limits, renewals, enterprise payment support, and visibility into tokens, limits, and expiration timelines."
+description: "Configure CodeBanana Team Plan for organizations with customizable seats, shared Budget Balance, seat-based VM configurations, flexible validity periods, usage alerts, billing modes, member limits, batch member management, model templates, model usage limits, renewals, seat management, and organization-level billing records."
 ---
 
 ## **What is Team Plan**
 
-Team Plan is a flexible team subscription for organizations in CodeBanana.
+Team Plan is a flexible organization subscription that centralizes seats, compute resources, AI usage, and administration in CodeBanana.
 
-It allows teams to configure and manage:
+It allows organizations to manage:
 
-- Customizable seat counts
-- Per-seat VM configurations
-- A shared token pool for team-wide usage
+- Customizable seat quantities
+- Seat-specific VM configurations
+- A shared **Budget Balance**
+- Member on-demand limits
+- Available models and reusable model templates
+- Organization-level billing and usage records
 
-All billing and usage management are handled at the organization level, giving admins centralized control over seats, compute, token consumption, and member limits.
+Unlike individual plans, Team Plan AI usage is funded through a shared organization balance rather than a separate included token quota for each seat.
 
 ---
 
@@ -25,60 +28,56 @@ Team Plan can be purchased from **Pricing → Team Plan**.
   ![0418 Teamplan Pricing](/images/0418-teamplan-pricing.png)
 </Frame>
 
-### **Custom seats and shared token pool**
+### **Seats and Budget Balance**
 
-Team Plan supports flexible purchase configuration based on actual team needs:
+Seats and AI usage balance are purchased separately.
 
-- Seat quantity can be selected freely
-- Minimum purchase starts from **1 seat**
-- The token pool amount can be customized
-- No minimum token pool amount is required
-- A token pool of **\$0** is allowed
-- The token pool is shared across the entire team
+- Seat quantity can be selected based on organization needs
+- A minimum of **1 seat** is required
+- Each seat costs **\$20 / month**
+- AI usage is deducted from the organization’s shared **Budget Balance**
+- Budget Balance starts from **\$100**
+- Budget Balance does not expire and can be topped up later
 
 ### **Validity period**
 
-Team Plan supports multiple validity options:
+Team Plan supports multiple validity periods:
 
 - **1 month**
 - **3 months**
 - **6 months**
 - **12 months**
 
-### **Included token quota**
+Available discounts may vary depending on the selected validity period.
 
-Each seat includes a fixed amount of token quota:
+### **VM configurations**
 
-- **\$25 / seat / month**
+Seats are associated with specific VM configurations.
 
-Team Plan usage is also managed through member-level limits and the shared organization token pool.
+Available VM tiers include:
 
-### **VM tiers**
+- **2 vCPU / 4 GB RAM**
+- **4 vCPU / 8 GB RAM**
+- **8 vCPU / 16 GB RAM**
 
-Each seat can be configured with one of three VM tiers:
-
-- **2 vCPU / 4GB** — **\$45 / seat / month**
-- **4 vCPU / 8GB** — **\$65 / seat / month**
-- **8 vCPU / 16GB** — **\$105 / seat / month**
-
-<Note>
-  Team Plan seat pricing follows the same VM tier structure as Personal Plan.
-</Note>
+The available seat quantity is tracked separately for each VM configuration.
 
 ---
 
 ## **Usage Entry**
 
-After purchasing Team Plan, admins can manage seats, token usage, and members from **Avatar → Usage**.
+After purchasing Team Plan, organization Owners and Admins can manage seats, Budget Balance, usage, and members from **Avatar → Usage**.
 
-This is the main entry for:
+The Usage page provides access to:
 
-- Team seat usage
-- Token pool balance and consumption
-- Member-level usage and limits
-- Renewals
-- Additional seat purchase
-- Token top-up
+- Seat usage and availability
+- Shared Budget Balance and AI consumption
+- Member-level limits and usage
+- Model permissions
+- Team Plan renewal
+- Additional seat purchases
+- Budget Balance top-up
+- Seat and balance records
 
 <Frame>
   ![0418 Teamplan Entry](/images/0715-usagenew.png)
@@ -88,7 +87,7 @@ This is the main entry for:
 
 ## **Usage Management**
 
-The **Usage** page provides both team-level and member-level visibility.
+The **Usage** page provides organization-level management for Owners and Admins, while allowing members to view their own available usage and VM resources.
 
 <Frame>
   ![0418 Teamplan Usermanage](/images/0520-teamplan-usagemanage.png)
@@ -96,59 +95,69 @@ The **Usage** page provides both team-level and member-level visibility.
 
 ### **Usage Alerts**
 
-CodeBanana provides usage alerts for Team Plan across both member-level limits and the shared organization token pool.
+CodeBanana provides Team Plan usage alerts for member on-demand limits and the shared organization Budget Balance.
 
 **Member on-demand limit**
 
 - A reminder is shown when a member’s remaining on-demand limit is **10% or less and no more than \$10**
 - Each user receives this reminder at most **once per day**
-- The reminder is triggered independently for each user
-- The reminder asks the user to contact the organization owner or admin before usage is interrupted **_Reminder text_**
-  > You're almost at your on-demand limit ({usedPct}% used). Reach out to your organization owner or admin to increase your limit before usage is interrupted.
+- Reminders are evaluated independently for each user
+- The user is asked to contact the organization Owner or Admin before usage is interrupted
 
-**Shared organization token pool**
+**Reminder text**
 
-- A reminder is shown when the shared token pool balance falls below **10%**
-- This reminder is intended for the organization owner or admin so the pool can be topped up in time **_Reminder text_**
-  > Your organization's shared token budget is almost depleted — \${remaining} left. Please contact your organization owner or admin to top up soon and keep your team running smoothly.
+> You're almost at your on-demand limit ({usedPct}% used). Reach out to your organization owner or admin to increase your limit before usage is interrupted.
+
+**Shared organization Budget Balance**
+
+- A reminder is shown when the remaining Budget Balance falls below **10%**
+- The reminder is intended for the organization Owner or Admin so the balance can be topped up in time
+
+**Reminder text**
+
+> Your organization's shared token budget is almost depleted — \${remaining} left. Please contact your organization owner or admin to top up soon and keep your team running smoothly.
+
+<Note>
+  No reminder is shown when a member’s personal plan quota is exhausted while the organization still has available shared Budget Balance.
+</Note>
 
 ### **Team usage (Admin view)**
 
-Admins can view and manage:
+Organization Owners and Admins can view:
 
-- Seats used / total seats
-- Shared token pool consumption
-- Remaining token pool balance
-- **Add Seats**
-- **Top Up** for the token pool
+- Seats used and available
+- Seat availability by VM configuration
+- Shared Budget Balance
+- Organization-wide AI usage
+- Member usage and on-demand limits
+- Seat records
+- Budget transaction history
 
-Current limitation:
+They can also:
 
-- Additional seats currently support only the **same VM tier** as the original Team Plan purchase
-- More flexible mixed seat top-up modes will be supported in later iterations
-
-Validity rule:
-
-- Additional seats and token top-ups follow the same expiration date as the current Team Plan period
-- If a seat is added during an active Team Plan period, both the added seat cost and its included token quota are prorated based on the remaining time in that period
-
-<Frame>
-  ![0418 Teamplan Addseat](/images/0520-teamplan-addseat.png)
-</Frame>
+- Add seats
+- Top up Budget Balance
+- Renew Team Plan
+- Open **Members & Quotas**
+- Review seat and balance changes
 
 ### **Personal usage (Member view)**
 
-Each member can view their own usage details, including:
+Each Team Plan member can view:
 
-- Personal token consumption amount
-- Current token limit status
+- Current token usage
+- Available on-demand limit
 - Current VM configuration
+- Limit reset time
+- Team Plan expiration information available to them
+
+For Team Plan members, AI usage is deducted from the organization’s shared Budget Balance, subject to the member’s configured on-demand limit.
 
 ---
 
 ## **Admin Controls**
 
-Organization owners and admins can manage Team Plan configuration and usage.
+Organization Owners and Admins can manage Team Plan configuration, members, billing behavior, models, limits, and VM resources.
 
 ### **Add members to Team Plan**
 
@@ -162,26 +171,34 @@ Organization owners and admins can manage Team Plan configuration and usage.
       ![Teamplanstep1](/images/0715-usagenew.png)
     </Frame>
   </Step>
-  <Step title="Members & Quotas">
+  <Step title="Open Members & Quotas">
     Switch to the **Members & Quotas** tab.
   </Step>
   <Step title="Click Add Members">
-    Click the blue **Add Members** button to open the member selection modal.
+    Click **Add Members** to open the member selection panel.
 
     <Frame>
       ![Teamplanstep3](/images/0520-teamplan-step3.png)
     </Frame>
   </Step>
+  <Step title="Configure members">
+    Select members and configure their seats, limits, and model permissions before confirming.
+  </Step>
 </Steps>
 
-Admins can add members into Team Plan within the range of already purchased seats.
+When adding members, admins can:
 
-- Members must already belong to the organization
-- Members can be selected directly from organization contacts
-- Seats are assigned within the currently purchased quota
+- Filter organization members by department
+- View available seats for each VM configuration
+- Assign members to available seats
+- Configure on-demand token limits
+- Apply model permissions or model templates
+- Adjust individual members separately when needed
+
+Members must already belong to the organization before they can be added to Team Plan.
 
 <Info>
-  Before adding members to Team Plan, users must first join the organization. Only after the admin approves the request can seats be assigned.
+  If the required VM seat is unavailable, CodeBanana can direct the admin to purchase an additional seat. Payment can use Budget Balance when sufficient, or continue through Stripe.
 </Info>
 
 <Card title="How to join an Organization?" icon="arrow-right-long" href="/documentation/teams/org">
@@ -189,14 +206,16 @@ Admins can add members into Team Plan within the range of already purchased seat
 
 ### **Billing mode**
 
-Organization owners and admins can choose how AI usage costs are charged across the organization.
+Billing Mode determines whose usage identity is used when AI costs are attributed inside the organization.
+
+Organization Owners and Admins can change the organization’s Billing Mode.
 
 **Where to configure**
 
-- Click your **avatar** in the top-right corner
-- Select **Billing Mode**
-- Choose the billing mode for the organization
-- Click **Save** to apply the changes
+1. Click your **avatar** in the top-right corner
+2. Select **Billing Mode**
+3. Choose a billing mode
+4. Click **Save**
 
 <Frame>
   ![0715 Billingmode](/images/0715-billingmode.png)
@@ -204,44 +223,71 @@ Organization owners and admins can choose how AI usage costs are charged across 
 
 **Available billing modes**
 
-- **Owner Mode** — All AI usage within the organization is charged to the **project owner's** quota.
-- **Presenter Mode** — AI usage is charged to the **current presenter** based on their own quota and actual usage.
+- **Owner Mode** — Usage is attributed to the project Owner
+- **Presenter Mode** — Usage is attributed to the current presenter based on their actual activity
 
 <Note>
-  Only **organization Owners** and **Admins** can change the billing mode. The selected billing mode applies to the entire organization.
+  The selected Billing Mode applies to the entire organization. The AI-Native Index Dashboard also displays usage statistics based on the selected mode.
 </Note>
+
+### **Model templates**
+
+Team Plan admins can create reusable model configurations for different teams or types of work.
+
+A model template can define:
+
+- Available models
+- Model display order
+- Default model
+- Whether **Auto mode** is used as the default
+
+Examples include:
+
+- Product and engineering template
+- Marketing and operations template
+- Cost-controlled template
+
+After a template is created, admins can apply it when adding members or managing existing members in **Members & Quotas**.
 
 ### **Model usage limits**
 
-Team Plan admins can restrict which AI models each team member is allowed to use, giving the organization more precise control over model usage and cost.
+Team Plan admins can control which AI models each member is allowed to use.
 
 **Where to configure**
 
 - Go to **Usage → Members & Quotas**
-- Find the **Models** column in the member table
-- Set model access for each member individually, or apply restrictions in bulk
+- Find the **Models** column
+- Apply a model template or select models manually
+- Configure one member or multiple members at once
 
 <Frame>
   ![0418 Teamplan Modellimite Overview](/images/0520-teamplan-modellimite-overview.png)
 </Frame>
 
-**Per-member model limits**
+1. **Per-member model limits**
 
-- Admins can open the **Models** selector for a specific member
-- Each member can be set to:
-  - **All** — all available models
-  - **Selected models only** — only the checked models can be used
-- Any model that is not selected will be unavailable to that member
+For each member, admins can select:
+
+- **All** — all organization-available models
+- **Model template** — a reusable model configuration created by the admin
+- **Selected models only** — only individually selected models are available
+
+Models outside the configured range are unavailable to that member.
 
 <Frame>
   ![0418 Teamplan Modellimite Single](/images/0520-teamplan-singlemodel.png)
 </Frame>
 
-**Bulk model limits**
+2. **Batch member management**
 
-- Admins can select multiple members or use **Select All**
-- After selecting members, admins can apply the same model access rules in one action
-- This makes it easier to manage model permissions across larger teams
+Team Plan admins can manage multiple members at once from **Members & Quotas**.
+
+Admins can:
+
+- Filter members by department based on the organization structure
+- Select multiple members or use **Select All**
+- Set member on-demand token limits in bulk
+- Apply available models or model templates in bulk
 
 <Frame>
   ![0520 Teamplan Batchmodel](/images/0520-teamplan-batchmodel.png)
@@ -249,60 +295,78 @@ Team Plan admins can restrict which AI models each team member is allowed to use
 
 **Filtering and visibility**
 
-- The **Model Limits** filter at the top of **Members & Quotas** helps admins quickly identify which members already have restricted model access
-- Skill and project usage remain visible, but model availability is limited based on the admin’s configuration
+- The **Model Limits** filter helps identify members with restricted model access
+- The member table shows the model configuration applied to each member
+- Unavailable models appear disabled in project model selectors
 
 **Restriction scope**
 
-- Model limits apply at the **member level**
-- If a restricted member creates a project, everyone in that project will only be able to use the models allowed under that member’s restriction
-- Unavailable models will appear disabled in the model selector
+- Model restrictions are applied at the member level
+- If a restricted member creates a project, everyone in that project can only use the models allowed under that member’s model configuration
 
 ![0418 Teamplan Modellimit Result](/images/0715-modellimit.png)
 
+### **Additional payment when seats are insufficient**
+
+If the required VM seat is unavailable, confirming the member configuration redirects the admin to the payment page.
+
+Payment can be completed through:
+
+- **Budget Balance**, when the organization has sufficient balance
+- **Stripe**, when additional payment is required
+
+### **Member on-demand limits**
+
+Organization Owners and Admins can configure an independent on-demand limit for each Team Plan member.
+
+Admins can:
+
+- Set limits while adding members
+- Modify limits directly in **Members & Quotas**
+- Configure multiple members in bulk
+- Apply different limits to individual members
+
+A member’s available AI usage depends on:
+
+- Their configured on-demand limit
+- The organization’s remaining Budget Balance
+
+When the member approaches their limit, the Team Plan usage alert rules apply.
+
 ### **Modify member plans**
 
-Admins can update:
+Admins can manage:
 
-- Monthly token usage limits
-- VM configuration
+- On-demand limits
+- Model permissions
+- VM configurations
 - Team Plan membership
-
-**Limit controls**
-
-- Members can only use token resources within the configured monthly limit
-- Usage beyond the limit will be handled according to the current Team Plan limit and shared pool settings
 
 **VM upgrades**
 
 - VM upgrades are supported
-- Changes take effect immediately
-
-If the shared token pool has sufficient balance:
-
-- Upgrade costs can be deducted from the token pool
-- Additional seat costs can also be deducted from the token pool
+- Changes take effect after confirmation
+- If an additional seat or payment is required, the admin is directed to the payment flow
+- Payment can use Budget Balance when sufficient, or Stripe
 
 **VM downgrades**
 
-- VM downgrades are **not currently supported**
+- VM downgrades are supported
+- Each member can downgrade their VM configuration only **once during an entitlement period**
 
 **Remove member**
 
-- Team Plan members can be removed by the admin
-- Removed seats can be reassigned to other members later within the purchased seat quota
+- Admins can remove members from Team Plan
+- The released seat becomes available for reassignment
+- Removing a member does not automatically reduce the number of purchased seats
 
 <Frame>
   ![Addteamplanmember](/images/0418-teamplan-remove-editlimit.png)
 </Frame>
 
-<Frame>
-  ![Chang Vm](/images/0418-teamplan-upgradeVm.png)
-</Frame>
+### **Billing management**
 
-**Billing management**
-
-- All invoices are available in **Personal Center → Billing**
+Invoices are available from **Personal Center → Billing**.
 
 <Frame>
   ![Teamplanbill](/images/0715-invoice.png)
@@ -310,69 +374,127 @@ If the shared token pool has sufficient balance:
 
 ---
 
+## **Budget Balance**
+
+**Budget Balance** is the organization’s shared balance for Team Plan usage and management.
+
+It replaces the previous **Token Balance** name because the balance can now be used for more than AI token consumption.
+
+Budget Balance can be used for:
+
+- Organization-wide AI usage
+- Team Plan renewal
+- Purchasing additional seats
+- Upgrading member VM configurations
+
+### **Top up Budget Balance**
+
+Organization Owners and Admins can top up Budget Balance from the Usage page.
+
+Available preset amounts include:
+
+- **\$100**
+- **\$500**
+- **\$1,000**
+- **\$2,000**
+
+A custom amount can also be entered.
+
+The top-up panel shows:
+
+- Current balance
+- Top-up amount
+- Balance after top-up
+
+Budget Balance does not expire.
+
+---
+
+## **Add Seats**
+
+Organization Owners and Admins can purchase additional seats at any time from the Usage page.
+
+Additional seats can use different VM configurations, including:
+
+- **2 vCPU / 4 GB RAM**
+- **4 vCPU / 8 GB RAM**
+- **8 vCPU / 16 GB RAM**
+
+Payment can be completed through:
+
+- Budget Balance, when sufficient
+- Stripe
+
+Additional seats follow the current Team Plan expiration date.
+
+If a seat is added during an active Team Plan period, the seat fee is prorated based on the remaining time in the current period.
+
+---
+
 ## **Renewal**
 
-Team Plan supports renewal before expiration.
+Team Plan can be renewed from the **Usage** page by clicking **Renew**.
 
-Admins can renew the plan directly from the **Usage** page by clicking **Renew**.
+During renewal, admins can:
 
-This allows teams to continue using their seats and token pool without interruption
+- Select a validity period of **1, 3, 6, or 12 months**
+- Increase seats
+- Reduce seats
+- Configure seat quantities for different VM tiers
+- Pay with Budget Balance when sufficient
+- Continue through Stripe when needed
 
----
+<Warning>
+  Before reducing the number of seats, remove the corresponding members from Team Plan so enough seats are available to remove.
+</Warning>
 
-## **Enterprise Payment**
-
-Team Plan also supports enterprise offline payment for contracted customers.
-
-This option is designed for enterprise clients who do not manage purchases directly from the frontend.
-
-For enterprise payment support, users should contact the CodeBanana team.
-
----
-
-## **Visibility of Time Information**
-
-Team Plan provides visibility into expiration and reset timelines.
-
-<Frame>
-  ![0520 Teamplan Reset](/images/05201-teamplanreset.png)
-</Frame>
-
-### **Owner can view**
-
-- Team Plan seat expiration time
-- Token pool expiration time
-- Reset time for member on-demand limits
-
-### **Member can view**
-
-- Their own on-demand limit reset time
-
-### **Everyone can view**
-
-- The time when a member was added to Team Plan
-- This is shown in the **Added** column of **Members & Quotas**
+Each Team Plan entitlement period can be renewed **only once** before expiration.
 
 ---
 
-## **What’s Included**
+## **Seat and Budget Records**
 
-Team Plan includes the following benefits:
+The Usage page provides detailed records for organization seats and Budget Balance.
 
-- **\$25 token quota / seat / month**<br />Each seat includes a fixed monthly token quota
-- **Flexible Seat Management**<br />Admins can manage Team Plan members at any time, and later add seats or top up the token pool
-- **Team Usage Limit Controls**<br />Admins can set monthly token usage limits for members to better control spending
-- **Custom VM Configurations**<br />Member VM configurations can be upgraded as needed
-- **Top up anytime, use on-demand**<br />The token pool can be recharged at any time, with no minimum threshold
-- **Shared On-Demand Token Usage**<br />Team members share a common token resource pool for more flexible team-level usage allocation
+### **Seat details**
+
+Admins can view:
+
+- Purchased seats by VM configuration
+- Used seats
+- Available seats
+- Seat changes
+
+Seat records help admins understand current capacity and decide when additional seats are required.
+
+### **Budget history**
+
+Admins can review Budget Balance transactions and filter them by type, including:
+
+- Top-up
+- Team Plan renewal
+- Additional seat purchase
+- VM upgrade
+- VM downgrade
+- Refund or balance return
+
+Income and expense records are visually distinguished to make balance changes easier to understand.
 
 ---
 
 ## **Transition Note**
 
-The new Team Plan replaces the previous version.
+The updated Team Plan changes how existing Team Plan token benefits are managed.
 
-Existing Team Plan users are not affected by the transition. They can continue using their current Team Plan benefits until those benefits expire or are fully used.
+For existing Team Plan customers:
+
+- Used Token in Plan and used Token Limit amounts are combined in the usage display
+- Existing configured member Token Limits remain unchanged
+- Unused **Token in Plan** balance is transferred to the organization’s **Budget Balance**
+- The transferred balance becomes available to all Team Plan members
+- The balance can also be used for renewal, additional seats, and VM upgrades
+
+Existing Team Plan users retain the value of their unused benefits through this migration.
 
 ---
 
@@ -385,82 +507,94 @@ Answers to common questions about Team Plan.
     Team Plan can be purchased from **Pricing → Team Plan**.
   </Accordion>
 
-  <Accordion title="Can I choose my own seat count when purchasing Team Plan?">
-    Yes. Team Plan supports customizable seat counts, starting from a minimum of **1 seat**.
+  <Accordion title="Does each Team Plan seat include a separate token quota?">
+    No. Seats and AI usage balance are purchased separately. Team members consume AI usage from the organization’s shared Budget Balance, subject to their configured on-demand limits.
+  </Accordion>
+
+  <Accordion title="What is the minimum Budget Balance top-up?">
+    Budget Balance starts from **\$100**. Preset amounts include \$100, \$500, \$1,000, and \$2,000, and custom amounts are also supported.
+  </Accordion>
+
+  <Accordion title="Does Budget Balance expire?">
+    No. Budget Balance does not expire.
+  </Accordion>
+
+  <Accordion title="What can Budget Balance be used for?">
+    Budget Balance can be used for AI usage, Team Plan renewal, additional seat purchases, and member VM upgrades.
   </Accordion>
 
   <Accordion title="What validity periods are available for Team Plan?">
     Team Plan supports **1, 3, 6, and 12 months**.
   </Accordion>
 
-  <Accordion title="Does the token pool have a minimum top-up amount?">
-    No. The token pool amount is fully customizable, and **\$0** is allowed.
-  </Accordion>
-
-  <Accordion title="Is the token pool shared across the team?">
-    Yes. The token pool is shared across all members in the Team Plan and can be used on demand.
-  </Accordion>
-
-  <Accordion title="What happens when the included token quota is exhausted?">
-    Team Plan usage can continue according to the current organization token pool and member limit configuration.
-  </Accordion>
-
   <Accordion title="Can different VM configurations be assigned to different members?">
-    Yes. Each seat can be configured independently, and admins can also upgrade VM configurations later for individual members.
+    Yes. Seats are associated with VM configurations, and members can be assigned different VM tiers based on available seats.
+  </Accordion>
+
+  <Accordion title="Can admins add seats with different VM configurations?">
+    Yes. Additional seats can be purchased for 2 vCPU / 4 GB, 4 vCPU / 8 GB, or 8 vCPU / 16 GB configurations.
+  </Accordion>
+
+  <Accordion title="What happens if I add a seat during an active Team Plan period?">
+    The added seat follows the current Team Plan expiration date. Its seat fee is prorated based on the remaining time in the active period.
+  </Accordion>
+
+  <Accordion title="Can admins manage multiple members at once?">
+    Yes. Admins can filter members by department, select multiple members, and configure on-demand token limits and model access in bulk.
+  </Accordion>
+
+  <Accordion title="Can individual members be configured separately?">
+    Yes. Admins can separately configure a member’s on-demand token limit, available models or model template, and VM configuration.
+  </Accordion>
+
+  <Accordion title="What happens when the required VM seat is unavailable?">
+    CodeBanana redirects the admin to the payment page after confirmation. Payment can use Budget Balance when sufficient, or Stripe when additional payment is required.
   </Accordion>
 
   <Accordion title="Can VM configurations be downgraded?">
-    No. VM upgrades are supported, but downgrades are currently unavailable.
+    Yes. VM downgrades are supported, but each member can downgrade only once during an entitlement period.
   </Accordion>
 
-  <Accordion title="Can admins add more seats later?">
-    Yes. Admins can use **Add Seats** from the Usage page. At the moment, additional seats must use the same VM tier as the original purchase.
+  <Accordion title="Can I reduce seats immediately?">
+    Purchased seats are reduced during renewal. Before reducing seats, remove the corresponding members from Team Plan so enough seats are available to remove.
   </Accordion>
 
-  <Accordion title="What happens if I add a seat in the middle of an active Team Plan period?">
-    If you add a seat during an active Team Plan period, the added seat will follow the same expiration date as the current Team Plan.
-
-    Both the additional seat cost and the included token quota are **prorated based on the remaining time** in the current period.
-
-    For example, if your Team Plan runs from **June 1 to June 30** and you add a seat on **June 15**, the added seat will expire on **June 30**, and both the seat fee and the included token quota will be calculated proportionally for the remaining period.
+  <Accordion title="Can I use Budget Balance to renew Team Plan or purchase seats?">
+    Yes. When the organization has sufficient Budget Balance, it can be used for Team Plan renewal, additional seats, and VM upgrades. Otherwise, payment can continue through Stripe.
   </Accordion>
 
-  <Accordion title="Can admins top up the token pool later?">
-    Yes. Admins can use **Top Up** from the Usage page to recharge the shared token pool at any time.
+  <Accordion title="Can admins filter members by department?">
+    Yes. The Add Members and member management flows support filtering members based on the organization’s department structure.
   </Accordion>
 
-  <Accordion title="Can seat upgrades or VM upgrades be paid from the token pool?">
-    Yes. If the shared token pool has sufficient balance, additional seat costs and member VM upgrade costs can be deducted from the token pool.
+  <Accordion title="Can admins create reusable model configurations?">
+    Yes. Admins can create model templates that define available models, model order, and the default model, including Auto mode.
   </Accordion>
 
-  <Accordion title="How do admins add members to Team Plan?">
-    Admins can add members from **Usage → Members & Quotas**, as long as the members are already in the organization and there are available purchased seats.
+  <Accordion title="Can admins restrict which AI models members can use?">
+    Yes. Admins can apply a model template or manually select the available models for individual members or multiple members.
   </Accordion>
 
-  <Accordion title="How are member token limits used in Team Plan?">
-    Team Plan supports member-level token limits so organizations can control usage more precisely. When a member approaches their configured on-demand limit, CodeBanana may show a reminder based on the current warning rules. Limit handling and available usage also depend on the organization’s shared token pool configuration.
-  </Accordion>
-
-  <Accordion title="Can admins restrict which AI models team members can use?">
-    Yes. In **Usage → Members & Quotas**, admins can configure model access for each member through the **Models** column. Members can be allowed to use all models or only a selected set. If a restricted member creates a project, everyone in that project will only be able to use the models allowed under that member’s restriction.
+  <Accordion title="How do member model restrictions affect projects?">
+    If a restricted member creates a project, everyone in that project can only use the models allowed under that member’s model configuration.
   </Accordion>
 
   <Accordion title="When will Team Plan show usage warnings?">
-    Team Plan uses different warning rules for different types of usage.
+    Team Plan uses separate warning rules:
 
     - A member receives a reminder when their remaining on-demand limit is **10% or less and no more than \$10**
-    - The organization owner or admin receives a reminder when the shared token pool balance falls below **10%**
+    - The organization Owner or Admin receives a reminder when the remaining Budget Balance falls below **10%**
   </Accordion>
 
-  <Accordion title="Where can I renew Team Plan?">
-    Team Plan can be renewed from the **Usage** page by clicking **Renew** before expiration.
+  <Accordion title="How often can a member receive an on-demand limit reminder?">
+    Each user receives the reminder at most once per day. The reminder is evaluated independently for each Team Plan member.
   </Accordion>
 
-  <Accordion title="Can enterprise customers use offline payment instead of frontend purchase?">
-    Yes. Enterprise customers can contact the CodeBanana team for offline payment support.
+  <Accordion title="Where can admins review seat and Budget Balance changes?">
+    Admins can review seat details and Budget Balance history from the Usage page, including top-ups, renewals, additional seats, and VM changes.
   </Accordion>
 
-  <Accordion title="Will existing users of the old Team Plan lose their benefits?">
-    No. Existing Team Plan users are not affected by the transition. They can continue using their current Team Plan benefits until those benefits expire or are fully used.
+  <Accordion title="What happens to unused benefits from the previous Team Plan?">
+    Unused Token in Plan value is transferred to the organization’s Budget Balance. It can then be shared by Team Plan members and used for eligible Team Plan payments.
   </Accordion>
 </AccordionGroup>
