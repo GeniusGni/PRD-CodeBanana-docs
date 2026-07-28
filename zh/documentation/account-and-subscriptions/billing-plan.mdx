@@ -1,187 +1,617 @@
 ---
-title: "计费与套餐"
-description: "比较 CodeBanana Free、Personal 和 Professional 套餐，了解套餐包含的 Token 额度、虚拟机配置、月付或年付方式、Token 充值、个人套餐用量提醒，以及基于 Token 的计费方式。"
+title: "Team Plan"
+description: "为组织配置 CodeBanana Team Plan，包括自定义席位、共享 Budget Balance、按席位设置虚拟机配置、灵活的有效期、用量提醒、计费模式、成员限额、批量成员管理、模型模板、模型使用限制、续费、席位管理和组织级账单记录。"
 ---
 
-## **选择套餐**
+## **什么是 Team Plan**
 
-CodeBanana 为不同用量需求提供灵活的套餐，从免费试用到高负载的个人工作场景均可覆盖。
+Team Plan 是 CodeBanana 面向组织提供的灵活订阅方案，用于集中管理席位、计算资源、AI 用量和组织管理。
 
-### **Free**
+组织可以管理：
 
-Free 套餐提供 CodeBanana 的完整功能，并包含一次性试用额度。
+- 自定义席位数量
+- 每个席位的虚拟机配置
+- 共享 **Budget Balance**
+- 成员按需用量限额
+- 可用模型和可复用的模型模板
+- 组织级账单与用量记录
 
-- **价值 \$5 的免费 Token 额度**
-- 在**注册当月**有效
-- **20 MB** 云存储空间
-- 不限制功能
-
-<Note>
-  Free 套餐的 Token 额度仅发放一次。额度将在注册当月结束时过期，且不会再次发放。
-</Note>
-
-### **Personal**
-
-Personal 套餐面向需要专属环境和更高 Token 额度的个人开发者。
-
-- **每月包含价值 \$25 的 Token 额度**
-- **1 GB** 云存储空间
-- 多种虚拟机配置：
-  - **2 vCPU / 4 GB RAM**
-  - **4 vCPU / 8 GB RAM**
-  - **8 vCPU / 16 GB RAM**
-
-<Note>
-  Personal 套餐价格由两部分组成：虚拟机费用和每月包含的 Token 额度费用。
-</Note>
-
-### **Professional**
-
-Professional 套餐面向负载更高的个人工作场景和大型项目。
-
-- **每月包含价值 \$130 的 Token 额度**
-- **5 GB** 云存储空间
-- 可选虚拟机配置：
-  - **4 vCPU / 8 GB RAM**
-  - **8 vCPU / 16 GB RAM**
-
-<Note>
-  Professional 套餐价格同样由虚拟机费用和每月包含的 Token 额度费用组成。
-</Note>
-
-<Card title="准备好购买了吗？" icon="arrow-right" href="https://www.codebanana.com/en/membership">
-  查看价格并选择适合你的套餐。
-</Card>
+与个人套餐不同，Team Plan 的 AI 用量从组织共享余额中扣除，而不是为每个席位单独提供套餐内 Token 额度。
 
 ---
 
-## **购买套餐**
+## **购买 Team Plan**
 
-选定符合需求的套餐后，可以从价格页面进行升级。
-
-<Tip>
-  **有优惠码？** 请在进入结算流程**之前**使用，否则优惠码之后不会自动生效。
-</Tip>
-
-**购买套餐：**
-
-1. 点击工作区右上角的**升级按钮**
-2. 选择套餐
-3. 选择虚拟机配置
-4. 选择计费周期：
-   - **月付** — 按月支付
-   - **年付** — 享受年度折扣
-5. 点击 **Upgrade** 继续结算
+可以通过 **Pricing → Team Plan** 购买 Team Plan。
 
 <Frame>
-  ![价格](/images/0715-price.png)
+  ![购买 Team Plan](/images/0728-teambuy-1.png "购买 Team Plan")
 </Frame>
 
-### **年付价格**
+### **席位与 Budget Balance**
 
-年付方式会根据以下两项费用的年度总价提供折扣：
+席位和 AI 用量余额需要分别购买。
 
-- 虚拟机费用
-- 套餐内 Token 额度费用
+- 可以根据组织需求选择席位数量
+- 最少需要购买 **1 个席位**
+- 每个席位的价格为**每月 \$20**
+- AI 用量从组织共享的 **Budget Balance** 中扣除
+- Budget Balance 最低从 **\$100** 起购
+- Budget Balance 不会过期，之后可以继续充值
 
-这意味着年付价格基于套餐的完整价值计算，而不是只根据虚拟机费用计算。
+### **有效期**
+
+Team Plan 提供多种有效期：
+
+- **1 个月**
+- **3 个月**
+- **6 个月**
+- **12 个月**
+
+具体折扣可能会根据所选有效期有所不同。
+
+### **虚拟机配置**
+
+席位与具体的虚拟机配置关联。
+
+可用虚拟机配置包括：
+
+- **2 vCPU / 4 GB RAM**
+- **4 vCPU / 8 GB RAM**
+- **8 vCPU / 16 GB RAM**
+
+每种虚拟机配置的可用席位数量会分别统计。
 
 ---
 
-## **Token 额度与计费**
+## **Usage 入口**
 
-### **什么是 Token**
+购买 Team Plan 后，组织 Owner 和 Admin 可以通过 **Avatar → Usage** 管理席位、Budget Balance、用量和成员。
 
-**Token** 用于衡量任务实际使用的模型计算量。
+Usage 页面提供以下功能：
 
-其中包括：
+- 查看席位使用情况和可用数量
+- 查看共享 Budget Balance 和 AI 消耗
+- 查看成员级限额与用量
+- 管理模型权限
+- 续订 Team Plan
+- 购买额外席位
+- 为 Budget Balance 充值
+- 查看席位与余额记录
 
-- **输入** — 提示词、上下文、文件和指令
-- **输出** — Agent 回复、生成的代码和计划
+<Frame>
+  ![Team Plan Usage 入口](/images/0715-usagenew.png)
+</Frame>
 
-任务越复杂、上下文窗口越大、模型能力越强，通常消耗的 Token 越多。
+---
 
-### **套餐内 Token 额度**
+## **用量管理**
 
-每种套餐都包含一定的 Token 额度：
+**Usage** 页面为 Owner 和 Admin 提供组织级管理能力，同时允许成员查看自己的可用用量和虚拟机资源。
 
-- **Free** — 一次性提供价值 **\$5** 的 Token 额度
-- **Personal** — **每月 \$25**
-- **Professional** — **每月 \$130**
-
-这些额度是套餐本身的一部分。
-
-### **Token 充值**
-
-套餐内 Token 额度用完后，可以通过 \*\*On-demand Usage（按需用量/充值）\*\*继续使用 CodeBanana。
-
-个人套餐支持充值，你可以在不更改当前订阅的情况下，根据需要增加 Token 余额。
-
-<Note>
-  Team Plan 不使用个人充值。团队用量通过团队共享 Token 池管理。
-</Note>
-
-### **计费方式**
-
-个人套餐采用以下计费结构：
-
-1. 订阅价格包括：
-   - **虚拟机费用**
-   - **套餐内 Token 额度费用**
-2. 套餐内 Token 额度会在**订阅续费日**重置
-3. 未使用的套餐内额度**不会**结转到下一个周期
-4. 套餐内额度用完后，可以通过 \*\*Top-up（充值）\*\*继续使用
+<Frame>
+  ![Team Plan 用量管理](/images/0728-teamusage.png)
+</Frame>
 
 ### **用量提醒**
 
-CodeBanana 提供用量提醒，帮助个人用户掌握剩余额度。
+CodeBanana 会针对成员按需用量限额和组织共享 Budget Balance 提供 Team Plan 用量提醒。
 
-- 当套餐内剩余 Token 余额低于 **10%** 时，系统会显示提醒 **_提醒文案_**
-  > Token 余额不足，你的套餐还剩 \${remaining}。立即充值或升级，确保工作不被中断。
+**成员按需用量限额**
 
-用量提醒适用于：
+- 当成员的按需用量剩余额度**不超过 10%，且不超过 \$10** 时，系统会显示提醒
+- 每位用户每天最多收到**一次**此提醒
+- 每位用户的提醒会独立判断
+- 提醒会要求用户在用量中断前联系组织 Owner 或 Admin
 
-- Free 套餐的 Token 额度
-- 个人付费套餐包含的 Token 额度
+**提醒文案**
+
+> 你即将达到按需用量限额（已使用 {usedPct}%）。请联系组织 Owner 或 Admin 提高限额，以免用量中断。
+
+**组织共享 Budget Balance**
+
+- 当剩余 Budget Balance 低于 **10%** 时，系统会显示提醒
+- 该提醒面向组织 Owner 或 Admin，以便及时为余额充值
+
+**提醒文案**
+
+> 组织的共享 Token 预算即将用尽，目前还剩 \${remaining}。请联系组织 Owner 或 Admin 尽快充值，确保团队工作顺利进行。
 
 <Note>
-  如果你从 Free 升级为个人付费套餐时，剩余余额已经较低，CodeBanana 不会立即重复发送相同的低余额提醒。
+  如果组织仍有可用的共享 Budget Balance，即使成员的个人套餐额度已经用完，系统也不会显示提醒。
 </Note>
+
+### **团队用量（管理员视图）**
+
+组织 Owner 和 Admin 可以查看：
+
+- 已使用和可用席位
+- 按虚拟机配置划分的席位可用情况
+- 共享 Budget Balance
+- 组织整体 AI 用量
+- 成员用量和按需用量限额
+- 席位记录
+- 预算交易记录
+
+他们还可以：
+
+- 增加席位
+- 为 Budget Balance 充值
+- 续订 Team Plan
+- 打开 **Members & Quotas**
+- 查看席位和余额变更
+
+### **个人用量（成员视图）**
+
+每位 Team Plan 成员可以查看：
+
+- 当前 Token 用量
+- 可用按需用量限额
+- 当前虚拟机配置
+- 限额重置时间
+- 自己可查看的 Team Plan 到期信息
+
+Team Plan 成员的 AI 用量会从组织共享 Budget Balance 中扣除，同时受该成员所配置的按需用量限额约束。
 
 ---
 
-## **常见问题**
+## **管理员控制**
+
+组织 Owner 和 Admin 可以管理 Team Plan 配置、成员、计费行为、模型、限额和虚拟机资源。
+
+### **将成员添加到 Team Plan**
+
+<Steps>
+  <Step title="进入 Usage">
+    点击右上角的头像。
+
+    在下拉菜单中选择 **Usage**，进入用量管理页面。
+
+    <Frame>
+      ![Team Plan 第一步](/images/0715-usagenew.png)
+    </Frame>
+  </Step>
+  <Step title="打开 Members & Quotas">
+    切换到 **Members & Quotas** 标签页。
+  </Step>
+  <Step title="点击 Add Members">
+    点击 **Add Members**，打开成员选择面板。
+
+    <Frame>
+      ![添加 Team Plan 成员](/images/0728-teamaddmember.png)
+    </Frame>
+  </Step>
+  <Step title="配置成员">
+    选择成员，并在确认前配置其席位、限额和模型权限。
+  </Step>
+</Steps>
+
+添加成员时，Admin 可以：
+
+- 按部门筛选组织成员
+- 查看每种虚拟机配置的可用席位
+- 将成员分配到可用席位
+- 配置按需 Token 限额
+- 应用模型权限或模型模板
+- 根据需要单独调整每位成员
+
+成员必须已经属于该组织，才能被添加到 Team Plan。
+
+<Info>
+  如果所需的虚拟机席位不可用，CodeBanana 可以引导 Admin 购买额外席位。余额充足时可以使用 Budget Balance 付款，也可以继续通过 Stripe 付款。
+</Info>
+
+<Card title="如何加入组织？" icon="arrow-right-long" href="/documentation/teams/org">
+</Card>
+
+### **计费模式**
+
+Billing Mode 决定在组织内归属 AI 费用时使用谁的用量身份。
+
+组织 Owner 和 Admin 可以更改组织的 Billing Mode。
+
+**配置位置**
+
+1. 点击右上角的**头像**
+2. 选择 **Billing Mode**
+3. 选择计费模式
+4. 点击 **Save**
+
+<Frame>
+  ![计费模式](/images/0715-billingmode.png)
+</Frame>
+
+**可用计费模式**
+
+- **Owner Mode** — 用量归属于项目 Owner
+- **Presenter Mode** — 用量根据当前 Presenter 的实际活动归属于该 Presenter
+
+<Note>
+  所选 Billing Mode 会应用于整个组织。AI-Native Index Dashboard 也会根据所选模式显示用量统计。
+</Note>
+
+### **模型模板**
+
+Team Plan Admin 可以为不同团队或工作类型创建可复用的模型配置。
+
+模型模板可以定义：
+
+- 可用模型
+- 模型显示顺序
+- 默认模型
+- 是否默认使用 **Auto mode**
+
+示例包括：
+
+- 产品与研发模板
+- 市场与运营模板
+- 成本控制模板
+
+创建模板后，Admin 可以在添加成员或通过 **Members & Quotas** 管理现有成员时应用模板。
+
+### **模型使用限制**
+
+Team Plan Admin 可以控制每位成员获准使用的 AI 模型。
+
+**模型模板**
+
+- 前往 **Usage → Members & Quotas**
+- 找到 **Models** 列
+- 创建模型模板
+
+<Frame>
+  ![管理 Team Plan 模型](/images/0728-teammodelmanage.png "管理 Team Plan 模型")
+</Frame>
+
+1. **单个成员的模型限制**
+
+对于每位成员，Admin 可以选择：
+
+- **All** — 组织内所有可用模型
+- **Model template** — 由 Admin 创建的可复用模型配置
+- **Selected models only** — 只能使用单独选中的模型
+
+配置范围之外的模型对该成员不可用。
+
+<Frame>
+  ![单独管理 Team Plan 成员](/images/0728-teammanageindividual.png)
+</Frame>
+
+2. **批量成员管理**
+
+Team Plan Admin 可以在 **Members & Quotas** 中同时管理多位成员。
+
+Admin 可以：
+
+- 根据组织架构按部门筛选成员
+- 选择多位成员，或通过**顶部面板**进行批量设置
+- 应用可用模型或模型模板
+
+<Frame>
+  ![批量管理 Team Plan 成员](/images/0728-teambulkmanage1.png)
+</Frame>
+
+**筛选与可见性**
+
+- **Model Limits** 筛选器可帮助识别模型访问受到限制的成员
+- 成员表格会显示应用于每位成员的模型配置
+- 不可用模型会在项目的模型选择器中显示为禁用
+
+**限制范围**
+
+- 模型限制应用于成员级别
+- 如果受限成员创建了项目：
+  - 如果计费模式为 **Owner Mode：** 项目中的所有人都只能使用**该成员模型配置**所允许的模型
+  - 如果计费模式为 **Presenter Mode**：项目中的每个人都可以使用**自己模型配置**所允许的模型
+
+![模型限制结果](/images/0715-modellimit.png)
+
+### **席位不足时的额外付款**
+
+如果所需的虚拟机席位不可用，确认成员配置后，Admin 会被跳转到付款页面。
+
+可以通过以下方式完成付款：
+
+- 组织余额充足时使用 **Budget Balance**
+- 需要额外付款时使用 **Stripe**
+
+### **成员按需用量限额**
+
+组织 Owner 和 Admin 可以为每位 Team Plan 成员配置独立的按需用量限额。
+
+Admin 可以：
+
+- 添加成员时设置限额
+- 直接在 **Members & Quotas** 中修改限额
+- 批量配置多位成员
+- 为个别成员设置不同的限额
+
+成员可用的 AI 用量取决于：
+
+- 为该成员配置的按需用量限额
+- 组织剩余的 Budget Balance
+
+成员接近限额时，会应用 Team Plan 用量提醒规则。
+
+### **修改成员套餐**
+
+Admin 可以管理：
+
+- 按需用量限额
+- 模型权限
+- 虚拟机配置
+- Team Plan 成员资格
+
+**升级虚拟机**
+
+- 支持升级虚拟机
+- 更改会在确认后生效
+- 如果需要额外席位或付款，Admin 会被引导至付款流程
+- 余额充足时可以使用 Budget Balance 付款，也可以使用 Stripe
+
+**降级虚拟机**
+
+- 支持降级虚拟机
+- 在一个权益周期内，每位成员只能降级虚拟机配置**一次**
+
+**移除成员**
+
+- Admin 可以从 Team Plan 中移除成员
+- 释放的席位可以重新分配
+- 移除成员不会自动减少已购买的席位数量
+
+### **账单管理**
+
+可以通过 **Personal Center → Billing** 查看账单。
+
+<Frame>
+  ![Team Plan 账单](/images/0715-invoice.png)
+</Frame>
+
+---
+
+## **Budget Balance**
+
+**Budget Balance** 是组织用于 Team Plan 用量和管理的共享余额。
+
+它取代了之前的 **Token Balance** 名称，因为该余额现在不仅可以用于 AI Token 消耗。
+
+Budget Balance 可以用于：
+
+- 组织整体 AI 用量
+- 续订 Team Plan
+- 购买额外席位
+- 升级成员的虚拟机配置
+
+### **为 Budget Balance 充值**
+
+组织 Owner 和 Admin 可以从 Usage 页面为 Budget Balance 充值。
+
+可用的预设金额包括：
+
+- **\$100**
+- **\$500**
+- **\$1,000**
+- **\$2,000**
+
+也可以输入自定义金额。
+
+充值面板会显示：
+
+- 当前余额
+- 充值金额
+- 充值后余额
+
+Budget Balance 不会过期。
+
+<Frame>
+  ![充值 Team Plan Budget Balance](/images/0728-teambugage.png "充值 Team Plan Budget Balance")
+</Frame>
+
+---
+
+## **增加席位**
+
+组织 Owner 和 Admin 可以随时从 Usage 页面购买额外席位。
+
+额外席位可以使用不同的虚拟机配置，包括：
+
+- **2 vCPU / 4 GB RAM**
+- **4 vCPU / 8 GB RAM**
+- **8 vCPU / 16 GB RAM**
+
+可以通过以下方式完成付款：
+
+- 余额充足时使用 Budget Balance
+- 使用 Stripe
+
+额外席位采用当前 Team Plan 的到期日期。
+
+如果在 Team Plan 有效期内增加席位，席位费用会根据当前周期的剩余时间按比例计算。
+
+---
+
+## **续费**
+
+可以在 **Usage** 页面点击 **Renew** 续订 Team Plan。
+
+续费期间，Admin 可以：
+
+- 选择 **1、3、6 或 12 个月**的有效期
+- 增加席位
+- 减少席位
+- 为不同虚拟机配置设置席位数量
+- 余额充足时使用 Budget Balance 付款
+- 根据需要继续通过 Stripe 付款
+
+<Warning>
+  减少席位数量前，请先从 Team Plan 中移除对应成员，确保有足够的可用席位可以移除。
+</Warning>
+
+每个 Team Plan 权益周期在到期前只能续订**一次**。
+
+<Frame>
+  ![续订 Team Plan](/images/0728-teamrenew.png "续订 Team Plan")
+</Frame>
+
+---
+
+## **席位与预算记录**
+
+Usage 页面提供组织席位和 Budget Balance 的详细记录。
+
+### **席位详情**
+
+Admin 可以查看：
+
+- 按虚拟机配置划分的已购席位
+- 已使用席位
+- 可用席位
+- 席位变更
+
+席位记录可以帮助 Admin 了解当前容量，并判断何时需要购买额外席位。
+
+<Frame>
+  ![Team Plan 席位记录](/images/0728-teamrecord.png "Team Plan 席位记录")
+</Frame>
+
+### **预算记录**
+
+Admin 可以查看 Budget Balance 交易，并按以下类型筛选：
+
+- 充值
+- 续订 Team Plan
+- 购买额外席位
+- 升级虚拟机
+- 降级虚拟机
+- 退款或余额返还
+
+收入和支出记录会通过不同的视觉样式区分，让余额变更更易理解。
+
+<Frame>
+  ![Team Plan 预算记录](/images/0728-teamrecord2.png "Team Plan 预算记录")
+</Frame>
+
+---
+
+## **版本过渡说明**
+
+更新后的 Team Plan 改变了现有 Team Plan Token 权益的管理方式。
+
+对于现有 Team Plan 客户：
+
+- Usage 显示中会合并已使用的 Token in Plan 和 Token Limit 金额
+- 已配置的成员 Token Limit 保持不变
+- 未使用的 **Token in Plan** 余额会转入组织的 **Budget Balance**
+- 转入的余额可供所有 Team Plan 成员使用
+- 该余额还可用于续费、购买额外席位和升级虚拟机
+
+现有 Team Plan 用户通过此次迁移仍会保留其未使用权益的价值。
+
+<Frame>
+  ![迁移 Team Plan 权益](/images/0728-teammove.png "迁移 Team Plan 权益")
+</Frame>
+
+---
+
+## 常见问题
+
+以下是有关 Team Plan 的常见问题解答。
 
 <AccordionGroup>
-  <Accordion title="Free 套餐目前包含哪些内容？">
-    Free 套餐包含一次性发放的**价值 \$5 的 Token 额度**、**20 MB** 云存储空间，以及不受功能限制的所有核心产品功能。
+  <Accordion title="在哪里可以购买 Team Plan？">
+    可以通过 **Pricing → Team Plan** 购买 Team Plan。
   </Accordion>
 
-  <Accordion title="Free 套餐额度会每月续发吗？">
-    不会。Free 套餐额度仅在注册当月发放一次，并在当月结束时过期，之后不会再次发放。
+  <Accordion title="每个 Team Plan 席位都包含单独的 Token 额度吗？">
+    不包含。席位和 AI 用量余额需要分别购买。团队成员的 AI 用量从组织共享 Budget Balance 中扣除，同时受为其配置的按需用量限额约束。
   </Accordion>
 
-  <Accordion title="套餐内 Token 额度用完后会怎样？">
-    如果你使用个人付费套餐，可以通过 \*\*On-demand Usage（按需用量/充值）\*\*继续使用，无需更改订阅。
+  <Accordion title="Budget Balance 的最低充值金额是多少？">
+    Budget Balance 最低从 **\$100** 起购。预设金额包括 \$100、\$500、\$1,000 和 \$2,000，同时也支持自定义金额。
   </Accordion>
 
-  <Accordion title="Personal 或 Professional 套餐可以充值 Token 吗？">
-    可以。个人付费套餐支持在套餐内额度用完后充值 Token。
+  <Accordion title="Budget Balance 会过期吗？">
+    不会。Budget Balance 不会过期。
   </Accordion>
 
-  <Accordion title="年付价格如何计算？">
-    年付价格基于虚拟机费用和套餐内 Token 额度费用的年度总价计算，并在此基础上应用年度折扣。
+  <Accordion title="Budget Balance 可以用于哪些用途？">
+    Budget Balance 可以用于 AI 用量、续订 Team Plan、购买额外席位和升级成员的虚拟机。
   </Accordion>
 
-  <Accordion title="什么时候会收到用量提醒？">
-    当套餐内剩余 Token 余额低于 **10%** 时，CodeBanana 会显示提醒。
-
-    提醒文案：
-
-    > Token 余额不足，你的套餐还剩 \${remaining}。立即充值或升级，确保工作不被中断。
+  <Accordion title="Team Plan 提供哪些有效期？">
+    Team Plan 支持 **1、3、6 和 12 个月**的有效期。
   </Accordion>
 
-  <Accordion title="未使用的 Token 会结转到下一个周期吗？">
-    不会。未使用的套餐内 Token 额度不会结转到下一个计费周期。
+  <Accordion title="可以为不同成员分配不同的虚拟机配置吗？">
+    可以。席位与虚拟机配置关联，可以根据可用席位为成员分配不同的虚拟机配置。
+  </Accordion>
+
+  <Accordion title="Admin 可以增加采用不同虚拟机配置的席位吗？">
+    可以。可以为 2 vCPU / 4 GB、4 vCPU / 8 GB 或 8 vCPU / 16 GB 配置购买额外席位。
+  </Accordion>
+
+  <Accordion title="如果在 Team Plan 有效期内增加席位，会怎样计算？">
+    新增席位采用当前 Team Plan 的到期日期。其席位费用会根据当前有效期的剩余时间按比例计算。
+  </Accordion>
+
+  <Accordion title="Admin 可以同时管理多位成员吗？">
+    可以。Admin 可以按部门筛选成员、选择多位成员，并批量配置按需 Token 限额和模型权限。
+  </Accordion>
+
+  <Accordion title="可以单独配置个别成员吗？">
+    可以。Admin 可以分别配置成员的按需 Token 限额、可用模型或模型模板，以及虚拟机配置。
+  </Accordion>
+
+  <Accordion title="所需的虚拟机席位不可用时会怎样？">
+    确认后，CodeBanana 会将 Admin 跳转到付款页面。余额充足时可以使用 Budget Balance 付款；需要额外付款时可以使用 Stripe。
+  </Accordion>
+
+  <Accordion title="可以降级虚拟机配置吗？">
+    可以。支持降级虚拟机，但每位成员在一个权益周期内只能降级一次。
+  </Accordion>
+
+  <Accordion title="可以立即减少席位吗？">
+    已购席位会在续费时减少。减少席位前，请先从 Team Plan 中移除对应成员，确保有足够的可用席位可以移除。
+  </Accordion>
+
+  <Accordion title="可以使用 Budget Balance 续订 Team Plan 或购买席位吗？">
+    可以。组织的 Budget Balance 余额充足时，可以用于续订 Team Plan、购买额外席位和升级虚拟机；否则可以继续通过 Stripe 付款。
+  </Accordion>
+
+  <Accordion title="Admin 可以按部门筛选成员吗？">
+    可以。Add Members 和成员管理流程支持根据组织的部门结构筛选成员。
+  </Accordion>
+
+  <Accordion title="Admin 可以创建可复用的模型配置吗？">
+    可以。Admin 可以创建模型模板，定义可用模型、模型顺序和默认模型，包括 Auto mode。
+  </Accordion>
+
+  <Accordion title="Admin 可以限制成员使用哪些 AI 模型吗？">
+    可以。Admin 可以应用模型模板，也可以为单个或多个成员手动选择可用模型。
+  </Accordion>
+
+  <Accordion title="成员模型限制会怎样影响项目？">
+    - 如果计费模式为 **Owner Mode：** 项目中的所有人都只能使用**该成员模型配置**所允许的模型
+    - 如果计费模式为 **Presenter Mode**：项目中的每个人都可以使用**自己模型配置**所允许的模型
+  </Accordion>
+
+  <Accordion title="Team Plan 什么时候会显示用量提醒？">
+    Team Plan 对不同用量采用不同的提醒规则：
+
+    - 当成员的按需用量剩余额度**不超过 10%，且不超过 \$10** 时，成员会收到提醒
+    - 当剩余 Budget Balance 低于 **10%** 时，组织 Owner 或 Admin 会收到提醒
+  </Accordion>
+
+  <Accordion title="成员多久会收到一次按需用量限额提醒？">
+    每位用户每天最多收到一次提醒。每位 Team Plan 成员的提醒会独立判断。
+  </Accordion>
+
+  <Accordion title="Admin 可以在哪里查看席位和 Budget Balance 变更？">
+    Admin 可以在 Usage 页面查看席位详情和 Budget Balance 记录，包括充值、续费、额外席位和虚拟机变更。
+  </Accordion>
+
+  <Accordion title="旧版 Team Plan 中未使用的权益会如何处理？">
+    未使用的 Token in Plan 价值会转入组织的 Budget Balance。之后可以由 Team Plan 成员共享，并用于符合条件的 Team Plan 付款。
   </Accordion>
 </AccordionGroup>
