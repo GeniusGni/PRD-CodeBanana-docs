@@ -25,7 +25,7 @@ Unlike individual plans, Team Plan AI usage is funded through a shared organizat
 Team Plan can be purchased from **Pricing → Team Plan**.
 
 <Frame>
-  ![0418 Teamplan Pricing](/images/0418-teamplan-pricing.png)
+  ![0728 Teambuy 1](/images/0728-teambuy-1.png "0728 Teambuy 1")
 </Frame>
 
 ### **Seats and Budget Balance**
@@ -90,7 +90,7 @@ The Usage page provides access to:
 The **Usage** page provides organization-level management for Owners and Admins, while allowing members to view their own available usage and VM resources.
 
 <Frame>
-  ![0418 Teamplan Usermanage](/images/0520-teamplan-usagemanage.png)
+  ![0418 Teamplan Usermanage](/images/0728-teamusage.png)
 </Frame>
 
 ### **Usage Alerts**
@@ -178,7 +178,7 @@ Organization Owners and Admins can manage Team Plan configuration, members, bill
     Click **Add Members** to open the member selection panel.
 
     <Frame>
-      ![Teamplanstep3](/images/0520-teamplan-step3.png)
+      ![Teamplanstep3](/images/0728-teamaddmember.png)
     </Frame>
   </Step>
   <Step title="Configure members">
@@ -253,15 +253,14 @@ After a template is created, admins can apply it when adding members or managing
 
 Team Plan admins can control which AI models each member is allowed to use.
 
-**Where to configure**
+**Model template**
 
 - Go to **Usage → Members & Quotas**
 - Find the **Models** column
-- Apply a model template or select models manually
-- Configure one member or multiple members at once
+- Create a model template 
 
 <Frame>
-  ![0418 Teamplan Modellimite Overview](/images/0520-teamplan-modellimite-overview.png)
+  ![0728 Teammodelmanage](/images/0728-teammodelmanage.png "0728 Teammodelmanage")
 </Frame>
 
 1. **Per-member model limits**
@@ -275,7 +274,7 @@ For each member, admins can select:
 Models outside the configured range are unavailable to that member.
 
 <Frame>
-  ![0418 Teamplan Modellimite Single](/images/0520-teamplan-singlemodel.png)
+  ![0418 Teamplan Modellimite Overview](/images/0728-teammanageindividual.png)
 </Frame>
 
 2. **Batch member management**
@@ -285,12 +284,11 @@ Team Plan admins can manage multiple members at once from **Members & Quotas**.
 Admins can:
 
 - Filter members by department based on the organization structure
-- Select multiple members or use **Select All**
-- Set member on-demand token limits in bulk
-- Apply available models or model templates in bulk
+- Select multiple members or use **the top panel** to set in bulk
+- Apply available models or model templates
 
 <Frame>
-  ![0520 Teamplan Batchmodel](/images/0520-teamplan-batchmodel.png)
+  ![0520 Teamplan Batchmodel](/images/0728-teambulkmanage1.png)
 </Frame>
 
 **Filtering and visibility**
@@ -302,7 +300,9 @@ Admins can:
 **Restriction scope**
 
 - Model restrictions are applied at the member level
-- If a restricted member creates a project, everyone in that project can only use the models allowed under that member’s model configuration
+- If a restricted member creates a project:
+  - If the billing mode is **Owner Mode:** everyone in that project can only use the models allowed **under that member’s model configuration**
+  - If the billing mode is **Presenter Mode**: everyone in that project can use the models allowed **under their own model configuration**
 
 ![0418 Teamplan Modellimit Result](/images/0715-modellimit.png)
 
@@ -360,10 +360,6 @@ Admins can manage:
 - The released seat becomes available for reassignment
 - Removing a member does not automatically reduce the number of purchased seats
 
-<Frame>
-  ![Addteamplanmember](/images/0418-teamplan-remove-editlimit.png)
-</Frame>
-
 ### **Billing management**
 
 Invoices are available from **Personal Center → Billing**.
@@ -408,6 +404,10 @@ The top-up panel shows:
 
 Budget Balance does not expire.
 
+<Frame>
+  ![0728 Teambugage](/images/0728-teambugage.png "0728 Teambugage")
+</Frame>
+
 ---
 
 ## **Add Seats**
@@ -450,6 +450,10 @@ During renewal, admins can:
 
 Each Team Plan entitlement period can be renewed **only once** before expiration.
 
+<Frame>
+  ![0728 Teamrenew](/images/0728-teamrenew.png "0728 Teamrenew")
+</Frame>
+
 ---
 
 ## **Seat and Budget Records**
@@ -467,6 +471,10 @@ Admins can view:
 
 Seat records help admins understand current capacity and decide when additional seats are required.
 
+<Frame>
+  ![0728 Teamrecord](/images/0728-teamrecord.png "0728 Teamrecord")
+</Frame>
+
 ### **Budget history**
 
 Admins can review Budget Balance transactions and filter them by type, including:
@@ -479,6 +487,10 @@ Admins can review Budget Balance transactions and filter them by type, including
 - Refund or balance return
 
 Income and expense records are visually distinguished to make balance changes easier to understand.
+
+<Frame>
+  ![0728 Teamrecord2](/images/0728-teamrecord2.png "0728 Teamrecord2")
+</Frame>
 
 ---
 
@@ -495,6 +507,10 @@ For existing Team Plan customers:
 - The balance can also be used for renewal, additional seats, and VM upgrades
 
 Existing Team Plan users retain the value of their unused benefits through this migration.
+
+<Frame>
+  ![0728 Teammove](/images/0728-teammove.png "0728 Teammove")
+</Frame>
 
 ---
 
